@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy
+easy,simple_substitution,gpt,gpt-4.1-2025-04-14,run_1,20.0,1,0,8,0.0

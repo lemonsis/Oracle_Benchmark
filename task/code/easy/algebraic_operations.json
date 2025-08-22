@@ -1,0 +1,4 @@
+{
+    "algorithm": "algebraic operations",
+    "description": "Perform basic algebraic operations on three input int numbers a b c. First, calculate d=a+b+c. Then, calculate e=a*b-c. Finally, calculate f = (e+d-10)/2"
+}

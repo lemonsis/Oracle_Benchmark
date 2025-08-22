@@ -1,0 +1,4 @@
+{
+    "algorithm": "elliptical planetary orbits",
+    "description": "An elliptical planetary orbit is a path followed by a planet around a star, where the orbit is an ellipse. The system contains one object which is the planet. The mass of the planet is 9 x 10^24 kg and the mass of the star is 8 x 10^29 kg. The periapsis is 6 x 10^10 m and the apoapsis is 9 x 10^10 m. The simulation does not consider any other forces except for the gravitational force between the planet and the star. The coordinate origin is set at the center of the star. G equals to 6.7 x 10^-11 N m²/kg²."
+}

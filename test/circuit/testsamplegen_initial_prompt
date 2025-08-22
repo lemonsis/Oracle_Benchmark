@@ -1,0 +1,11 @@
+- Instruction
+  - You need to generate {num1} test samples according to given instructions, aiming to comprehensively evaluating the correctness of programme.
+  - For each task sample, you need to randomly generate a 0/1 list of length {input_size}.
+  - You should output in json format
+- Example
+Your response should be like this:
+[
+  [0, 1, 1],
+  [1, 0, 0],
+  [0, 1, 1]
+]

@@ -1,0 +1,4 @@
+{
+    "algorithm": "A hundred coins for a hundred fowls",
+    "description": "You have m coins and you want to buy exactly n fowls. Each rooster costs 5 coin, each hen costs 3 coins, and each chick costs 1 coin. How many Roosters, Hens, and Chicks can you buy? Solve this problem in a function."
+}

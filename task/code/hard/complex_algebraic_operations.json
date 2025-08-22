@@ -1,0 +1,4 @@
+{
+    "algorithm": "algebraic operations",
+    "description": "Perform basic algebraic operations on four input int numbers a b c d. First, calculate e = a*b+c*d. If this value is greater than 50, e = e-10, else e = e+10. Then, calculate f = e^2-a-b-c-d. If f is odd, f = (f-1)/2, else f=f/2. Fianlly, calculate g = f -a."
+}

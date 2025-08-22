@@ -1,0 +1,5 @@
+{
+    "algorithm": "rsa",
+    "description": "The public key for RSA is set as $(e, n) = (13, 713)$, and the private key is set as $(d, n) = (1117, 713)$. The plaintext is a string of letters. The encryption process is as follows: First, convert each letter to its corresponding integer value: a/A=1, b/B=2, ..., z/Z=26. This procedure is case-insensitive. Then, split the plaintext into blocks with a size of 2. Calculate the value of each block in hexavigesimal. For example, the value of `HE' is $8x26+5=213$. Finally, perform traditional RSA algorithm to each block. Blank spaces in plaintext are ignored. Output the ciphertext as a string of integers, separated by commas.",
+    "feature": "case-insensitive, blank-ignored"
+}

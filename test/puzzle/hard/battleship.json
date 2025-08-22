@@ -1,0 +1,20 @@
+[
+    {
+        "answer": "AAA....\nOO....C\n......C\n......C\n......C\n......C\n..BBBB."
+    },
+    {
+        "answer": ".......\n.....C.\n.AO..C.\n.ABBBC.\n.A..OC.\n.....C.\n......."
+    },
+    {
+        "answer": ".......\n.......\n.A.....\n.ACCCCC\n.ABBBB.\n....OO.\n......."
+    },
+    {
+        "answer": "..CCCCC\n..AO...\n..A....\n..AO...\nBBBB...\n.......\n......."
+    },
+    {
+        "answer": ".......\n.CCCCC.\n.OB.AO.\n..B.A..\n..B.A..\n..B....\n......."
+    },
+    {
+        "answer": ".A.....\n.A.COO.\n.A.C...\n...C.B.\n...C.B.\n...C.B.\n.....B."
+    }
+]

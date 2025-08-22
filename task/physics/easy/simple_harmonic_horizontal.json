@@ -1,0 +1,4 @@
+{
+    "algorithm": "simple harmonic",
+    "description": "A simple harmonic oscillator is a system that experiences a restoring force proportional to the displacement from its equilibrium position. The system contains one object. The mass of the object is 1 kg. The spring constant is 100 N/m. The initial displacement from the equilibrium position is 0.2 m (spring in contracted state). The system is horizontal and the object is support by smooth ground without friction. The system is released from rest and do not consider any air resistance. The coordinate origin is set at the equilibrium position of the oscillator."
+}

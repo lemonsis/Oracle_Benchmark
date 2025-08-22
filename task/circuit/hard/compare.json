@@ -1,0 +1,5 @@
+{
+    "algorithm": "compare circuit",
+    "description": "For input size $n=10$ (x_1, ... x_5, y_1, ... , y_5), we construct a circuit for compare x and y. That is, we compare (x_1, y_1) (x_2, y_2) ... (x_5, y_5) in order. a > b can be construct by (a and (not b))",
+    "input_size": 10
+}

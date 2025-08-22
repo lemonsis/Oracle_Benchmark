@@ -1,0 +1,5 @@
+{
+    "algorithm": "01248 encryption",
+    "description": "01248 encryption is an encryption method. For characters A-Z or a-z (case-insensitive), the encryption is done by first replacing each character with a number based on its position in the alphabet, namely, A=1, B=2, C=3, ..., Z=26. For number 1 to 26, it's replaced by the sum of combination of 1, 2, 4, 8. Black space is replaced by 0. For example, 3 is replaced by 12, 10 is replaced by 28, 20 is replaced by 488. The replacement follows two rule: 1. Use larger numbers first to make sure the encrypted number has the fewest digits (e.g. use 18 for 9 instead of 1224). 2. Put small number in the front. (e.g. use 18 instead of 81 for 9). According to the above rules, string 'Hello World' is encrypted to '814484812480124881248288484'.",
+    "feature": "case-insensitive, blank-considered"
+}

@@ -1,0 +1,4 @@
+{
+    "algorithm": "oblique projectile motion from infinite height",
+    "description": "An oblique projectile motion system is a scenario where an object is projected at an angle from a very high point and falls under the influence of gravity. The system contains one object. The mass of the object is 2 kg. The initial height from which the object is projected is infinite, meaning it starts at a very high altitude. The initial horizontal velocity of the object is 10 m/s, and the initial vertical velocity is 10 m/s. The simulation does not consider air resistance. The coordinate origin is set at the initial position. Gravity g is 10 m/s²." 
+}

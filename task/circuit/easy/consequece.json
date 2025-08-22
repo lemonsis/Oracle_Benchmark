@@ -1,0 +1,5 @@
+{
+    "algorithm": "consecutive 1 gate",
+    "description": "For input size $n=8$, we construct a circuit output whether there are two consecutive input wires are both 1. Let input wires are a[i], b[i] = a[i-1] and a[i], s[i] = b[i] or s[i-1]",
+    "input_size": 8
+}

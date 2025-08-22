@@ -1,0 +1,142 @@
+[
+    {
+        "role": "developer",
+        "content": "You are an excellent reasoning model. You are very good at understanding the interaction rules, reasoning over interaction history, thinking step by step, and finally figureing out the working principle of a system that contains hidden information. \nYou also strictly follow output format rules."
+    },
+    {
+        "role": "user",
+        "content": "1. Task overview: \n- The user transforms one string into another based on a fixed rule, but you don't know what the fixed rule is. You need to figure out this rule by interacting with the user in multiple turns. \n\n2. Goal:\n- By interacting with the user within given interaction turns, you need to understand the fixed rule of transforming one string into another.\n\n3. User property:\n- The user will remind you the remaining number of turns in each turn.\n- The user will output transformed string in each turn.\n\n4. Interaction rules:\n- Rule 1: You must only assign one string in each turn. You can assign any string freely, but make sure the string **only contains uppercase or lowercase English letters (A-Z, a-z) and blank space**. Then you will receive corresponding transformed string from the user.\n\n5. Output format:\n- You must strictly obey the output format rules: **Only output the string**. DO NOT output any unrelated text or symbols like \"Let's input\", \"I'll try\", \"\\n\".\n- If you understand the transforming rule before reaching given interaction turns, keep interacting with the user to make sure you don't miss any details. DO NOT output text like \"I understand the pattern\".\n\n6. Evaluation:\n- When the given number of interactions is reached, you will be given several test strings and you need to output corresponding transformed string. **You MUST ONLY output the value, DO NOT contain any other text.**"
+    },
+    {
+        "role": "assistant",
+        "content": "I understand the rules. I will not output any unrelated text! Let us start the interaction."
+    },
+    {
+        "role": "user",
+        "content": "You have 12 interaction turns to understand the black-box. Now the interaction starts. Only output the value and DO NOT contain any unrelated text."
+    },
+    {
+        "role": "assistant",
+        "content": "A"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 11 Turns Remaining> 1"
+    },
+    {
+        "role": "assistant",
+        "content": "B"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 10 Turns Remaining> 2"
+    },
+    {
+        "role": "assistant",
+        "content": "C"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 9 Turns Remaining> 3"
+    },
+    {
+        "role": "assistant",
+        "content": "D"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 8 Turns Remaining> 4"
+    },
+    {
+        "role": "assistant",
+        "content": "E"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 7 Turns Remaining> 5"
+    },
+    {
+        "role": "assistant",
+        "content": "F"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 6 Turns Remaining> 6"
+    },
+    {
+        "role": "assistant",
+        "content": "G"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 5 Turns Remaining> 7"
+    },
+    {
+        "role": "assistant",
+        "content": "H"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 4 Turns Remaining> 8"
+    },
+    {
+        "role": "assistant",
+        "content": "I"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 3 Turns Remaining> 9"
+    },
+    {
+        "role": "assistant",
+        "content": "J"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 2 Turns Remaining> 10"
+    },
+    {
+        "role": "assistant",
+        "content": "K"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 1 Turns Remaining> 11"
+    },
+    {
+        "role": "assistant",
+        "content": "L"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 0 Turns Remaining> 12\n********Evaluation Starts, You Have 1 Chances for Answering Each Question********\n Now answer the question: What's the output of the blackbox when the input plaintext is 'tEsT'?"
+    },
+    {
+        "role": "assistant",
+        "content": "uFtU"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'Dog'?"
+    },
+    {
+        "role": "assistant",
+        "content": "EpH"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    }
+]

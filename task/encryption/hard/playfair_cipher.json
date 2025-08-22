@@ -1,0 +1,5 @@
+{
+    "algorithm": "playfair cipher",
+    "description": "Playfair is a method of encryption. It encrypts pairs of letters using a $5\times 5$ grid of letters constructed from a keyword `SECURITY'. The keyword is used to fill the grid, and the remaining letters of the alphabet are filled in order, skipping any letters already in the keyword. The letter `J' is combined with `I'. To encrypt, locate each letter pair in the grid: if they are in the same row, replace them with letters to their right; if they are in the same column, replace them with letters below; if they form a rectangle, replace them with letters on the same row but at the opposite corners. If a pair consists of two identical letters, insert a filler letter `X' between them. If the plaintext has an odd number of letters, append a filler letter `X' at the end. The ciphertext is case-sensitive and blank spaces are considered.",
+    "feature": "case-sensitive, blank-considered"
+}

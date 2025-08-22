@@ -1,0 +1,5 @@
+{
+    "algorithm": "arbitrary big gates",
+    "description": "For input size $n=7$, we construct a circuit of 16 gates without nothing restriction. The circuit is not for some well-known purpose.",
+    "input_size": 7
+}

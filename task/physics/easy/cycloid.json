@@ -1,0 +1,4 @@
+{
+    "algorithm": "cycloid motion",
+    "description": "A cycloid is the curve traced by a fixed point on the circumference of a circle as it rolls along a straight line without slipping. The system contains one object which is the fixed point. The radius of the circle is 1 m. The circle moves in a uniform speed of 1 m/s. The coordinate origin is set at the fixed point where the circle starts rolling."
+}

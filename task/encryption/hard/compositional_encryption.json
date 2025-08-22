@@ -1,0 +1,5 @@
+{
+    "algorithm": "compositional encryption",
+    "description": "It's an encryption method that undergoes polyalphabetic substitution, affine transformation, and fixed permutation. The encryption process follows: For each English letter \\$P_i\\$ in the plaintext: (1). Letter to Number Conversion: Convert \\$P_i\\$ to its corresponding number \\$p_i\\$ (a/A=0, ..., z/Z=25). (2). Get Keyword Character: Let the keyword be \\$K\\$ with length \\$L_k\\$. Take the \\$j=(i \\mod L_k))\\$-th character \\$K_j\\$ from the keyword and convert it to its numerical value \\$k_j\\$. The keyword \\$K\\$ is set as `LOVE'. (3). Polyalphabetic Substitution: Calculate \\$s_{1,i} = (p_i+k_j) \\mod 26\\$. (4). Affine Transformation: Calculate \\$s_{2,i}=(3\\times s_{1,i}+10) \\mod 26\\$. (5). Fixed Permutation: Generate a permutation table \\$P_{table}\\$ and use it to find \\$s_{3,i}=P_{table}[s_{2,i}]\\$. (6). Number to Letter Conversion: Convert \\$s_{3,i}\\$ back to its corresponding letter \\$C_i\\$. (7). Keep Blank Spaces: Keep the blank spaces in the ciphertext.",
+    "feature": "case-insensitive, blank-considered"
+} 

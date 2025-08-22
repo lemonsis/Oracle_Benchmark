@@ -1,0 +1,5 @@
+{
+    "algorithm": "backpack encryption",
+    "description": "It uses a superincreasing sequence as private key. The plaintext is a string of letters. The encryption process is as follows: Convert each letter to a binary value: a/A=00000, b/B=00001, ..., z/Z=11001. The public key is set as $\\{34,51,58,11,35\\}$. The ciphertext is obtained by summing the products of each public key element and its corresponding digit in the binary representation. For example, the letter `c' is encrypted to $(0\\times34)+(0\\times51)+(0\\times58)+(1\\times11)+(0\\times35)=11$. Output the ciphertext as a string of numbers, separated by commas.",
+    "feature": "case-insensitive, blank-considered"
+}

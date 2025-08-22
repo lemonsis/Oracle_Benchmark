@@ -1,0 +1,5 @@
+{
+    "algorithm": "Prefix XOR gate",
+    "description": "For input size $n=8$, we construct a circuit calculate prefix XOR. Notice that a xor b = (a and (not b)) or ((not a) and b), s[i] = s[i-1] xor a[i].",
+    "input_size": 6
+}

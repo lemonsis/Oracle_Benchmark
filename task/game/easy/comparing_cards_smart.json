@@ -1,0 +1,8 @@
+{
+    "algorithm": "Comparing Cards",
+    "description": "Comparing Cards is a game where two players play a card at the same time and compare the number. Initially, both players have [[total_cards]] cards, numbered from 1 to [[total_cards]]. In each turn, both players choose a card on his hand to play at the same time, in the form of `card x`, where `x` is the number on the card between 1 and [[total_cards]], and this card must be available. The player with the higher number wins the turn and earns 1 point, while the other player earns -1 point. If both players play the same number, then both players earn 0 points. The game lasts for [[total_cards]] turns, both players try to maximize their scores. ",
+    "strategy": "First choose the card with median value. If the opponent plays a card smaller than that, play accordingly to the order of 'median-1, median-2, ..., 1, median+1, median+2, ..., the highest value'. Else if the opponent plays a card larger than that, play accordingly to the order of 'median+1, median+2, ..., the highest value, median-1, median-2, ..., 1'.",
+    "settings": {
+        "total_cards": "an integer, the number of cards in the game, from 8 to 12"
+    }
+}

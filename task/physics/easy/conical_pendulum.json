@@ -1,0 +1,4 @@
+{
+    "algorithm": "conical pendulum motion",
+    "description": "A conical pendulum is a pendulum that moves in a circular path while swinging at an angle. The system contains one object which is the pendulum bob. The mass of the pendulum bob is 2 kg. The length of the pendulum is 5 m. The angle between the string and the vertical is 30 degrees. The simulation does not consider air resistance. The coordinate origin is set at the point where the string is attached to the ceiling. Gravity g is 10 m/s²."
+}

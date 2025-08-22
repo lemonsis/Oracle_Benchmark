@@ -1,0 +1,5 @@
+{
+    "algorithm": "Nerdle",
+    "description": "Nerdle is a math-based puzzle game where players guess a hidden equation consisting of numbers and operators. Here we guarantee that the length of the equation is 15, including digits (0-9) and operators (+, -, *, /, =). For example, truth can be `10002*3+6=30012`. In each turn, player can guess a length 15 **valid equation** (such as `1+1+1+1=50` is invalid since this is not correct, and `1+1+1+1=4` is invalid since length is only 9). Each guess provides feedback: (1) Correct digit/operator in the correct position, represented by `A`; (2) Correct digit/operator but misplaced, represented by `M`; (3) Digit/operator not in the equation, represented by `X`. Players iteratively refine guesses using feedback until solving the equation, within limited attempts. After a few turns of querying, the player will give a 15-character valid equation answer.",
+    "answer_format": "15-character valid equation (including digits and operators)"
+}

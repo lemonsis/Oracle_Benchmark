@@ -1,0 +1,5 @@
+{
+    "algorithm": "caesar cipher 8",
+    "description": "Caesar cipher is a type of substitution cipher in which each letter in the plaintext is shifted 8 places down the alphabet. For example, A(a) would be replaced by I(i), B(b) would become J(j), and so on. For letters at the end of the alphabet, the shift wraps around to the beginning. For example, Y(y) would become G(g). Only take letters A-Z and a-z (case-sensitive) into account. Blank spaces are ignored.",
+    "feature": "case-sensitive, blank-ignored"
+}

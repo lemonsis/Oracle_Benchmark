@@ -1,0 +1,5 @@
+{
+    "algorithm": "Nuts and Bolts",
+    "description": "There are 8 bolts and 8 nuts of different sizes, named `Bolt 1`, ..., `Bolt 8` and `Nut 1` ... `Bolt 8`, where each bolt exactly matches one nut. We know that `Bolt 1` is smaller than `Bolt 2`, `Bolt 2` is smaller than `Bolt 3`, and so on. The goal is to find the matching nut for each bolt. In each turn, the player can make a query of 3 bolt-but pairs in the form of `Bolt X1, Nut Y1; Bolt X2, Nut Y2; Bolt X3, Nut Y3`, which returns `small`, `large` or `equal` to represent whether the nut is too small, too large, or a match for the bolt, for example `small; small; large`. After a series of queries, the player must answer a permutation of the nuts, such as `Nut 1, Nut 3, Nut 2, Nut 5, Nut 4, Nut 6, Nut 7, Nut 8`, which represents the order of nuts that match the bolts from `Bolt 1` to `Bolt 8`. The player will win if they correctly identify the matching nuts for all bolts.",
+    "answer_format": "A permutation of the 8 nuts, such as `Nut 1, Nut 3, Nut 2, Nut 5, Nut 4, Nut 6, Nut 7, Nut 8`. Which means that `Nut 1` matches `Bolt 1`, `Nut 3` matches `Bolt 2`, and so on."
+}

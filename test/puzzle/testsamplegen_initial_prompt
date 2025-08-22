@@ -1,0 +1,11 @@
+- Goal
+  - You need to generate {num} independent test samples according to given instructions. These samples will be used as answers of a given puzzle, and to evaluate a player's ability.
+  - Output format should strictly follow the description of the answer of the given puzzle.
+
+- Instruction
+1. The puzzle we are targeting is {algorithm}. The rule is as follows:
+{description}
+
+2. Note that the samples you generate must be {answer_format}
+
+3. Try to make the data you generate have a difficulty gradient.

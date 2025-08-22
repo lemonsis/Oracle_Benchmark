@@ -1,0 +1,5 @@
+{
+    "algorithm": "ADHXZ encryption",
+    "description": "ADHXZ is a method of encryption that uses a 5$\times$5 grid to encrypt. The encryption is case-insensitive and follows this replacement rule: `a/A=AH, b/B=AA, c/C=XH, d/D=DA, e/E=ZH, f/F=HD, g/G=XA, h/H=DD, i/I=XD, j/J=XD, k/K=DZ, l/L=AX, m/M=ZA, n/N=HZ, o/O=DH, p/P=AZ, q/Q=HA, r/R=ZD, s/S=HX, t/T=AD, u/U=XX, v/V=HH, w/W=ZX, x/X=XZ, y/Y=ZZ, z/Z=DX'. Black spaces are kept.",
+    "feature": "case-insensitive, blank-considered"
+}

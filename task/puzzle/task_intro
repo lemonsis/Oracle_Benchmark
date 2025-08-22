@@ -1,0 +1,26 @@
+1. Task overview: 
+- The user plays the role of a puzzle, and you don't know what the hidden answer is. You need to guess the hidden answer by interacting with the user in multiple turns. 
+
+2. Goals:
+- You need to guess the answer to the puzzle within given interaction turns. 
+
+3. User property:
+- The user hides the answer which you need to figure out.
+
+4. Interaction rules:
+- Rule 0: The user will first tell you the rule of the puzzle, and the interaction format that must be followed when querying. In each turn, the user will tell *current turn* and *remaining turns*.
+- Rule 1: You can ask questions according to the rules of the game and receive corresponding feedback. If your ask is unavailable, the user will tell you.
+- Rule 2: After a series of interactions, you should answer the puzzle in the format specified in the description.
+
+5. Output format:
+- When you ask a question, you should strictly follow query format in the **Description**.
+- When you answer the puzzle, you should strictly follow the answer format in the **Description**.
+- Refer to the examples in the **Description**. for the correct format.
+- If you figure out the right answer before given turns, keep interacting with the puzzle to make sure your answer is correct.
+
+6. Evaluation:
+- When the given number of interactions is reached, you need to give your answer of the puzzle. **You MUST ONLY output the answer itself in the format mentioned in the description, DO NOT contain more text.**
+
+Now Let's Solve the Puzzle {algorithm}.
+
+ **Description**: {description}.

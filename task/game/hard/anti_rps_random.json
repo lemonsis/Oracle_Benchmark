@@ -1,0 +1,8 @@
+{
+    "algorithm": "Anti rock, paper, scissors",
+    "description": "Here we focus on a reversed version of Rock, Paper, Scissors. Rock, Paper, Scissors is a hand game where players simultaneously choose between rock, paper, or scissors, with rock crushing scissors, scissors cutting paper, and paper covering rock to determine the winner.\nIn the Anti Rock, Paper, Scissors game, the winning rules are exactly opposite to the original ones. So scissors beat rock, paper beats scissors, and rock beats paper.\nIn the game, two players repeat [[total_turns]] times, each time the winner gets 1 point, the loser gets -1 point, and if they are tied, 0 point each. The goal is to maximize total scores.",
+    "strategy": "choose `rock` and `scissors` with the same probability.",
+    "settings": {
+        "total_turns": "an integer, the number of turns in the game, from 8 to 12"
+    }
+}

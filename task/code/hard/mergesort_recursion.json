@@ -1,0 +1,4 @@
+{
+    "algorithm": "merge sort",
+    "description": "Merge sort is a divide-and-conquer algorithm that sorts an array by recursively splitting it into halves, sorting each half, and then merging the sorted halves back together. Use **only one function** to implement the merge sort algorithm."
+}

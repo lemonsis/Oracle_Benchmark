@@ -1,0 +1,4 @@
+[
+{"var_names": ["a", "b"], "var_values": [3, 6], "checkpoints": [[1, 1, "c"], [2, 1, "a"], [2, 1, "b"]]},
+{"var_names": ["a", "b"], "var_values": [16, 10], "checkpoints": [[1, 1, "c"], [2, 1, "a"], [2, 1, "a"]]}
+]

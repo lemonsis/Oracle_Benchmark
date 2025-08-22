@@ -1,0 +1,5 @@
+{
+    "algorithm": "swap gates",
+    "description": "For input size $n=9$, let the first 4 output gates are the last 4 input wires, and last 5 output gates are first 5 input wires. Notice that we use b[i]=a[j] and a[j] to implement copy.",
+    "input_size": 9
+}

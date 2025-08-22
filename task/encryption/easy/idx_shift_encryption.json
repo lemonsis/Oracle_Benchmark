@@ -1,0 +1,5 @@
+{
+    "algorithm": "index shift encryption",
+    "description": "Index shift encryption is a method of encryption that uses the index of each letter in the plaintext to determine the shift for each letter. The index of first letter is 0. Suppose the letters are represented by a=0, b=1, ..., z=25, A=26, B=27, ..., Z=51. The value of each letter in ciphertext equals its value in plaintext plus a shift number (i.e. the number of index) and then modulo 52. Then convert the value to the corresponding letter. Keep the blank spaces in the ciphertext.",
+    "feature": "case-sensitive, blank-considered"
+}

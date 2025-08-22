@@ -1,0 +1,11 @@
+You need to fix running errors of a code.
+
+- The code is as follows:
+
+{current_code}
+
+- This above code has the following running errors:
+
+{running_errors}
+
+- You need to think step by step and output the revised correct code. **Make sure the output code is runnable, DO NOT output any other text**.

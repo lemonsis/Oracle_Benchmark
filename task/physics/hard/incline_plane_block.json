@@ -1,0 +1,4 @@
+{
+    "algorithm": "block released from incline plane",
+    "description": "An inclined plane with an angle of 30 degrees and a mass of 10 kg is placed on a smooth horizontal surface. A wooden block with a mass of 5 kg is placed at a perpendicular height of 8 m on the inclined plane. There is no friction between the wooden block and the inclined plane. In the initial state, the wooden block's coordinates are (0,0,8) and the inclined plane's coordinates are (0,0,0). The system is released from rest. After the wooden block separates from the inclined plane, both the wooden block and the inclined plane will move along the smooth horizontal surface. g = 10 m/s^2."
+}

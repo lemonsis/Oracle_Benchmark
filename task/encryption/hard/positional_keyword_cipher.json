@@ -1,0 +1,5 @@
+{
+    "algorithm": "positional keyword cipher",
+    "description": "This method uses a keyword `Jackal' to determine how each letter in the plaintext is shifted. Each letter of the alphabet is assigned a value A=0, B=1, ..., Z=25, a=26, b=27, ..., z=51. Write the keyword repeatedly above the plaintext, matching each letter of the plaintext with a letter from the keyword. Black spaces are kept. For example, if plaintext is `Hello World', then the corresponding keyword for matching is `Jacka lJack'. For each letter, calculate the sum of the value of plaintext and keyword, then modulo 52 to get the value of the ciphertext letter. Finally, translate the value to corresponding letter. Since the keyword is repeated, the same letter in the plaintext will be paired with different letters of the keyword at different positions, leading to different ciphertext letters.",
+    "feature": "case-sensitive, blank-considered"
+}

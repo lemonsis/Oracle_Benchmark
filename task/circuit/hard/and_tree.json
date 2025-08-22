@@ -1,0 +1,5 @@
+{
+    "algorithm": "Tree AND gate",
+    "description": "For an input size of $n=8$, we construct a circuit with $n-1$ gates. The circuit forms a tree structure, where each gate has two children and the outuput is the AND of its two children. The last gate outputs the AND of all input wires. The second-to-last gate outputs the AND of input wires with indices [1, n/2], while the third-to-last gate outputs the AND of input wires with indices [n/2+1, n]. The last gate outputs the AND of the results from the second-to-last and third-to-last gates...",
+    "input_size": 8
+}

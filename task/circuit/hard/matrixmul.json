@@ -1,0 +1,5 @@
+{
+    "algorithm": "matrix multiplication gates",
+    "description": "For input size $n=9$, it can be treated as a 3*3 matrix M in field Z_2. Calculate the matrix square M^2. Notice that M^2[i][j] = XOR (M[i][k] and M[k][j]). a xor b = (a and (not b)) or (b and (not a)).",
+    "input_size": 9
+}

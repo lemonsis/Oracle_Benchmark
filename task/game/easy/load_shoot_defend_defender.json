@@ -1,0 +1,8 @@
+{
+    "algorithm": "Load Shoot Defend Scout",
+    "description": "In each turn, a player can choose `load`: gain one bullet, `scout`: see the opponent's bullet count, `shoot x`: spend `x` bullets to attack, or `defend y`: spend `y` bullets to defend. Then, actions and the gaining points of both players are revealed, but the specific numerical values 'x' and 'y' are kept hidden. Each player starts with 0 bullets and can hold a maximum of 8. 'x' and 'y' cannot exceed the number of bullets they have currently. \nIf one player `shoot x` and the other `defend y`, the defense succeeds and the player wins 1 point if y>=x, and the shooter wins -1 point. But if y<x, the attacker wins 1 point and the defender wins -1 point. A Shoot action will always succeed against an opponent who chooses to Load or Scout. When a simultaneous shoot happens, player with more bullets will win 1 point and the other win -1 point. The same bullets will result in a tie where both players win 0 point. When a simultaneous defend or scout or load happens, both players win 0 point. If player `scout`, he will receive opponent's bullet number. The game lasts for [[total_turns]] turns, both players try to maximize their scores.",
+    "strategy": "Cycle through `load`, `load`, `defend 2`, `load`, `defend 1`,...",
+    "settings": {
+        "total_turns": "an integer, the number of turns in the game, from 8 to 18"
+    }
+}

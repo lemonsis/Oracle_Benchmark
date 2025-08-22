@@ -1,0 +1,5 @@
+{
+    "algorithm": "Single Battleship",
+    "description": "Single Battleship is a simplified version of the classic Battleship game. In this game, the player has to guess the location of a single 1×5 battleship on a 9×9 grid. The player will make guesses by specifying coordinates on the grid, in the form of `(x, y)`, from `(1, 1)` to `(9, 9)`, and the game will provide feedback on whether the guess `hits` or `misses` the battleship. After a series of guesses, the player will provide the coordinates of the battleship in the format `Row X` or `Column Y`, where `X` and `Y` are integers from 1 to 9, since a battleship must be placed either horizontally or vertically and occupies a whole row or column.",
+    "answer_format": "`Row X` or `Column Y`, where `X` and `Y` are integers from 1 to 9"
+}

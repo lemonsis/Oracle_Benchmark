@@ -1,0 +1,5 @@
+{
+    "algorithm": "greater gates",
+    "description": "For input size $n=6$, we construct a circuit to check whether the number of input 1 wires is greater than or equal to the number of 0 wires. If number of 1 is greater or equal, there must be three input wires are 1. Let the input be a[1..6], c[1..20] be whether there are three 1 wires. For example, c[1] = a[1] and a[2] and a[3], c[2] = a[1] and a[2] and a[4], ..., c[20] = a[4] and a[5] and a[6]. The result is c[1] or ... or c[20].",
+    "input_size": 6
+}

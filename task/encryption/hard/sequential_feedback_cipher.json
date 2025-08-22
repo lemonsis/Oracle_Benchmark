@@ -1,0 +1,5 @@
+{
+    "algorithm": "sequential feedback cipher",
+    "description": "Sequential feedback cipher encrypts letter in the plaintext one by one in a sequential order. Each letter in the alphabet is assigned a value A=0, B=1, ..., Z=25, a=26, b=27, ..., z=51. The initial hidden letter is set as `b'. For each letter in the plaintext, the shift number is the value of previous encrypted letter. And for the first letter, the shift number is the value of initial hidden letter. The ciphertext for each letter is its original value plus the shift number and then modulo 52. For example, the letter 'A' in plaintext 'At' will be encrypted to 'b' because $(27 + 0) \\mod 52 = 27$. The letter 't' will be encrypted to 'U' because $(45 + 27) \\mod 52 = 20$. Blank spaces are kept in the ciphertext.",
+    "feature": "case-sensitive, blank-considered"
+}

@@ -1,0 +1,4 @@
+{
+    "algorithm": "factorial using recursion",
+    "description": "Given a non-negative integer n, return the factorial of n using recursion. The factorial of n (denoted as n!) is the product of all positive integers less than or equal to n. When n is negative, print('n is non-negative')."
+}

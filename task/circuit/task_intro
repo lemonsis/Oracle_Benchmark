@@ -1,0 +1,28 @@
+0. Definitions: A 'circuit' means a boolean circuit with no circle, whose input wires are a fixed number of 0/1 bits, and consisted of `AND`/`OR`/`NOT` gates. For each gates, the input are input wires or the output of other gates.
+
+1. Task overview: 
+    You are presented with a platform containing a circuit. Your task is to discover the structure of this circuit by interacting with the platform over multiple turns.
+
+2. Goals:
+    You have one final goal: You need to know output of circuit gates given every input.
+    
+3. Interaction Process:
+    To finish the goal, you need to interact with the platform. The interaction process is as follows:
+    - The platform will first provide you with the input sizes $n$
+    - In each turn, you can ask the platform for the outputs of every circuit gates with a given input size $x=(x_1, x_2, ..., x_n), x_i\in \{0,1\}$.
+    - Each turn after you ask the platform, you will receive the circuit's gate output in the following format: $[y_1, y_2, ..., y_m], y_i\in \{0,1\}$, where $m$ is the number of gates, $y_i$ is the output of the $i$-th gate.
+
+4. Output format in Interaction:
+    **You must strictly obey the output format rules, DO NOT output any unrelated text!**:
+    Format your queries as: (x_1, x_2, ... , x_n). 
+    For example, if you what to now the output of circuit given input $x=(0,1,1)$, you should output: (0, 1, 1). 
+
+5. Evaluation:
+    After reaching the maximum number of allowed interactions, you will be tested on your understanding of the circuit family:
+    - You will be given input $x=(x_1, x_2, ... , x_n)$ and you should answer the output of each gate $[y_1, y_2, ..., y_m]$.
+    - Your construction should specify the exact connections and gate types in $C_n$.
+
+6. Circuit Details
+   - `AND` and `OR` gates always have exactly two inputs, and `NOT` gatea always have one input.
+   - There are no restrictions on how many times a gate's output or an input wire can be used as input to other gates.
+   - Every circuit in the circuit family contains no loops, For the $i$-th gate, all inputs must come from either input wires or outputs of gates with indices smaller than $i$.

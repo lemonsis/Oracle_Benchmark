@@ -1,0 +1,4 @@
+{
+    "algorithm": "two balls collision",
+    "description": "Two balls, A and B, are on a 20 m, smooth plane with walls on each side. Ball A has a mass of 5 kg, and Ball B has a mass of 3 kg. Ball A starts from one side of the plane and moves uniformly along the plane at a speed of 4 m/s. Ball B starts from the other side of the plane and moves towards Ball A at a speed of 6 m/s. When the two balls collide, the collision is inelastic and the coefficient of restitution e = 0.8; When the balls collide with the walls, they bounce off elastically."
+}

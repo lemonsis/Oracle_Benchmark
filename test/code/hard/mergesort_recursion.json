@@ -1,0 +1,7 @@
+[
+{"var_names": ["arr"], "var_values": [[30, 10, 20]], "checkpoints": [[1, 1, "arr"], [2, 1, "arr"], [3, 1, "arr"], [4, 1, "arr"], [5, 1, "arr"], [6, 1, "arr"], [8, 1, "arr"]]},
+{"var_names": ["arr"], "var_values": [[100, 10, 50, 20, 80]], "checkpoints": [[1, 1, "arr"], [2, 1, "arr"], [3, 1, "arr"], [4, 1, "arr"], [5, 1, "arr"], [7, 1, "arr"], [8, 1, "arr"]]},
+{"var_names": ["arr"], "var_values": [[90, 80, 70, 60, 50, 40, 30, 20, 10, 0]], "checkpoints": [[1, 1, "arr"], [2, 1, "arr"], [3, 1, "arr"], [5, 3, "arr"], [5, 5, "arr"], [6, 2, "arr"], [8, 1, "arr"]]},
+{"var_names": ["arr"], "var_values": [[10, 10, 10, 10]], "checkpoints": [[1, 2, "arr"], [1, 4, "arr"], [2, 1, "arr"], [3, 1, "arr"], [5, 3, "arr"], [6, 3, "arr"], [8, 1, "arr"]]},
+{"var_names": ["arr"], "var_values": [[1, -1, 2, -2, 3, -3]], "checkpoints": [[1, 1, "arr"], [2, 1, "arr"], [3, 1, "arr"], [4, 2, "arr"], [5, 3, "arr"], [7, 1, "arr"], [8, 1, "arr"]]}
+]

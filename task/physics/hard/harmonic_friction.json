@@ -1,0 +1,4 @@
+{
+    "algorithm": "harmonic with friction",
+    "description": "A harmonic oscillator with friction is a system that experiences a restoring force proportional to the displacement from its equilibrium position, along with a damping force proportional to the velocity. The system contains one object. The mass of the object is 1 kg. The spring constant is 100 N/m. The initial displacement from the equilibrium position is 1 m (spring in contracted state). The system is horizontal and the object is supported by ground with dynamic friction coefficient 0.1, gravity equals to 10. The system is released from rest and do not consider any air resistance. The coordinate origin is set at the equilibrium position of the oscillator. The simulation time begins from 0s to 100s with a time step of 0.1s."
+}

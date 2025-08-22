@@ -1,0 +1,11 @@
+- Here is an interaction log:
+
+{interaction_log}
+
+- The interaction log is supposed to follow the given rules:
+
+{taskintro}
+
+and the blackbox function implements {algorithm}, {description}.
+
+- You need to read the log carefully and identify whether the log matches the given rule and correctly implements the blackbox function. Neglect the wrong answer from the assistant because it's not a part of the judgment. Neglect the replies from the assistant and **focus on the replies from the user**. Output "correct" if you think it's correct, **DO NOT output any other text**. If you think the interaction logs do not satisfy the given request, output the wrong points clearly but do not contain revised code.

@@ -1,0 +1,4 @@
+{
+    "algorithm": "find the most frequent character",
+    "description": "Given a string, find the character that appears most frequently. If there are multiple characters with the same frequency, return the one that appears first in the string. The input string can contain letters, digits, and punctuation marks. The output should be a single character that is the most frequent in the input string. **Only use list to solve the problem, do not use dict**"
+}

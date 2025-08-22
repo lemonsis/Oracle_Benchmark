@@ -1,0 +1,23 @@
+1. Task overview: 
+- The user plays the role of an opponent who takes a fixed strategy in a game. But you don't know what the stategy is. You need to guess the hidden stategy of your opponent by interacting (playing game) with him in multiple turns. 
+
+2. Goals:
+- You have 1 final goal: You need to guess your opponent's strategy and try to maximize your score in the game. The score might depend on winning rate, or minimal cost, etc.
+
+3. User property:
+- The user hides his game strategy which you need to figure out to win the game.
+
+4. Interaction rules:
+- To finish the goal, you need to interact with the user. The interaction rules are as follows:
+  - Interaction Rule 0: The user will first tell you the rule of the game, and the interaction format that must be followed when playing. In each turn, the user will tell *current turn* and *remaining turns*.
+  - Interaction Rule 1: You can take actions according to the rules of the game and receive corresponding feedback, such as current game states. If your action is unavailable, the user will tell you.
+  - Interaction Rule 2: We will first play a few times of the game to familiarize you with the rules and the behavior of your opponent. In this phase, your actions will not be recorded, and your score does not matter. You can make use of this phase to explore the game and understand the opponent's strategy.
+  - Interaction Rule 3: After the *exploration phase*, you will enter the *evaluation phase*. We will only play the game for 1 final time, and your actions will be recorded. Your score will be calculated based on your actions in this final game.
+
+5. Output format:
+- **You must strictly obey the output format rules, DO NOT output any unrelated text!**:
+
+6. Evaluation:
+- When the given number of interactions is reached, the game ends and we'll calculate your **score** 
+
+Now Let's Play the Game {algorithm}, the Description Is that {description}.

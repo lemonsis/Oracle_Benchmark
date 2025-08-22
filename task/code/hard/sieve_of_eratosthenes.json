@@ -1,0 +1,4 @@
+{
+    "algorithm": "use Sieve of Eratosthenes to find prime numbers",
+    "description": "Implement the Sieve of Eratosthenes algorithm to find all prime numbers up to a given limit."
+}
