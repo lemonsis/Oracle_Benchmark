@@ -1,0 +1,49 @@
+- Task overview:
+You should formalize a player-blackbox interaction process into runnable python code. Generally speaking, you need to focus on three things: 
+  - Generate the function of a blackbox, which implements a specific algorithm.
+  - Generate the function of a platform, which parses player output and get blackbox output.
+  - Generate the main function which is responsible for the interaction between player and blackbox.
+
+
+- Detailed Coding Instructions:
+  - Before starting, we list all the related packages. You need to import them at the beginning of programme:
+    - `import os`
+    - `import sys`
+    - `current_path = os.path.abspath(__file__)`
+    - `oracle_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(current_path))))`
+    - `if oracle_path not in sys.path:`
+    - `    sys.path.insert(0, oracle_path)`
+    - `from ckpt import get_local_variables, check_query_validity, get_ckpt_numbers, get_function_params, capture_print`
+    - `from eva_models import ReasoningLLM`
+    - `import re`
+
+  - Generate the code of a blackbox:
+    - First insert `get_local_variables.counters = {{}}` and `get_local_variables.max_visits = {{}}` inside the function to initialize.
+    - Write a function named `blackbox`. It implements {algorithm}. The description of this algorithm is that {description}. The input variables of this function should be the simplest (e.g. you can get the length of a list through len() function, so you don't need an additional variable n as imput). **Note that you must write Type Hints for all the input variables!**
+    - Apart from the original function input variables, 2 additional parameters `idx=0, iter=0` must be added to the function input variables.
+    - There's a python function `get_local_variables(idx)` that can get the result of all local variables. You need to assert it to the `blackbox` function in the places where local variables are changed in the runtime. But do not insert too many checkpoints. `idx` refers to the times `get_local_variables` is inserted. For example, when first inserted, add `get_local_variables(1)`, when second inserted, add `get_local_variables(2)`, and so forth. 
+    - At the end of this function, add `check_query_validity(idx, iter)`.
+    - **DO NOT return any values.**
+    - **Use meaningless variable names like a, t, s, num, arr, etc. Make sure the names of variables do not leak any potential information.**
+
+  - Generate the code of a platform:
+    - Write a function named `platform`, which takes `player_output` as function input variable and print `blackbox_output`. Use `@capture_print` as Decorator for this function. **Note the function Only use `print`, DO NOT use `return`!**
+    - The code should first parse `player_output` and then get the result of corresponding `blackbox_output`. To correctly parse `player_output`, you need to pay special attention to its format. There are **only 3 conditions** for `player_output`:
+      - Condition 1: If the `player_output = ''`, call `params = get_function_params(blackbox)` and `num_ckpt = get_ckpt_numbers(blackbox, get_local_variables)` orderly to get the names and types of all variables, and the total number of checkpoints. Then `print(f'The black-box takes {{params}} as input variables, and has {{num_ckpt}} checkpoints.')`.
+      - Condition 2: If the `player_output` follows this format: "variable_name_1 = value_1; variable_name_2 = value_2; ..." (e.g. arr = [1, 5, 2]; n = 3), First split `player_output`, then change the type of value from string to its real type for each variable_name. Call `params_info = get_function_params(blackbox)` to get the names and types of all variables. `params_info` is a List like this `[{{'name': 'arr', 'type': <class 'list'>}}, {{'name': 'n', 'type': <class 'int'>}}]`. Check if variable_name is in `params_info`. If not, set `print('Error: The variable name is not in the function parameters')`. If yes, change the type of value from string to its real type, and record `{{variable_name_1: value_1, variable_name_2: value_2}}` in a global dict `vars`. When new variable value is assigned, dict `vars` needs to be updated. Set `print(f'Set {{vars}}.')`
+      - Condition 3: If the `player_output` follows this format: "(`idx`, `iter`)", set `blackbox(**vars, idx, iter)`.
+    - Remember to tackle with unexpected errors:
+      - If `player_output` is not in the above-mentioned 3 conditions, the function should print output format rules.
+      - Some other possible errors. Remember to use `print` instead of `return`.
+
+  - Generate the main code:
+    - The main function takes some input variables `main(model_family, model_name, task, eva_mode, n_runs, difficulty, task_id, failure_num, output_dir, max_turns, version, mode, thinking_mode)`.
+    - First, the main code need to instantiate `ReasoningLLM` class through `player = ReasoningLLM(model_family, model_name, task, eva_mode, n_runs, difficulty, task_id, thinking_mode, mode)`.
+    - Then, call `blackbox_output = platform(player_output, max_turns)` and `player_output = player.normal_output(blackbox_output)` iteratively in a `for` loop with `max_turns` iterations. When `blackbox_output = platform(player_output)` is first called, set it as `player_output = ''`. Add string `f'<Current Turn: {{i+1}}, {{max_turns-(i+1)}} Turns Remaining> '` before each `blackbox_output`, will `i` is the index in the loop.
+    - When the loop exits, call `player.evaluate(failure_num, version)` and `player.save_history(output_dir, version)`.
+    - Finish the main function.
+
+  - Add `if __name__ == "__main__":`, `args = sys.argv[1:]`, `main(args[0], args[1], args[2], args[3], int(args[4]), args[5], args[6], int(args[7]), args[8], int(args[9]), int(args[10]), args[11], bool(eval(args[12])))` at the end of this programme to make it runnable.
+
+
+- Tips: DO NOT include other text output. Make sure the output is runnable. Code and think step by step.

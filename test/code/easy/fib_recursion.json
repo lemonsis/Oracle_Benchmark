@@ -1,0 +1,7 @@
+[
+{"var_names": ["n"], "var_values": [10], "checkpoints": [[1, 1, "n"], [1, 55, "n"], [2, 1, "a"], [2, 54, "a"], [3, 1, "result"], [3, 27, "result"], [3, 54, "result"]]},
+{"var_names": ["n"], "var_values": [11], "checkpoints": [[1, 1, "n"], [1, 89, "n"], [2, 1, "a"], [2, 88, "a"], [3, 1, "result"], [3, 44, "result"], [3, 88, "result"]]},
+{"var_names": ["n"], "var_values": [12], "checkpoints": [[1, 1, "n"], [1, 144, "n"], [2, 1, "a"], [2, 143, "a"], [3, 1, "result"], [3, 72, "result"], [3, 143, "result"]]},
+{"var_names": ["n"], "var_values": [15], "checkpoints": [[1, 1, "n"], [1, 610, "n"], [2, 1, "a"], [2, 609, "a"], [3, 1, "result"], [3, 305, "result"], [3, 609, "result"]]},
+{"var_names": ["n"], "var_values": [20], "checkpoints": [[1, 1, "n"], [1, 6765, "n"], [2, 1, "a"], [2, 6764, "a"], [3, 1, "result"], [3, 3382, "result"], [3, 6764, "result"]]}
+]

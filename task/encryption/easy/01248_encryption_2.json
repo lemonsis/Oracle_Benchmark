@@ -1,0 +1,5 @@
+{
+    "algorithm": "01248 encryption",
+    "description": "For characters A-Z or a-z (case-insensitive), each letter is assigned a value from 1 to 26 (a/A=1, b/B=2, etc.). This value is then broken down into the sum of combinations of 1, 2, 4, 8. Use larger numbers first to sum. Then calculate the amount of 1, 2, 4, 8 separately and convert it to a four-digits number where the ones, tens, hundreds, and thousands places represent the amounts of 1, 2, 4, 8, respectively. For example, C=1+2=0011, j=2+8=1010, Z=2+8+8+8=3010. Black space is replaced by 0.",
+    "feature": "case-insensitive, blank-considered"
+}

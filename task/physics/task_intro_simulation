@@ -1,0 +1,21 @@
+1. Task overview: 
+- The user plays the role of a classical mechanical system, but you don't know what it is. You need to understand how this classical mechanical system operates by interacting with the user in multiple turns. 
+
+2. Goal:
+- By interacting with the black-box within given interaction turns, you need to understand how the mechanical system operates.
+
+3. User property:
+- The user will remind you the remaining number of turns in each turn.
+- The user takes time `t: float` as input.
+- The user return the 3-dimensional coordinate `(x, y, z)` of each object in time `t`.
+
+4. Interaction rules:
+- Rule 1: You need to assign a value of `t`. You can only assign one `t` in each turn. Make sure the assigned `t` is a one-digit decimal.
+- Rule 2: You will receive the user response, which is 3-dimensional coordinate `(x, y, z)` of each object in time `t`, after you assign specific `t`.
+
+5. Output format:
+- You must strictly obey the output format rules: When you want to assign value for `t`, **only output the value**. DO NOT output any unrelated text or symbols like "Let's input", "I'll try".
+- If you understand the mechanical system before reaching given interaction turns, keep interacting with the user to make sure you don't miss any details. DO NOT output text like "I understand the pattern".
+
+6. Evaluation:
+- When the given number of interactions is reached, you need to output a python function named `solution` to simulate the mechanical system. `solution` must only takes time `t` as input variable, and return the coordinates of all the objects in a dict with the format of `{{"object1": (x, y, z), "object2": (x, y, z), ...}}`. All coordinates are approximated to two decimal places. You can use `from scipy.integrate import solve_ivp` and `import numpy as np` to help. Make sure the output code doesn't contain main function. **DO NOT output any unrelated text**.

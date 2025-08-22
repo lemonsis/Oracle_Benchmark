@@ -1,0 +1,4 @@
+{
+    "algorithm": "boat in the river",
+    "description": "A rectangular river is 2000m long and 20m wide. The river's flow velocity is proportional to the distance from the river banks, with the velocity being 0 at both banks and 10m/s at the center of the river. A boat travels from one bank to the other perpendicular to the current at a constant relative speed of 2m/s. At a point 5m from the bank, due to a malfunction, the boat immediately turns around and heads back towards the original bank perpendicular to the current at a speed of 1m/s."
+}

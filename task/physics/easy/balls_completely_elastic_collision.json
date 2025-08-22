@@ -1,0 +1,4 @@
+{
+    "algorithm": "two balls completely elastic collision",
+    "description": "Two balls, A and B, are on an infinitely long, smooth plane. Ball A has a mass of 5 kg, and Ball B has a mass of 2 kg. Ball A starts from the origin and moves uniformly along the x-axis at a speed of 4 m/s. Ball B is placed at rest 10 m from the origin. When the two balls collide, they bounce off each other completely elastically."
+}

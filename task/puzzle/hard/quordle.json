@@ -1,0 +1,5 @@
+{
+    "algorithm": "Quordle",
+    "description": "Quordle is a word-guessing game where players attempt to deduce four hidden 8-letter words (all uppercase) simultaneously. Each guess provides feedback for each word: (1) Correct letter in the correct position, represented by `A`; (2) Correct letter but misplaced, represented by `M`; (3) Letter not in the word, represented by `X`. Players iteratively refine guesses using feedbacks until solving all four words, within limited attempts. In each turn, players ask a **single 8-letter uppercase word**, and will receive corresponding answer made up of 'AMX' for the four words.  After a few times of querying, the player will give **four 8-letter uppercase words** answers, separated by commas. He will win if all four words are correct.",
+    "answer_format": "four 8-letter uppercase words, separated by commas, like `COMPUTER, BUILDING, QUESTION, FESTIVAL`"
+}

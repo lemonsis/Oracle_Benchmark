@@ -1,0 +1,5 @@
+{
+    "algorithm": "vigenere cipher",
+    "description": "Vigenere cipher is a method of encryption that uses a keyword `MEMORY' to encrypt the plaintext. Each letter in the plaintext is shifted by a number of positions determined by the corresponding letter in the keyword. The keyword is repeated to match the length of the plaintext. For example, if the plaintext is `HELLOWORLD', then the keyword is repeated as `MEMORYMEMO'. The first letter `H' is shifted by `M' (12 positions), resulting in `T'. The second letter `E' is shifted by `E' (4 positions), resulting in 'I'. The encryption is case-insensitive. Both uppercase and lowercase letters will be treated as uppercase. Keep the blank space in the ciphertext.",
+    "feature": "case-insensitive, blank-considered"
+}

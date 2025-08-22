@@ -1,0 +1,5 @@
+{
+    "algorithm": "palindrome gates",
+    "description": "For input size $n=8$, let a[i] be the input wires, and we construct a circuit check whether the input wires form a palindrome and a[1..4] = a[5..8]. b[i] = a[i] and a[n-i+1], c[i] = a[i] or a[n-i+1], d[i] = b[i] or (not c[i]), e[i] = a[i] and a[i+n/2], f[i] = a[i] or a[i+n/2], g[i] = e[i] or (not f[i]), s[i] = s[i-1] and d[i] and g[i].",
+    "input_size": 8
+}

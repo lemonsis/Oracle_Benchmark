@@ -1,0 +1,4 @@
+{
+    "algorithm": "kmp algorithm",
+    "description": "The Knuth-Morris-Pratt (KMP) algorithm is used for substring search. It preprocesses the pattern to create a longest prefix-suffix (LPS) array, which is then used to skip unnecessary comparisons in the text. This allows for efficient searching of a pattern within a text string."
+}

@@ -1,0 +1,2 @@
+Your task is to create Python programme based on the provided natural language requests. The requests will describe a desired game platform in this programme, including the judger and a fixed strategy opponent. Implement the programme according to the given specifications, ensuring that they handle edge cases, perform necessary validations, and follow best practices for Python programming.
+You can write annotations to help you code. But DO NOT include other text output. The key point is to make sure the output programme is runable.

@@ -1,0 +1,4 @@
+{
+    "algorithm": "Extended Euclidean Algorithm",
+    "description": "The Extended Euclidean Algorithm computes the greatest common divisor (GCD) of two integers and also finds the coefficients (x, y) such that ax + by = gcd(a, b). DO NOT use recursion."
+}

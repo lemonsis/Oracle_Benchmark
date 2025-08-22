@@ -1,0 +1,4 @@
+{
+    "algorithm": "double pendulum",
+    "description": "A double pendulum is a mechanical system that consists of two pendulums attached end to end. The first pendulum is attached to a fixed pivot, and the second pendulum is attached to the free end of the first pendulum. The system contains two objects. The first object weighs 1 kg and attached to a fixed pivot with a 1 meter rigid rod. The first object weighs 1 kg and attached to the first object with a 1 meter rigid rod. The initial angle of the first pendulum is 45 degrees, and the initial angle of the second pendulum is 45 degrees. The acceleration due to gravity is 10 m/s^2. Do not take air resistance into account. The coordinate origin is set at the pivot point of the first pendulum. The simulation time begins from 0s to 100s with a time step of 0.1s. The system is released from rest."
+}

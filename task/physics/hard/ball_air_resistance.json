@@ -1,0 +1,4 @@
+{
+    "algorithm": "ball_air_resistance",
+    "description": "A 2 kg ball is thrown vertically upward from a horizontal surface with an initial velocity of 15 m/s. The air resistance is given by f=0.1v**2, where v is the ball's velocity. After reaching its highest point, the ball keeps falling as there's no ground. g = 10 m/s^2."
+}

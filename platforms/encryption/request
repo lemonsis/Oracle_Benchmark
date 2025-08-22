@@ -1,0 +1,33 @@
+- Task overview:
+You should formalize a player-blackbox interaction process into runnable python code. Generally speaking, you need to focus on two things: 
+  - Generate the function of a blackbox, which implements an encryption algorithm.
+  - Generate the main function which is responsible for the interaction between player and blackbox.
+
+
+- Detailed Coding Instructions:
+  - Before starting, we list all the related packages. You need to import them at the beginning of programme:
+    - `import os`
+    - `import sys`
+    - `current_path = os.path.abspath(__file__)`
+    - `oracle_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(current_path))))`
+    - `if oracle_path not in sys.path:`
+    - `    sys.path.insert(0, oracle_path)`
+    - `from eva_models import ReasoningLLM`
+
+  - Generate the code of a blackbox:
+    - Write a function named `blackbox`. It implements {algorithm}. The description of this algorithm is that {description}. 
+    - The function tasks only one variable as input, which is `plaintext`, and return only one variable `ciphertext`. Both `plaintext` and `ciphertext` only contains English letters.
+
+
+  - Generate the main code:
+    - The main function takes some input variables `main(model_family, model_name, task, eva_mode, n_runs, difficulty, task_id, failure_num, output_dir, max_turns, version, mode, thinking_mode)`.
+    - First, the main code need to instantiate `ReasoningLLM` class through `player = ReasoningLLM(model_family, model_name, task, eva_mode, n_runs, difficulty, task_id, thinking_mode, mode)`.
+    - `blackbox_output` is first as `blackbox_output = f'You have {{max_turns}} interaction turns to understand the black-box. Now the interaction starts. Only output the value and DO NOT contain any unrelated text.'`.
+    - Then, call `player_output = player.normal_output(blackbox_output)`, `blackbox_output = f'<Current Turn: {{i+1}}, {{max_turns-(i+1)}} Turns Remaining> ' + blackbox(player_output)`, iteratively in a `for` loop with `max_turns+1` iterations. `i` is the index in the loop.
+    - When the loop exits, call `player.evaluate(failure_num, version)` and `player.save_history(output_dir, version)`.
+    - Finish the main function.
+
+  - Add `if __name__ == "__main__":`, `args = sys.argv[1:]`, `main(args[0], args[1], args[2], args[3], int(args[4]), args[5], args[6], int(args[7]), args[8], int(args[9]), int(args[10]), args[11], bool(eval(args[12])))` at the end of this programme to make it runnable.
+
+
+- Tips: DO NOT include other text output. Make sure the output is runnable. Code and think step by step.

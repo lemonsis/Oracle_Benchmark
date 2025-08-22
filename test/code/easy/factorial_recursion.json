@@ -1,0 +1,62 @@
+[
+{
+    "var_names": ["n"],
+    "var_values": [3],
+    "checkpoints": [
+        [2, 1, "n"],
+        [2, 1, "result"],
+        [3, 1, "n"],
+        [3, 1, "result"],
+        [3, 2, "n"],
+        [3, 2, "result"]
+    ]
+},
+{
+    "var_names": ["n"],
+    "var_values": [4],
+    "checkpoints": [
+        [2, 1, "n"],
+        [3, 1, "n"],
+        [3, 1, "result"],
+        [3, 2, "n"],
+        [3, 2, "result"],
+        [3, 3, "result"]
+    ]
+},
+{
+    "var_names": ["n"],
+    "var_values": [6],
+    "checkpoints": [
+        [3, 1, "n"],
+        [3, 2, "result"],
+        [3, 3, "n"],
+        [3, 4, "result"],
+        [3, 5, "n"],
+        [3, 5, "result"]
+    ]
+},
+{
+    "var_names": ["n"],
+    "var_values": [7],
+    "checkpoints": [
+        [2, 1, "result"],
+        [3, 2, "result"],
+        [3, 3, "result"],
+        [3, 4, "result"],
+        [3, 5, "result"],
+        [3, 6, "result"]
+    ]
+},
+{
+    "var_names": ["n"],
+    "var_values": [8],
+    "checkpoints": [
+        [2, 1, "result"],
+        [3, 1, "result"],
+        [3, 2, "n"],
+        [3, 3, "result"],
+        [3, 6, "result"],
+        [3, 7, "result"]
+    ]
+}
+]

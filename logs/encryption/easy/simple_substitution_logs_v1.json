@@ -1,0 +1,78 @@
+[
+    {
+        "role": "developer",
+        "content": "You are an excellent reasoning model. You are very good at understanding the interaction rules with a black-box, reasoning over the interaction history, thinking step by step, and finally figureing out the working principle of the black-box. \nYou also strictly follow output format rules."
+    },
+    {
+        "role": "user",
+        "content": "1. Task overview: \n- A black-box implements an encryption method, but you don't know what the method is. You need to understand the detailed working principle of this black-box by interacting with it in multiple turns. \n\n2. Goal:\n- You have 1 final goal: You need to understand how the encryption method operates by interacting with the black-box within given interaction turns. \n\n3. Black-box property:\n- The black-box will remind you the remaining number of turns in each turn.\n- The black-box takes plaintext as input and ciphertext as output.\n- The plaintext only allows uppercase or lowercase English letters (A-Z, a-z) and blank space.\n\n4. Interaction rules:\n- To finish the goal, you need to interact with the black-box. The interaction rules are as follows:\n  - Interaction Rule 1: First you need to assign plaintext as input to black-box. You can only assign one plaintext in each turn. You can assign any plaintext freely, but you must make sure the plaintext **only** contains uppercase or lowercase English letters (A-Z, a-z) and blank space.\n  - Interaction Rule 2: You will receive the black-box output, which is ciphertext, after you assign specific plaintext.\n\n5. Output format:\n- You must strictly obey the output format rules: When you want to assign value for plaintext, **only output the plaintext**. DO NOT output any unrelated text or symbols like \"Let's input\", \"I'll try\", \"\\n\".\n- If you understand the working principle of black-box before reaching given interaction turns, keep interacting with the black-box to make sure you don't miss any details. DO NOT output text like \"I understand the pattern\".\n\n6. Evaluation:\n- When the given number of interactions is reached, we will present several plaintext and you need to output corresponding ciphertext. **You MUST ONLY output the value, DO NOT contain any other text.**"
+    },
+    {
+        "role": "assistant",
+        "content": "I understand the rules. I will not output any unrelated text! Let us start the interaction."
+    },
+    {
+        "role": "user",
+        "content": "You have 5 interaction turns to understand the black-box. Now the interaction starts. Only output the value and DO NOT contain any unrelated text."
+    },
+    {
+        "role": "assistant",
+        "content": "HELLO"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 4 Turns Remaining> EINND"
+    },
+    {
+        "role": "assistant",
+        "content": "WORLD"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 3 Turns Remaining> TDKNG"
+    },
+    {
+        "role": "assistant",
+        "content": "TESTING"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 2 Turns Remaining> CIRCAFM"
+    },
+    {
+        "role": "assistant",
+        "content": "ENCRYPTION"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 1 Turns Remaining> IFQKWXCADF"
+    },
+    {
+        "role": "assistant",
+        "content": "UNDERSTAND"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 0 Turns Remaining> VFGIKRCPFG"
+    },
+    {
+        "role": "assistant",
+        "content": "EINND"
+    },
+    {
+        "role": "user",
+        "content": "********Evaluation Starts, You Have 1 Chances for Answering Each Question********\n Now answer the question: What's the output of the blackbox when the input plaintext is 'Sphinx Of Black Quartz'?"
+    },
+    {
+        "role": "assistant",
+        "content": "VFGIKRCPFG"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    }
+]

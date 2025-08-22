@@ -1,0 +1,5 @@
+{
+    "algorithm": "3 Arm Bandit",
+    "description": "In the 3 Arm Bandit problem, there are three slot machines named `Bandit A`, `Bandit B`, and `Bandit C`. Each machine has a probability of winning, which is unknown to you. The player's goal is to discover the better bandit by choosing which machine to play over a series of rounds. You can choose either `Bandit A`, `Bandit B`, or `Bandit C` in each round, and you will receive a reward (such as `Reward: 0` or `Reward: 1`) based on the machine's winning probability. After a series of rounds, player need to answer `Bandit A`, `Bandit B` or `Bandit C` to indicate which bandit they believe has the higher winning probability.",
+    "answer_format": "`Bandit A`, `Bandit B`, or `Bandit C`"
+}

@@ -1,0 +1,5 @@
+{
+    "algorithm": "Number Guessing",
+    "description": "In the Number Guessing game, the player will try to guess a secret integer that is randomly chosen from [0, 100]. The player will make guesses in the form of `Number X` (such as `Number 10`). And after each guess, the player will receive feedback indicating whether the absolute value of guess minus ground truth number is 'Greater than 15' or 'Less than or equal to 15'. If the absolute value is 'Greater than 15', the player will receive `Far`, else if the absolute value is 'Less than or equal to 15', the player will receive `Close`. After a series of guesses, the player needs to answer with the correct number they believe is the secret integer in the form of `Number X`.",
+    "answer_format": "`Number X`, where `X` is an integer between 0 and 100"
+}

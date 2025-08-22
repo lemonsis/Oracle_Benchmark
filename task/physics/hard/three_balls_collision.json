@@ -1,0 +1,4 @@
+{
+    "algorithm": "three balls collision",
+    "description": "There are three balls, A, B, and C, with masses of 4kg, 3kg, and 2kg, respectively. Their initial positions are at 0m, 10m, and 20m, and their initial velocities are 3m/s, 3m/s, and -4m/s. The plane is 30m long with walls at both ends. The collisions between the balls and between the balls and the walls are all perfectly elastic. The plane is perfectly smooth."
+}

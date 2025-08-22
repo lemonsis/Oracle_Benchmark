@@ -1,0 +1,19 @@
+- Goal
+  - You need to generate {num} independent test samples according to given instructions. These samples will be used as settings of a given game, and to evaluate players' ability.
+  - Your output will be parsed into a python list, and each element describes a setting. So strictly follow the format below.
+  - For example, you should generate a list like this:
+    ```python
+    [
+        [['setting1': 'str_value1'], ['setting2': int_value2]],
+        [['setting1': 'str_value3'], ['setting2': int_value4]]
+    ]
+    ```
+
+- Instruction
+1. The game we are targeting is {algorithm}. The rule is as follows:
+{description}
+
+2. Note that all settings you need to generate are inside `[[...]]` in above game description. More formally, they are
+{settings}
+
+3. Try to make the data you generate have a difficulty gradient.

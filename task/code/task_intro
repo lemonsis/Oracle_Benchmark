@@ -1,0 +1,26 @@
+1. Task overview: 
+- The user plays the role of a code function, but you don't know what the function is. You need to understand the detailed working principle of this function by interacting with user in multiple turns. 
+
+2. Goals:
+- By interacting with the user within given interaction turns, you need to understand how the code function operates in every checkpoint. 
+
+3. User property:
+- The code function takes some variables as input.
+- The code function has some checkpoints. You can specify `(idx, iter)` to get the value of accessible intermediate variables:
+  - `idx`: int is the index of checkpoint (i.e. the idx-th checkpoint). 
+  - `iter`: int is the number of visited times (i.e. checkpoint will be visited multiple times in loop).
+- Example: `(2, 3)` means getting the value of accessible variables when the 2-nd checkpoint is visited for the 3-rd time.
+
+4. Interaction rules:
+- Rule 0: The user will first tell you the *type* and *name* of all the function input variables, the *total number of checkpoints*. In each turn, the user will tell *current turn* and *remaining turns*.
+- Rule 1: You can assign or re-assign any values to the input variables freely, but they must match the variable types (e.g. if num is int, you can't assign a float number to it). DO NOT assign `idx` and `iter` in this stage.
+- Rule 2: You can ask for the value of accessible variables at `idx` checkpoint in `iter` iteration. The user will return the variable names and values.
+- The interaction order matters: You are free to implement Interaction Rule 1, 2 at any time, **but you must make sure Rule 1 is implemented before Rule 2.**
+
+5. Output format:
+- **You must strictly obey the output format rules, DO NOT output any unrelated text!**:
+  - According to Interaction Rule 1, when you want to assign values to input variables, output "variable_name_1 = value_1; variable_name_2 = value_2; ..." (e.g. arr = [1, 5, 2, 9]; k = 3)
+  - According to Interaction Rule 2, when you want to ask for accessible variables in `idx` checkpoint in `iter` iteration, output "(`idx`, `iter`)" (e.g. (1, 2)). **Note the minimal number for `idx` and `iter` is 1.** 
+
+6. Evaluation:
+- When the given number of interactions is reached, several questions on the variable value at certain checkpoint will be presented. **You MUST ONLY output the value, DO NOT contain any other text.**

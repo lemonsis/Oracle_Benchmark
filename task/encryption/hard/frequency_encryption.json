@@ -1,0 +1,5 @@
+{
+    "algorithm": "frequency encryption",
+    "description": "For each letter in the plaintext, its ciphertext is affected by the frequency of letters before it in the plaintext. Suppose we have plaintext $P=p_1p_2...p_n$ and the initial hidden keyword $p_0$ is set as `H'. A-Z and a-z are represented by numerical values 0-25 and 26-51 respectively. For letters $p_i (i\\geq1)$, the value for encrypted letter $c_i$ is calculated as $c_i = (p_i + \\text{shift}_i) \\mod 52$, where $\text{shift}_i$ is the value of the letter that has the highest frequency in $p_0p_1...p_{i-1}$. If several letters have the same frequency, choose the letter according to the following preference order: `A'$\\succ$`B'$\\succ$...$\\succ$`Z'$\\succ$`a'$\\succ$`b'$\\succ$...$\\succ$`z'. Keep the blank spaces in the ciphertext.",
+    "feature": "case-sensitive, blank-considered"
+}

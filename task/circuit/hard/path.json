@@ -1,0 +1,5 @@
+{
+    "algorithm": "path gates",
+    "description": "For input size $n=9$, it can be treated as a 4*4 adjacent matrix G of a 3 nodes directed graph, where the diagnol is not important. We should construct a circuit that compute whether there are paths between every pair of nodes. Because every possible path has length less than 2, G'[i][j] = OR ( G[i][k] and G[k][j] ). Then G' is the result. Notice that G[i][i]=1 no matter what the input is.",
+    "input_size": 9
+}

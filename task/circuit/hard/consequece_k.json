@@ -1,0 +1,5 @@
+{
+    "algorithm": "four consecutive 1 gate",
+    "description": "For input size $n=10$, we construct a circuit output whether there four two consecutive input wires are both 1 (we should treat the input wires as a circle, which means x[8] x[9] x[10] x[1] are also consecutive. Let s[i] = x[i] and x[next(i)], s'[i] = s[i] and s[next(next(i))], where next(i) = i mod 10 +1. s'[i] checks whether there is consecutive 1 begins at i.",
+    "input_size": 10
+}

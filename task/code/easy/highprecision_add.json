@@ -1,0 +1,4 @@
+{
+    "algorithm": "High Precision Addition",
+    "description": "This algorithm performs addition of very large integers. By simulating the columnar addition, it adds digits from the least significant (rightmost) position, handling carries. The input variables are int instead of string."
+}

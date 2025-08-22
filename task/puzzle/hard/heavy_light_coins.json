@@ -1,0 +1,5 @@
+{
+    "algorithm": "Heavy Light Coins",
+    "description": "In the Heavy Light Coins puzzle, there are 152 coins, named `Coin 1`, `Coin 2`, ..., `Coin 152`. Among these coins, one is heavier than the others, and another one is lighter than the others. If the normal coin weighs 1, then the heavy coin weighs 1.1 and the light coin weighs 0.9. The task is to identify the heavy coin and the light coin using a balance scale. The balance scale can compare the weight of two groups of coins at a time. For example, player can make queries like `Left: Coin 1, Coin 2, Coin 3; Right: Coin 4, Coin 5, Coin 6`. The balance scale will return `Left` if the left side is heavier, `Right` if the right side is heavier, or `Equal` if both sides are balanced. After a series of queries, the player need to identify the heavy coin and the light coin among the 152 coins in the form of `Heavy Coin X; Light Coin Y`, where `X` and `Y` is the number of the heavy coin and the light coin.",
+    "answer_format": "`Heavy Coin X; Light Coin Y`, where X, Y is the number of the heavy coin and the light coin, respectively. Note that X != Y."
+}

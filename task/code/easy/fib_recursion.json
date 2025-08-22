@@ -1,0 +1,4 @@
+{
+    "algorithm": "fibonacci sequence using recursion",
+    "description": "Give n>0, it returns the n-th number in the Fibonacci sequence using recursion. When n is non-positive, print('n is positive')"
+}

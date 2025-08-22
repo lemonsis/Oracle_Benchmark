@@ -1,0 +1,5 @@
+{
+    "algorithm": "circuit construction for arbitrary function",
+    "description": "For input size $n=7$ and an arbitrary function f: Z_2^7 -> Z_2. We can construct a circuit to compute f. Let f(x_1) = 1, f(x_2) = 1, ... f(x_k) = 1. f(x) = (x = x_1) or (x = x_2) or ... or (x = x_k), (x = y) can be construct by ((x[1] and y[1]) or not(x[1] and y[1])) and ((x[2] and y[2]) or not(x[2] and y[2])) and ... We choose $x_1, x_2, ..., x_8$ without any particular pattern and construct the circuit according to that.",
+    "input_size": 7
+}

@@ -1,0 +1,5 @@
+{
+    "algorithm": "variant of Bacon's cipher",
+    "description": "This variant of Bacon's cipher is a method of encoding text using a binary system. Each letter of the alphabet is represented by a unique combination of five letters, either `X'(`x') or `Y'(`y'). `X'(`x') indicates 0 and `Y'(`y') indicates 1. The encryption is case-sensitive, meaning uppercase letters will be replaced by `X', `Y', and lowercase letters will be replaced by `x', `y'. The first thirteen letters of the alphabet, namely `A' to `M' will be replaced by `XXXXX' to `XYYXX' (i.e. 0-12), while the last thirteen letters, namely `N' to `Z' will be replaced by `YXXYY' to `YYYYY' (i.e. 19-31). Blank spaces are ignored.",
+    "feature": "case-sensitive, blank-ignored"
+}

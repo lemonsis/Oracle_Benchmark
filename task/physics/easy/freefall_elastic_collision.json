@@ -1,0 +1,4 @@
+{
+    "algorithm": "free fall to the ground, completely elastic collision",
+    "description": "A free fall system is a scenario where an object falls under the influence of gravity until it collides with the ground, and then bounces. The system contains one object. The mass of the object is 5 kg. The initial height from which the object is dropped is 10 m. The ground is modeled as a surface that can completely deform elastically upon impact, meaning it will return to its original shape after the collision. The simulation does not consider air resistance. The coordinate origin is set at the ground level. Gravity g is 10 m/s²."
+}

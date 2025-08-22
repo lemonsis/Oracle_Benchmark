@@ -1,0 +1,8 @@
+{
+    "algorithm": "rock, paper, scissors, fire, water, air, sponge",
+    "description": "Rock, paper, scissors, fire, water, air, sponge is a hand game where players simultaneously choose between rock, paper, scissors, fire, water, air, sponge. Rock triumphs over three opponents: it smashes Scissors, crushes Sponge, and puts out Fire. Paper also defeats three: it covers Rock, floats on Water, and fans Air. Scissors have three victories: they cut Paper, shred Sponge, and can create a spark to start a Fire. Fire is victorious against three as well: it melts Scissors, burns Paper, and scorches Sponge. Water overcomes three challengers: it erodes Rock, extinguishes Fire, and rusts Scissors. Air has three wins: it blows out Fire, erodes Rock, and evaporates Water. Finally, Sponge defeats its three foes: it soaks up Water, cleans Paper (rendering it useless), and utilizes its pockets to contain Air. \nIn the game, two players repeat [[total_turns]] times, each time the winner gets 1 point, the loser gets -1 point, and if they are tied, 0 point each. The goal is to maximize total scores.",
+    "strategy": "choose `rock`, `paper`, `air` with the same probability.",
+    "settings": {
+        "total_turns": "an integer, the number of turns in the game, from 10 to 15"
+    }
+}

@@ -1,0 +1,4 @@
+{
+    "algorithm": "freefall from infinite height",
+    "description": "An object is dropped from an infinite height. The acceleration due to gravity is 10 m/s^2. The object falls freely under the influence of gravity. Do not take air resistance into account. The coordinate origin is set at the point where the object is dropped."
+}

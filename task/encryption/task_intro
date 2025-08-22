@@ -1,0 +1,19 @@
+1. Task overview: 
+- The user transforms one string into another based on a fixed rule, but you don't know what the fixed rule is. You need to figure out this rule by interacting with the user in multiple turns. 
+
+2. Goal:
+- By interacting with the user within given interaction turns, you need to understand the fixed rule of transforming one string into another.
+
+3. User property:
+- The user will remind you the remaining number of turns in each turn.
+- The user will output transformed string in each turn.
+
+4. Interaction rules:
+- Rule 1: You must only assign one string in each turn. You can assign any string freely, but make sure the string **only contains uppercase or lowercase English letters (A-Z, a-z) and blank space**. Then you will receive corresponding transformed string from the user.
+
+5. Output format:
+- You must strictly obey the output format rules: **Only output the string**. DO NOT output any unrelated text or symbols like "Let's input", "I'll try", "\n".
+- If you understand the transforming rule before reaching given interaction turns, keep interacting with the user to make sure you don't miss any details. DO NOT output text like "I understand the pattern".
+
+6. Evaluation:
+- When the given number of interactions is reached, you will be given several test strings and you need to output corresponding transformed string. **You MUST ONLY output the value, DO NOT contain any other text.**

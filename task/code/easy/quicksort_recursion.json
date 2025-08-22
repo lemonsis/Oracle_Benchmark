@@ -1,0 +1,4 @@
+{
+    "algorithm": "quick sort using recursion",
+    "description": "This code implements the quick sort algorithm using recursion to sort an array of integers. Always choose the last number in the list as pivot. Use **only one function** to implement this algorithm."
+}

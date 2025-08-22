@@ -1,0 +1,34 @@
+- Goal
+  - You need to generate {num1} test samples according to given instructions, aiming to comprehensively evaluating the correctness of programme.
+  - For each task sample, you need to assign
+    1. `var_names: list[str]` which contains the name of input variables.
+    1. `var_values: list[Union[str, int, list[int]]]` which contains the values of all input variables in a list.
+    2. `checkpoints: list[list[Union[int, str]]]` which contains {num2} query checkpoints in the format of `[idx: int, iter: int, query_var: str]` in a list.
+
+- Instruction
+1. The programme implements {algorithm}. The complete code is as follows:
+```
+{code}
+```
+
+2. The assigned values for `var_names` should strictly follow the **type** and **order** of input variables in the above code. Variable names `idx`, `iter`, `query_var` are excluded. 
+
+3. The assigned values for `var_values` should strictly follow the **type** and **order** of input variables in the above code. Variables `idx`, `iter`, `query_var` are excluded. If the value is list, its length should below 12. If the value is int, it should below 999. If the value is str, its length should below 12.
+
+4. The assigned values for `checkpoints` should contain {num2} `[idx, iter, query_var]`.
+By assigning `[idx, iter, query_var]`, you can get access to the value of `query_var` when the `idx`-th checkpoint is visited in the `iter` times. The function `get_local_variables(idx)` in the above code marks the position of `idx`-th checkpoint. 
+
+The minimum value for `idx` and `iter` is 1. Only when `query_var` is in a loop can the `iter` be assigned above 1. `query_var` is the name of any variable in the code besides `idx`, `iter`, `query_var`. An example is like `[2, 2, "arr"]`. Pay attention that the code actually visited the `idx`-th checkpoint at least `iter` times!!!
+
+5. Make sure the generated `var_values` and `checkpoints` cover long/big input, short/small input, edge cases, strange numbers(do not use single-digit numbers).
+
+6. MOST IMPORTANT! Make sure only **important variables** are included in `checkpoints`, contain no loop index (e.g. `i`, `j`) or some variable which can be easily calculated without understanding the whole function. DO NOT test unimportant and easy variables. For example, in bubble sort, only the array is the important variable; in sieve of eratosthenes, only the array for checking primes is the important variable.
+
+7. Make sure the assigned `checkpoints` can be accessed in current input situations.
+
+8. Output `null` instead of `None` because the output content will be dumped to a json file.
+
+- Example
+```
+[{{"var_names": ["arr"], "var_values": [[50, 40, 70, 30, 60]], "checkpoints": [[1, 1, "arr"], [2, 1, "arr"], [3, 1, "arr"], [3, 2, "arr"], [3, 3, "arr"], [3, 4, "arr"], [4, 1, "arr"]]}},{{"var_names": ["arr"], "var_values": [[10, 10, 10, 10, 10]], "checkpoints": [[1, 1, "arr"], [2, 1, "arr"], [3, 1, "arr"], [3, 2, "arr"], [3, 3, "arr"], [3, 4, "arr"], [4, 1, "arr"]]}},{{"var_names": ["arr"], "var_values": [[11, 22, 33, 44, 55, 66, 77]], "checkpoints": [[1, 1, "arr"], [1, 2, "arr"], [2, 1, "arr"], [3, 1, "arr"], [3, 3, "arr"], [3, 6, "arr"], [4, 1, "arr"]]}},{{"var_names": ["arr"], "var_values": [[-12, 99, 34, -45, 67, 23, -89, 100, 88, 55]], "checkpoints": [[1, 1, "arr"], [1, 3, "arr"], [2, 1, "arr"], [3, 1, "arr"], [3, 5, "arr"], [3, 9, "arr"], [4, 1, "arr"]]}},{{"var_names": ["arr"], "var_values": [[990, 880, 770, 660, 550, 440, 330, 220, 110, 100, 10]], "checkpoints": [[1, 2, "arr"], [1, 3, "arr"], [2, 1, "arr"], [3, 1, "arr"], [3, 7, "arr"], [3, 10, "arr"], [4, 1, "arr"]]}}]
+```

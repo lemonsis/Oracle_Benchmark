@@ -1,0 +1,7 @@
+[
+{"var_names": ["t1", "t2"], "var_values": ["abababababa", "abaabaabaab"], "checkpoints": [[2, 4, "lps"], [2, 8, "lps"], [3, 1, "lps"], [4, 3, "res"], [4, 7, "res"], [4, 9, "res"], [5, 1, "res"]]},
+{"var_names": ["t1", "t2"], "var_values": ["short", "shortlong"], "checkpoints": [[2, 2, "lps"], [2, 7, "lps"], [3, 1, "lps"], [4, 1, "res"], [4, 2, "res"], [4, 4, "res"], [5, 1, "res"]]},
+{"var_names": ["t1", "t2"], "var_values": ["pattern", "pattern"], "checkpoints": [[2, 1, "lps"], [2, 3, "lps"], [3, 1, "lps"], [4, 1, "res"], [4, 4, "res"], [4, 7, "res"], [5, 1, "res"]]},
+{"var_names": ["t1", "t2"], "var_values": ["abcabcabc", "abc"], "checkpoints": [[2, 1, "lps"], [2, 2, "lps"], [3, 1, "lps"], [4, 2, "res"], [4, 4, "res"], [4, 7, "res"], [5, 1, "res"]]},
+{"var_names": ["t1", "t2"], "var_values": ["zzzzzzzzzz", "zzzzz"], "checkpoints": [[2, 1, "lps"], [2, 4, "lps"], [3, 1, "lps"], [4, 3, "res"], [4, 5, "res"], [4, 8, "res"], [5, 1, "res"]]}
+]

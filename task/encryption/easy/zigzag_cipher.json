@@ -1,0 +1,5 @@
+{
+    "algorithm": "zigzag cipher",
+    "description": "Write the letters of plaintext in a zigzag path, moving downwards and then upwards across the 3 rows. Imagine writing on 3 parallel lines: when you reach the bottom row, move back up, and when you reach the top row, move back down, repeating this pattern until all plaintext characters are written. Spaces are ignored. After writing, read the characters from left to right, row by row, to form the ciphertext. For example, the zigzag path for `HELLO WORLD' is 'HOL\nELWRD\nLO'.So it's encrypted as `HOLELWRDLO'.",
+    "feature": "case-sensitive, blank-ignored"
+}

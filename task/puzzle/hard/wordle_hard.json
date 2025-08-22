@@ -1,0 +1,5 @@
+{
+    "algorithm": "wordle",
+    "description": "Wordle is a word-guessing game where players attempt to deduce a hidden 11-letter word (all uppercase). Each guess provides feedback (1) Correct letter in the correct position, represented by `A`; (2) Correct letter but misplaced, represented by `M`; (3) Letter not in the word, represented by `X`. \n Players iteratively refine guesses using feedbacks until solving the word, typically within limited attempts. After a few times of querying, the player will give an 11-letter uppercase word answer, and he'll win if he answers the correct word. \n OUTPUT the 11-letter uppercase word directly.",
+    "answer_format": "11-letter uppercase word"
+}

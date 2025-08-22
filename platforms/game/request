@@ -1,0 +1,49 @@
+- Task overview:
+You should formalize a player-blackbox interaction process into runnable python code. Generally speaking, you need to focus on 3 things: 
+  - Generate the function of a blackbox, which implements a fixed strategy of an "adversarial player" in the game.
+  - Generate the function of a game platform, which implements the game "judger". The platform inform current game state to the blackbox and an other `player`, and asking them for their actions. It also calculate the total score for the `player`.
+  - Generate the main function which calls some essential functions.
+
+
+- Detailed Coding Instructions:
+  - Before starting, we list all the related packages. You need to import them at the beginning of programme:
+    - `import os`
+    - `import sys`
+    - `current_path = os.path.abspath(__file__)`
+    - `oracle_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(current_path))))`
+    - `if oracle_path not in sys.path:`
+    - `    sys.path.insert(0, oracle_path)`
+    - `from eva_models import ReasoningLLM`
+
+  - Generate the code of a blackbox:
+    - Write a function named `blackbox`. It implements a fixed strategy of an "adversarial player" in {algorithm}. The description of this game is that {description}
+    - The blackbox plays the role of an adversarial player, whose strategy is {strategy}
+    - The function takes some (may be zero) variables as input, including essential game states, and some information about part of game settings which should be known by players.
+
+  - Generate the function of a game platform
+    - Write a function named `platform`. It implements the judger of {algorithm}. Recall that the description of this game is given above.
+    - The function takes 2 variable `settings` and `player` as input.
+      1. `settings` is a `dict` from `str` to something, containing essential elements to start a game. `str` is the name of any variable inside `[[...]]` in above game description.
+        * Some settings are private. Only `platform` can know.
+        * Some settings are public. They should be sent to `blackbox` and `player`.
+        * **Send And Only Send All Settings which can be known by players according to above game rule.** 
+      2. `player` is an other player besides the blackbox "adversarial player". 
+    - The function simulates a whole game. It repeatedly tells `blackbox` and `player` *last turn's game result*, *current game states* and *asks for their actions*.
+      - The sending information including essential game states for taking action, and part of game settings which should be known by players.
+      - Information can be sent to `blackbox` in **any way** for your convenience, e.g. by multiple arguments with different types.
+      - Information should be sent to `player` by a string in **natural language**. 
+        Use `player_action = player.normal_output(...last turn's game result, current game state, and some settings...)` to get `players`'s action, where the argument is a single string describing some information about current game state and public settings, and it is same as input variables of `blackbox` function. However, use a sequence in natural language to describe it here.
+      - Note that actions returned by `blackbox` are always valid since it is implemented by you. But actions of `player` may be invalid or have format error. So the platform checks it's format and validity, and use `player_action = player.normal_output(...format warnings and requirements...)` to re-generate its action, telling the player to take aware of its format or validity. The argument is also a single string in natual language.
+    - The function also calculate the score of `player` according to above game description, and return the score of `player`. Note that score of `blackbox` doesn't matter.
+
+  - Generate the main code:
+    - The main function takes some input variables `main(model_family, model_name, task, eva_mode, n_runs, difficulty, task_id, failure_num, output_dir, max_turns, version, mode, thinking_mode)`.
+    - First, the main code need to instantiate `ReasoningLLM` class through `player = ReasoningLLM(model_family, model_name, task, eva_mode, n_runs, difficulty, task_id, thinking_mode, mode)`.
+    - Then, call `player.evaluate(failure_num, version, max_turns)` and `player.save_history(output_dir, version)` to evaluate and save logs.
+    - Finish the main function.
+    - Only contain above code in the main function, do not include any other code.
+
+  - Add `if __name__ == "__main__":`, `args = sys.argv[1:]`, `main(args[0], args[1], args[2], args[3], int(args[4]), args[5], args[6], int(args[7]), args[8], int(args[9]), int(args[10]), args[11], bool(eval(args[12])))` at the end of this programme to make it runnable.
+
+
+- Tips: DO NOT include other text output. Make sure the output is runnable. Code and think step by step.

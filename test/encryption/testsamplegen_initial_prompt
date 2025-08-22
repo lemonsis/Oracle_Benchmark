@@ -1,0 +1,11 @@
+- Goal
+  - You need to generate {num} test samples according to given instructions, aiming to comprehensively evaluating the correctness of encryption programme.
+  - For each task sample, you need to assign
+    1. `plaintext: str` which is plaintext that **only** allows uppercase or lowercase English letters (A-Z, a-z) and blank space.
+
+- Instruction
+1. The encryption programme implements {algorithm}.
+
+2. `plaintext` **must not** (1) exceed the length of 32. (2) contain very simple and common words or phrases (e.g. hello world). (3) any information that might leak the encryption programme.
+
+3. Make sure the generated `plaintext` cover diverse situations: long input, short input, input with blank space, input without blank space, input with mixed uppercase and lowercase letters, input with random letters, input with normal collocation.

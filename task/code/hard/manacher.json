@@ -1,0 +1,4 @@
+{
+    "algorithm": "manacher's algorithm for longest palindromic substring",
+    "description": "use Manacher's algorithm to find the longest palindromic substring in a given string. The algorithm works by transforming the input string to handle even-length palindromes and then expanding around potential centers to find the longest palindrome efficiently."
+}

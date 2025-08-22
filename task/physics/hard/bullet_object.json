@@ -1,0 +1,4 @@
+{
+    "algorithm": "Bullet shoot Object",
+    "description": "A 2000g object, 60m in length, slides on a horizontal surface with a coefficient of friction of 0.1. Its initial speed is 15m/s. A 50g bullet is flying horizontally at 400m/s. After 1.5 seconds, the bullet horizontally embeds into the object. During the bullet's passage through the object, it experiences a resistive force $f = 0.2v$, where $v$ is the bullet's instantaneous velocity. When the bullet go through the object, it continues horizontal uniform flight. Neglect the bullet's vertical drop. Use $g = 10 m/s^2$."
+}

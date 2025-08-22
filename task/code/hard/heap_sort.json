@@ -1,0 +1,4 @@
+{
+    "algorithm": "heap sort",
+    "description": "Heap sort is a comparison-based sorting algorithm that uses a binary heap data structure. It first builds a max heap from the input data, then repeatedly extracts the maximum element from the heap and rebuilds the heap until all elements are sorted. Use **only one function** and do not use nested function to implement the heap sort algorithm."
+}

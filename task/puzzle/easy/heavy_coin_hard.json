@@ -1,0 +1,5 @@
+{
+    "algorithm": "Heavy Coin",
+    "description": "In the Heavy Coin puzzle, there are 100 coins, named `Coin 1`, `Coin 2`, ..., `Coin 100`. Among these coins, one is heavier than the others. The task is to identify the heavy coin using a balance scale. The balance scale has 2 properties: 1. It can compare the weight of two groups of coins at a time. But it only returns balance or imbalance, without giving which side is heavier. 2. It will lie once in a random turn in every 10 interactions. When it lies, it will return the opposite of the truth. \n\nPlayer must make queries with the same format of this example: `Left: Coin 1, Coin 2, Coin 3; Right: Coin 4, Coin 5, Coin 6`. The balance scale will return `Balance` if both sides are balanced or `Imbalance` if one side is heavier. After a series of queries, the player need to identify the heavy coin among the 100 coins in the form of `Heavy Coin X`, where `X` is the number of the heavy coin.",
+    "answer_format": "Heavy Coin X, where X is the number of the heavy coin"
+} 

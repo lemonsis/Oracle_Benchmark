@@ -1,0 +1,5 @@
+{
+    "algorithm": "hill cipher",
+    "description": "The hill cipher is a polygraphic substitution cipher based on linear algebra. Each letter is first mapped into a number (a/A=0, b/B=1, ..., z/Z=25). The hill cipher uses matrix multiplication to encrypt blocks of text. The key is a $2\\times 2$ square matrix $K=\\begin{pmatrix}3 & 5 \\\\ 1 & 2\\end{pmatrix}$, and the plaintext is divided into blocks with a length of 2. If the last block is fewer than 2 letters, use `x' to fill. Each block is represented as a 2-D vector, and the encryption is performed by multiplying the key matrix with the plaintext vector modulo 26. The resulting vector is then converted back to letters. The encryption process is case-insensitive. Output the ciphertext in lowercase style. For example, `Hi' will be encrypted to `jx'. Keep the blank spaces in the ciphertext.",
+    "feature": "case-insensitive, blank-considered"
+}

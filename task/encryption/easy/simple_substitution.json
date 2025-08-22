@@ -1,0 +1,5 @@
+{
+    "algorithm": "simple substitution cipher",
+    "description": "Simple substitution cipher is a method of encryption where each letter in the plaintext is replaced by a letter with a fixed relationship to it. The detailed corresponding relationship is as follows: Each letter in `abcdefghijklmnopqrstuvwxyz' will be replaced by `phqgiumeaylnofdxjkrcvstzwb'. The process is case-sensitive, meaning uppercase will keep as uppercase and lowercase will keep as lowercase. If the plaintext contains blank spaces, keep them in the ciphertext.",
+    "feature": "case-sensitive, blank-considered"
+}

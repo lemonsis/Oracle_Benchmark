@@ -1,0 +1,5 @@
+{
+    "algorithm": "add 0/1 bit",
+    "description": "For input size $n=10$, let the input wires be a[i], we construct a circuit to compute a[2]a[3]a[4]... + a[1], which means add the first bit to the binary number of the last n-1 bits. result[i]=a[n-i+1] xor b[i-1], b[i]=a[n-i+1] and b[i-1], b[0]=1.",
+    "input_size": 10
+}

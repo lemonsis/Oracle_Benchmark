@@ -1,0 +1,4 @@
+{
+    "algorithm": "Pendulum",
+    "description": "A pendulum is a weight suspended from a pivot so that it can swing freely. The system contains one object. The initial angle of the pendulum is 60 degree. The length of the pendulum is 2 meters. The acceleration due to gravity is 10 m/s^2. Do not take air resistance into account. The pendulum is released from rest. The coordinate origin is set at the pivot point of the pendulum."
+}

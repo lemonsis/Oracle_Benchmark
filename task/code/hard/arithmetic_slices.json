@@ -1,0 +1,4 @@
+{
+    "algorithm": "number of arithmetic slices",
+    "description": "A sequence is defined as an arithmetic progression if it contains at least three elements and the difference between any two consecutive elements is constant. Given an integer array nums, return the number of all arithmetic subsequences within nums."
+}

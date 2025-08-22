@@ -1,0 +1,4 @@
+{
+    "algorithm": "high precision division",
+    "description": "Simulate high-precision division a / b (including floating-point results), without using any floating-point numbers in the code. The input variables a and b are of type int. Keep to 4 decimal places."
+}
