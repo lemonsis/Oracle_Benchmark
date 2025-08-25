@@ -1,4 +1,4 @@
-# <img src="assets/logo.png" alt="Oracle" width="25"> Oracle: Investigating Advanced Reasoning of Large Language Models via Black-Box Interaction
+# <img src="assets/logo.png" alt="Oracle" width="40"> Oracle: Investigating Advanced Reasoning of Large Language Models via Black-Box Interaction
 
 ---
 
@@ -11,7 +11,7 @@
     </a>
 </p>
 
-<img src="assets/logo.png" alt="Oracle" width="25"> The Oracle benchmark investigates whether LLMs can independently explore unknown environment via black-box interaction. Current benchmark consists of 6 black-box tasks and 96 black-boxes, 50 of them are easy and 46 of them are hard. 19 popular LLMs are benchmarked.
+The Oracle benchmark investigates whether LLMs can independently explore unknown environment via black-box interaction. Current benchmark consists of 6 black-box tasks and 96 black-boxes, 50 of them are easy and 46 of them are hard. 19 popular LLMs are benchmarked.
 Please check out the paper for more details, and this repo will detail how to run the evaluation.
 
 
