@@ -1,9 +1,9 @@
-# <img src="assets/logo.png" alt="Oracle" width="40"> Oracle: Investigating Advanced Reasoning of Large Language Models via Black-Box Interaction
+# <img src="assets/logo.png" alt="Oracle" width="50"> Oracle: Investigating Advanced Reasoning of Large Language Models via Black-Box Interaction
 
 ---
 
 <p align="center">
-    <a href="" target="_blank" rel="noopener noreferrer">
+    <a href="https://arxiv.org/abs/2508.19035" target="_blank" rel="noopener noreferrer">
         <img alt="paper" src="https://img.shields.io/badge/paper-paper?logo=arxiv&logoColor=%23B31B1B&labelColor=white&color=%23B31B1B">
     </a>
     <a href="https://oraclebenchmark.github.io" target="_blank" rel="noopener noreferrer">
@@ -17,6 +17,7 @@ Please check out the paper for more details, and this repo will detail how to ru
 
 ## 💥 News
 
+- **[2025.8.27]** 🎯 Paper available in arxiv.
 - **[2025.8.23]** 🎯 We release the code for Oracle Benchmark v1.0.
 
 ## 📖 Quick Start
@@ -73,11 +74,19 @@ The generated interaction history during iterative debugging will be saved in ``
 <img width="1354" alt="benchmark_overview" src="assets/benchmark20@2.png">
 
 ## ✨ Contribution
-Congchi Yin, Tianyi Wu, Yankai Shu contribute to the code implementation.
+Congchi Yin, Tianyi Wu, Yankai Shu contribute to the code implementation. We welcome contributions of black-boxes and black-box tasks from the community.
 
 ## 📚 Citation
 
 If you find our work useful, please cite us:
 ```
-
+@misc{yin2025investigatingadvancedreasoninglarge,
+      title={Investigating Advanced Reasoning of Large Language Models via Black-Box Interaction}, 
+      author={Congchi Yin and Tianyi Wu and Yankai Shu and Alex Gu and Yunhan Wang and Jun Shao and Xun Jiang and Piji Li},
+      year={2025},
+      eprint={2508.19035},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2508.19035}, 
+}
 ```
