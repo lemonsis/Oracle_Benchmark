@@ -17,6 +17,7 @@ Please check out the paper for more details, and this repo will detail how to ru
 
 ## 💥 News
 
+- **[2025.9.22]** 🐛 Fix a bug that caused incorrect GSI task results
 - **[2025.8.27]** 🎯 Paper available in arxiv.
 - **[2025.8.23]** 🎯 We release the code for Oracle Benchmark v1.0.
 
