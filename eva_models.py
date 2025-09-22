@@ -59,7 +59,7 @@ class ReasoningLLM:
         else:
             with open(self.paths.task_path / task / 'task_intro') as f:
                 self.task_intro = f.read()
-        if task == 'puzzle':
+        if task == 'puzzle' or task =='game':
             with open(self.paths.task_path / task / difficulty / f'{task_id}.json', 'r', encoding='utf-8') as f:
                 information = json.load(f)
                 self.task_intro = self.task_intro.format(
