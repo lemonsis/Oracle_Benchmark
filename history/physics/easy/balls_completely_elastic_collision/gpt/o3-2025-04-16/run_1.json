@@ -1,0 +1,358 @@
+[
+    {
+        "role": "developer",
+        "content": "You are an excellent reasoning model. You are very good at understanding the interaction rules, reasoning over interaction history, thinking step by step, and finally figureing out the working principle of a system that contains hidden information. \nYou also strictly follow output format rules."
+    },
+    {
+        "role": "user",
+        "content": "1. Task overview: \n- The user plays the role of a classical mechanical system, but you don't know what it is. You need to understand how this classical mechanical system operates by interacting with the user in multiple turns. \n\n2. Goal:\n- By interacting with the user within given interaction turns, you need to understand how the mechanical system operates.\n\n3. User property:\n- The user will remind you the remaining number of turns in each turn.\n- The user takes time `t: float` as input.\n- The user return the 3-dimensional coordinate `(x, y, z)` of each object in time `t`.\n\n4. Interaction rules:\n- Rule 1: You need to assign a value of `t`. You can only assign one `t` in each turn. Make sure the assigned `t` is a one-digit decimal.\n- Rule 2: You will receive the user response, which is 3-dimensional coordinate `(x, y, z)` of each object in time `t`, after you assign specific `t`.\n\n5. Output format:\n- You must strictly obey the output format rules: When you want to assign value for `t`, **only output the value**. DO NOT output any unrelated text or symbols like \"Let's input\", \"I'll try\".\n- If you understand the mechanical system before reaching given interaction turns, keep interacting with the user to make sure you don't miss any details. DO NOT output text like \"I understand the pattern\".\n\n6. Evaluation:\n- When the given number of interactions is reached, you need to calculate the 3-dimensional coordinate `(x, y, z)` of each object at time `t` with the format of `{{\"object1\": (x, y, z), \"object2\": (x, y, z), ...}}`. All coordinates are approximated to two decimal places."
+    },
+    {
+        "role": "assistant",
+        "content": "I understand the rules. I will not output any unrelated text! Let us start the interaction."
+    },
+    {
+        "role": "user",
+        "content": "You have 30 interaction turns to understand the black-box. Now the interaction starts. Only output the value and DO NOT contain any unrelated text."
+    },
+    {
+        "role": "assistant",
+        "content": "0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> {'object1': (0.0, 0.0, 0.0), 'object2': (10.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> {'object1': (4.0, 0.0, 0.0), 'object2': (10.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "2"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> {'object1': (8.0, 0.0, 0.0), 'object2': (10.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "3"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> {'object1': (10.86, 0.0, 0.0), 'object2': (12.86, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "4"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> {'object1': (12.57, 0.0, 0.0), 'object2': (18.57, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "5"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> {'object1': (14.29, 0.0, 0.0), 'object2': (24.29, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "6"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> {'object1': (16.0, 0.0, 0.0), 'object2': (30.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "7"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> {'object1': (17.71, 0.0, 0.0), 'object2': (35.71, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "2.5"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> {'object1': (10.0, 0.0, 0.0), 'object2': (10.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "8"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> {'object1': (19.43, 0.0, 0.0), 'object2': (41.43, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "6.5"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> {'object1': (16.86, 0.0, 0.0), 'object2': (32.86, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "9"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> {'object1': (21.14, 0.0, 0.0), 'object2': (47.14, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "2.9"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> {'object1': (10.69, 0.0, 0.0), 'object2': (12.29, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "1.5"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> {'object1': (6.0, 0.0, 0.0), 'object2': (10.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "2.4"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> {'object1': (9.6, 0.0, 0.0), 'object2': (10.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "3.5"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> {'object1': (11.71, 0.0, 0.0), 'object2': (15.71, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "0.5"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> {'object1': (2.0, 0.0, 0.0), 'object2': (10.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "4.5"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> {'object1': (13.43, 0.0, 0.0), 'object2': (21.43, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "12"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> {'object1': (26.29, 0.0, 0.0), 'object2': (64.29, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "1.2"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> {'object1': (4.8, 0.0, 0.0), 'object2': (10.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "1.8"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> {'object1': (7.2, 0.0, 0.0), 'object2': (10.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "2.3"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> {'object1': (9.2, 0.0, 0.0), 'object2': (10.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "18"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> {'object1': (36.57, 0.0, 0.0), 'object2': (98.57, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "2.6"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> {'object1': (10.17, 0.0, 0.0), 'object2': (10.57, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "2.49"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> {'object1': (9.96, 0.0, 0.0), 'object2': (10.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "2.51"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> {'object1': (10.02, 0.0, 0.0), 'object2': (10.06, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "3.2"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> {'object1': (11.2, 0.0, 0.0), 'object2': (14.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "9.5"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> {'object1': (22.0, 0.0, 0.0), 'object2': (50.0, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "8.3"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> {'object1': (19.94, 0.0, 0.0), 'object2': (43.14, 0.0, 0.0)}"
+    },
+    {
+        "role": "assistant",
+        "content": "{\"object1\": (19.94, 0.00, 0.00), \"object2\": (43.14, 0.00, 0.00)}"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> {'object1': (19.94, 0.0, 0.0), 'object2': (43.14, 0.0, 0.0)}\n********Evaluation Starts, You Have 2 Chances for Answering Each Question********\n Now answer the question: What is the coordinate of each object at time 1.7?"
+    },
+    {
+        "role": "assistant",
+        "content": "{{\"object1\": (6.80, 0.00, 0.00), \"object2\": (10.00, 0.00, 0.00)}}"
+    },
+    {
+        "role": "user",
+        "content": "Strictly follow the output format `{\"object1\": (x, y, z), \"object2\": (x, y, z), ...}`. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": "{\"object1\": (6.80, 0.00, 0.00), \"object2\": (10.00, 0.00, 0.00)}"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What is the coordinate of each object at time 3.8?"
+    },
+    {
+        "role": "assistant",
+        "content": "{\"object1\": (12.23, 0.00, 0.00), \"object2\": (17.43, 0.00, 0.00)}"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What is the coordinate of each object at time 7?"
+    },
+    {
+        "role": "assistant",
+        "content": "{\"object1\": (17.71, 0.00, 0.00), \"object2\": (35.71, 0.00, 0.00)}"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What is the coordinate of each object at time 80?"
+    },
+    {
+        "role": "assistant",
+        "content": "{\"object1\": (142.86, 0.00, 0.00), \"object2\": (452.86, 0.00, 0.00)}"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What is the coordinate of each object at time 5.2?"
+    },
+    {
+        "role": "assistant",
+        "content": "{\"object1\": (14.63, 0.00, 0.00), \"object2\": (25.43, 0.00, 0.00)}"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What is the coordinate of each object at time 10.7?"
+    },
+    {
+        "role": "assistant",
+        "content": "{\"object1\": (24.06, 0.00, 0.00), \"object2\": (56.86, 0.00, 0.00)}"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    }
+]

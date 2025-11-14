@@ -1,0 +1,230 @@
+[
+    {
+        "role": "developer",
+        "content": "You are an excellent reasoning model. You are very good at understanding the interaction rules, reasoning over interaction history, thinking step by step, and finally figureing out the working principle of a system that contains hidden information. \nYou also strictly follow output format rules."
+    },
+    {
+        "role": "user",
+        "content": "1. Task overview: \n- The user transforms one string into another based on a fixed rule, but you don't know what the fixed rule is. You need to figure out this rule by interacting with the user in multiple turns. \n\n2. Goal:\n- By interacting with the user within given interaction turns, you need to understand the fixed rule of transforming one string into another.\n\n3. User property:\n- The user will remind you the remaining number of turns in each turn.\n- The user will output transformed string in each turn.\n\n4. Interaction rules:\n- Rule 1: You must only assign one string in each turn. You can assign any string freely, but make sure the string **only contains uppercase or lowercase English letters (A-Z, a-z) and blank space**. Then you will receive corresponding transformed string from the user.\n\n5. Output format:\n- You must strictly obey the output format rules: **Only output the string**. DO NOT output any unrelated text or symbols like \"Let's input\", \"I'll try\", \"\\n\".\n- If you understand the transforming rule before reaching given interaction turns, keep interacting with the user to make sure you don't miss any details. DO NOT output text like \"I understand the pattern\".\n\n6. Evaluation:\n- When the given number of interactions is reached, you will be given several test strings and you need to output corresponding transformed string. **You MUST ONLY output the value, DO NOT contain any other text.**"
+    },
+    {
+        "role": "assistant",
+        "content": "I understand the rules. I will not output any unrelated text! Let us start the interaction."
+    },
+    {
+        "role": "user",
+        "content": "You have 10 interaction turns to understand the black-box. Now the interaction starts. Only output the value and DO NOT contain any unrelated text."
+    },
+    {
+        "role": "assistant",
+        "content": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 9 Turns Remaining> XRLF EKQW VPJD CIOU ZTNHB AGMSY"
+    },
+    {
+        "role": "assistant",
+        "content": "HELLO WORLD"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 8 Turns Remaining> W O DL LL RE HO"
+    },
+    {
+        "role": "assistant",
+        "content": "A B"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 7 Turns Remaining> B A"
+    },
+    {
+        "role": "assistant",
+        "content": "ABCDEF"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 6 Turns Remaining> F E D C B A"
+    },
+    {
+        "role": "assistant",
+        "content": "ABCDEFGHIJKL"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 5 Turns Remaining> LF EK JD CI HB AG"
+    },
+    {
+        "role": "assistant",
+        "content": "GARDEN OF EDEN"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 4 Turns Remaining> NN EE DD RE FA GO"
+    },
+    {
+        "role": "assistant",
+        "content": "ABCDEFGHIJ"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 3 Turns Remaining> F E JD CI HB AG"
+    },
+    {
+        "role": "assistant",
+        "content": "THE QUICK BROWN FOX"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 2 Turns Remaining> WI UO XRQ EBO FKH TCN"
+    },
+    {
+        "role": "assistant",
+        "content": "AAAAA"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 1 Turns Remaining> A A A A A"
+    },
+    {
+        "role": "assistant",
+        "content": "CRYPTOGRAPHY"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 0 Turns Remaining> YO TH PP YA RR CG\n********Evaluation Starts, You Have 1 Chances for Answering Each Question********\n Now answer the question: What's the output of the blackbox when the input plaintext is 'Draw bicycle under maple Tree'?"
+    },
+    {
+        "role": "assistant",
+        "content": " להתמודד with incomplete information"
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": "eaui bemr Trlw acee ldyr Dcnpe"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'axisPointDistance'?"
+    },
+    {
+        "role": "assistant",
+        "content": "so Pie cDs itn anx ait"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'q z T e'?"
+    },
+    {
+        "role": "assistant",
+        "content": "e T z q"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'Mandolin chime Shroud Blink'?"
+    },
+    {
+        "role": "assistant",
+        "content": "kuml oion irhd nchl BSna Mied"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'tRansfer'?"
+    },
+    {
+        "role": "assistant",
+        "content": "f s n a rR te"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'YlKiopvEdrnqz'?"
+    },
+    {
+        "role": "assistant",
+        "content": "qp on ri Kd El Yvz"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'Combustion theory Max'?"
+    },
+    {
+        "role": "assistant",
+        "content": "ahs utM ynb mor oio Ctex"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'alligator'?"
+    },
+    {
+        "role": "assistant",
+        "content": "a g i lr ol at"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    }
+]

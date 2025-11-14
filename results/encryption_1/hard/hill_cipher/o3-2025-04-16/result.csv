@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+hard,hill_cipher,gpt,o3-2025-04-16,run_1,30.0,1,4,8,0.5,5862.697674418605,"[64, 64, 512, 448, 832, 3840, 1792, 2560, 2816, 9728, 2816, 2112, 4160, 6336, 8832, 10688, 5952, 8128, 9408, 8832, 17216, 7488, 5952, 18176, 8192, 11392, 11648, 14656, 12160, 1088, 768, 1600, 5440, 7360, 3456, 11392, 4416, 6144, 1408, 2816, 5632, 2112, 1664]"

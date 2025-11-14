@@ -1,0 +1,1598 @@
+[
+    {
+        "role": "system",
+        "content": "You are an excellent reasoning model. You are very good at understanding the interaction rules, reasoning over interaction history, thinking step by step, and finally figureing out the working principle of a system that contains hidden information. \nYou also strictly follow output format rules. When making queries, you strictly obey querying format. When answering questions, you strictly obey answer format. You never output anymore unrelated text."
+    },
+    {
+        "role": "user",
+        "content": "1. Task overview: \n- The user plays the role of a puzzle, and you don't know what the hidden answer is. You need to guess the hidden answer by interacting with the user in multiple turns. \n\n2. Goals:\n- You need to guess the answer to the puzzle within given interaction turns. \n\n3. User property:\n- The user hides the answer which you need to figure out.\n\n4. Interaction rules:\n- Rule 0: The user will first tell you the rule of the puzzle, and the interaction format that must be followed when querying. In each turn, the user will tell *current turn* and *remaining turns*.\n- Rule 1: You can ask questions according to the rules of the game and receive corresponding feedback. If your ask is unavailable, the user will tell you.\n- Rule 2: After a series of interactions, you should answer the puzzle in the format specified in the description.\n\n5. Output format:\n- When you ask a question, you should strictly follow query format in the **Description**.\n- When you answer the puzzle, you should strictly follow the answer format in the **Description**.\n- Refer to the examples in the **Description**. for the correct format.\n- If you figure out the right answer before given turns, keep interacting with the puzzle to make sure your answer is correct.\n\n6. Evaluation:\n- When the given number of interactions is reached, you need to give your answer of the puzzle. **You MUST ONLY output the answer itself in the format mentioned in the description, DO NOT contain more text.**\n\nNow Let's Solve the Puzzle Number Guessing.\n\n **Description**: In the Number Guessing game, the player will try to guess a secret integer that is randomly chosen from [0, 100]. The player will make guesses in the form of `Number X` (such as `Number 10`). And after each guess, the player will receive feedback indicating whether the absolute value of guess minus ground truth number is 'Greater than 15' or 'Less than or equal to 15'. If the absolute value is 'Greater than 15', the player will receive `Far`, else if the absolute value is 'Less than or equal to 15', the player will receive `Close`. After a series of guesses, the player needs to answer with the correct number they believe is the secret integer in the form of `Number X`.."
+    },
+    {
+        "role": "assistant",
+        "content": "I understand the rules. I will not output any unrelated text! Let us start the interaction."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 50"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 65"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 35"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 40"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 55"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 60"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 42"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 44"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 46"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 48"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 52"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 54"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 56"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 58"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 47"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 49"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 51"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 53"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 57"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 59"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 43"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 41"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 39"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 37"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 36"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 38"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 34"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 33"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 32"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> Close********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 31"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
+    },
+    {
+        "role": "assistant",
+        "content": "Number 30"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 50"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 75"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 25"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 10"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 90"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 85"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 80"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 95"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 100"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 105"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Query out of range. X should be an integer between 0 and 100."
+    },
+    {
+        "role": "assistant",
+        "content": "Number 99"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 96"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 93"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 91"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 88"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 86"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 84"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 82"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 83"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 81"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 87"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 89"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 92"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 94"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 97"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 98"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 100"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 99"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 98"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 97"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> Close********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 97"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
+    },
+    {
+        "role": "assistant",
+        "content": "Number 98"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 50"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 75"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 25"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 10"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 15"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 20"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 5"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 8"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 12"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 3"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 7"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 13"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 18"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 11"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 14"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 9"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 6"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 4"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 2"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 17"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 19"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 22"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 24"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 26"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 28"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 30"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 32"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> Far********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 21"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
+    },
+    {
+        "role": "assistant",
+        "content": "Number 23"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 50"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 65"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 35"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 55"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 60"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 57"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 62"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 58"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 59"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 61"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 56"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 63"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 64"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 52"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 53"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 54"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 51"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 49"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 48"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 47"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 46"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 44"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 43"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 42"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 41"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 40"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 70"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 67"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 68"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> Close********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 69"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
+    },
+    {
+        "role": "assistant",
+        "content": "Number 66"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 50"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 75"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 60"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 65"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 70"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 73"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 77"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 80"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 83"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 86"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 89"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 85"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 87"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 88"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 90"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 84"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 82"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 81"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 79"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 78"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 76"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 74"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 72"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 71"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 69"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 68"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 67"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 66"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 64"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 63"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> Close********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 62"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
+    },
+    {
+        "role": "assistant",
+        "content": "Number 61"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 50"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 75"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 25"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 30"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 20"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 15"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 10"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 5"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 35"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 40"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 12"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 8"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 3"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 18"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 22"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 28"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 32"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 4"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 7"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 11"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 14"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 17"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 19"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 21"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 26"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> Close"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 29"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> Far"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 27"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> Close********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Number 28"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
+    },
+    {
+        "role": "assistant",
+        "content": "Number 26"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    }
+]

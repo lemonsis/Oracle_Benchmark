@@ -4,6 +4,7 @@ import sys
 import logging
 import os
 import random
+import builtins
 from openai import OpenAI
 from google import genai
 from google.genai import types
@@ -50,6 +51,8 @@ class ReasoningLLM:
         self.eva_mode = eva_mode
         self.eva_nums = n_runs
         self.mode = mode  # generate or evaluate
+
+        self.token_cost = []
 
         with open(self.paths.task_path / task / 'player_system_prompt') as f:
             self.system_prompt = f.read()  # system prompt for each task
@@ -116,6 +119,12 @@ class ReasoningLLM:
                              {"role": "user", "content": [{"text": self.task_intro}]},
                              {"role": "assistant", "content": [{"text": "I understand the rules. I will not output any unrelated text! Let us start the interaction."}]}]
             self.history =  copy.deepcopy(self.messages)
+        elif model_family == 'human':
+            self.messages = [{"role": "user", "content": self.task_intro},
+                            {"role": "assistant", "content": 'I understand the rules. I will not output any unrelated text! Let us start the interaction.'}]
+            print("Blackbox: ", self.task_intro)
+            print("Human: I understand the rules. I will not output any unrelated text! Let us start the interaction.")
+            self.history =  copy.deepcopy(self.messages)
 
     def save_result(self, output_dir, result):
         if self.mode == 'generate':
@@ -130,7 +139,7 @@ class ReasoningLLM:
                 os.makedirs(os.path.join(output_dir, self.task, self.difficulty, self.task_id, name))
                 
             if not os.path.exists(os.path.join(output_dir, self.task, self.difficulty, self.task_id, name, 'result.csv')):
-                header = ['difficulty', 'task_id', 'model_family', 'model_name', 'run_times', 'max_turns', 'failure_num', 'num_correct', 'total_samples', 'accuracy']
+                header = ['difficulty', 'task_id', 'model_family', 'model_name', 'run_times', 'max_turns', 'failure_num', 'num_correct', 'total_samples', 'accuracy', 'avg_token_cost', 'token_cost']
                 with open(os.path.join(output_dir, self.task, self.difficulty, self.task_id, name, 'result.csv'), "w", newline="", encoding="utf-8") as f:
                     writer = csv.writer(f)
                     writer.writerow(header)
@@ -175,16 +184,18 @@ class ReasoningLLM:
                     max_tokens=500,
                 )
                 response = response.choices[0].message.content
+                self.token_cost.append(0)
             else:   # for o-series models
                 response = self.client.responses.create(
                     model=self.model_name,
                     input=self.messages,
                     reasoning={"effort": "medium"},
                 )
+                self.token_cost.append(response.usage.output_tokens_details.reasoning_tokens)
                 response = response.output_text
             self.messages.append({"role": "assistant", "content": response})
             self.history.append({"role": "assistant", "content": response})
-
+            
         elif self.model_family == 'claude':
             if self.thinking_mode == False:
                 self.messages.append({"role": "user", "content": str(input)})
@@ -202,6 +213,7 @@ class ReasoningLLM:
                     response = 'claude did not return any response'
                 self.messages.append({"role": "assistant", "content": response})
                 self.history.append({"role": "assistant", "content": response})
+                self.token_cost.append(0) 
             else:
                 self.messages.append({"role": "user", "content": str(input)})
                 self.history.append({"role": "user", "content": str(input)})
@@ -228,6 +240,7 @@ class ReasoningLLM:
                     self.history.append({"role": "thinking_assistant", "content": thinking_content})
                 self.history.append({"role": "assistant", "content": response_content})
                 response = response_content 
+                self.token_cost.append(0) 
 
         elif self.model_family == 'gemini':
             self.messages.append(types.Content(role="user", parts=[types.Part.from_text(text=str(input))]))
@@ -242,6 +255,10 @@ class ReasoningLLM:
                         ),
                         contents=self.messages
                     )
+                    if response.usage_metadata.thoughts_token_count is not None:
+                        self.token_cost.append(response.usage_metadata.thoughts_token_count)
+                    else:
+                        self.token_cost.append(0)
                     response_content = 'gemini did not return any response'
                     for part in response.candidates[0].content.parts:
                         if not part.text:
@@ -254,6 +271,7 @@ class ReasoningLLM:
                     self.messages.append(types.Content(role="model", parts=[types.Part.from_text(text=response_content)]))
                     self.history.append({"role": "assistant", "content": response_content})
                     response = response_content
+                    print(self.token_cost)
                 else:
                     response = self.client.models.generate_content(
                         model=self.model_name,
@@ -269,6 +287,7 @@ class ReasoningLLM:
                         response = 'gemini did not return any response'
                     self.messages.append(types.Content(role="model", parts=[types.Part.from_text(text=response)]))
                     self.history.append({"role": "assistant", "content": response})
+                    self.token_cost.append(0)
             else:
                 response = self.client.models.generate_content(
                     model=self.model_name,
@@ -282,6 +301,7 @@ class ReasoningLLM:
                 response = response.text
                 self.messages.append(types.Content(role="model", parts=[types.Part.from_text(text=response)]))
                 self.history.append({"role": "assistant", "content": response})
+                self.token_cost.append(0)
 
         elif self.model_family == 'qwen':
             self.messages.append({"role": "user", "content": str(input)})
@@ -345,6 +365,7 @@ class ReasoningLLM:
                 response = response.choices[0].message.content
                 self.messages.append({"role": "assistant", "content": response})
                 self.history.append({"role": "assistant", "content": response})
+                self.token_cost.append(0)
 
         elif self.model_family == 'llama':
             self.messages.append({"role": "user", "content": [{"text": str(input)}]})
@@ -365,6 +386,15 @@ class ReasoningLLM:
             response = response['choices'][0]['message']['content']
             self.messages.append({"role": "assistant", "content": [{"text": str(response)}]})
             self.history.append({"role": "assistant", "content": response})
+
+        elif self.model_family == 'human':
+            self.messages.append({"role": "user", "content": str(input)})
+            self.history.append({"role": "user", "content": str(input)})
+            print("Blackbox: ", str(input))
+            response = builtins.input("Human: ")
+            self.messages.append({"role": "assistant", "content": response})
+            self.history.append({"role": "assistant", "content": response})
+            self.token_cost.append(0)
 
         '''If mistake happens, filter them in self.messages'''
         if self.has_format_mistake(str(input)):
@@ -466,7 +496,8 @@ class ReasoningLLM:
                             answer = False
                             break
                         model_output = self.normal_output("Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer.")
-                    
+                        print("Blackbox: ", model_output)
+
                     if answer == True:
                         num_correct += 1
                         if self.model_family == 'gemini':
@@ -475,6 +506,10 @@ class ReasoningLLM:
                         elif self.model_family == 'llama':
                             self.messages.append({"role": "user", "content": [{"text": "Your answer is correct. Let's move to next question."}]})
                             self.messages.append({"role": "assistant", "content": [{"text":"Ok."}]})
+                        elif self.model_family == 'human':
+                            self.messages.append({"role": "user", "content": "Your answer is correct. Let's move to next question."})
+                            self.messages.append({"role": "assistant", "content": "Ok."})
+                            print("Blackbox: Your answer is correct. Let's move to next question.")
                         else:
                             self.messages.append({"role": "user", "content": "Your answer is correct. Let's move to next question."})
                             self.messages.append({"role": "assistant", "content": "Ok."})
@@ -487,6 +522,10 @@ class ReasoningLLM:
                         elif self.model_family == 'llama':
                             self.messages.append({"role": "user", "content": [{"text": "Your answer is wrong. Let's move to next question."}]})
                             self.messages.append({"role": "assistant", "content": [{"text":"Ok."}]})
+                        elif self.model_family == 'human':
+                            self.messages.append({"role": "user", "content": "Your answer is wrong. Let's move to next question."})
+                            self.messages.append({"role": "assistant", "content": "Ok."})
+                            print("Blackbox: Your answer is wrong. Let's move to next question.")
                         else:
                             self.messages.append({"role": "user", "content": "Your answer is wrong. Let's move to next question."})
                             self.messages.append({"role": "assistant", "content": "Ok."})
@@ -495,10 +534,10 @@ class ReasoningLLM:
 
             if self.mode == 'evaluate':
                 if self.thinking_mode:
-                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name+'_thinking', 'run_'+str(version), max_turns, failure_num, num_correct, active_samples*len(samples[0]["checkpoints"]), num_correct/(active_samples*len(samples[0]["checkpoints"]))]])  
+                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name+'_thinking', 'run_'+str(version), max_turns, failure_num, num_correct, active_samples*len(samples[0]["checkpoints"]), num_correct/(active_samples*len(samples[0]["checkpoints"])), sum(self.token_cost)/len(self.token_cost), self.token_cost]])  
                 else:
-                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name, 'run_'+str(version), max_turns, failure_num, num_correct, active_samples*len(samples[0]["checkpoints"]), num_correct/(active_samples*len(samples[0]["checkpoints"]))]])  
-       
+                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name, 'run_'+str(version), max_turns, failure_num, num_correct, active_samples*len(samples[0]["checkpoints"]), num_correct/(active_samples*len(samples[0]["checkpoints"])), sum(self.token_cost)/len(self.token_cost), self.token_cost]])  
+
         elif self.task == 'encryption':
             max_turns = (len(self.messages)-5) / 2
             num_correct = 0 
@@ -520,7 +559,7 @@ class ReasoningLLM:
                         model_input = model_input["content"] + f"\n********Evaluation Starts, You Have {failure_num+1} Chances for Answering Each Question********\n Now answer the question: What's the output of the blackbox when the input plaintext is '{plaintext}'?"
                 else:
                     model_input = f"Answer the question: What's the output of the blackbox when the input plaintext is '{plaintext}'?"
-                logging.info(f"Evaluation Stage Model Input: {model_input}")
+                # logging.info(f"Evaluation Stage Model Input: {model_input}")
                 model_output = self.normal_output(model_input)
                 model_output = model_output.rstrip('\n')
                 
@@ -533,7 +572,7 @@ class ReasoningLLM:
                     if times > 1:
                         break
 
-                logging.info(f"Evaluation Stage Model Output: {model_output}")
+                # logging.info(f"Evaluation Stage Model Output: {model_output}")
                 truth = platform_module.blackbox(plaintext)
 
                 num_try = 0
@@ -552,6 +591,10 @@ class ReasoningLLM:
                     elif self.model_family == 'llama':
                         self.messages.append({"role": "user", "content": [{"text": "Your answer is correct. Let's move to next question."}]})
                         self.messages.append({"role": "assistant", "content": [{"text":"Ok."}]})
+                    elif self.model_family == 'human':
+                        self.messages.append({"role": "user", "content": "Your answer is correct. Let's move to next question."})
+                        self.messages.append({"role": "assistant", "content": "Ok."})
+                        print("Blackbox: Your answer is correct. Let's move to next question.")
                     else:
                         self.messages.append({"role": "user", "content": "Your answer is correct. Let's move to next question."})
                         self.messages.append({"role": "assistant", "content": "Ok."})
@@ -564,6 +607,10 @@ class ReasoningLLM:
                     elif self.model_family == 'llama':
                         self.messages.append({"role": "user", "content": [{"text": "Your answer is wrong. Let's move to next question."}]})
                         self.messages.append({"role": "assistant", "content": [{"text":"Ok."}]})
+                    elif self.model_family == 'human':
+                        self.messages.append({"role": "user", "content": "Your answer is wrong. Let's move to next question."})
+                        self.messages.append({"role": "assistant", "content": "Ok."})
+                        print("Blackbox: Your answer is wrong. Let's move to next question.")
                     else:
                         self.messages.append({"role": "user", "content": "Your answer is wrong. Let's move to next question."})
                         self.messages.append({"role": "assistant", "content": "Ok."})
@@ -572,10 +619,10 @@ class ReasoningLLM:
 
             if self.mode == 'evaluate':
                 if self.thinking_mode:
-                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name+'_thinking', 'run_'+str(version), max_turns, failure_num, num_correct, active_samples, num_correct/active_samples]])  
+                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name+'_thinking', 'run_'+str(version), max_turns, failure_num, num_correct, active_samples, num_correct/active_samples, sum(self.token_cost)/len(self.token_cost), self.token_cost]])  
                 else:
-                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name, 'run_'+str(version), max_turns, failure_num, num_correct, active_samples, num_correct/active_samples]])  
-        
+                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name, 'run_'+str(version), max_turns, failure_num, num_correct, active_samples, num_correct/active_samples, sum(self.token_cost)/len(self.token_cost), self.token_cost]])  
+
         elif self.task == 'puzzle':
             num_correct = 0
             active_samples = len(samples) if self.mode == 'evaluate' else 1
@@ -616,11 +663,16 @@ class ReasoningLLM:
                         answer = False
                         break
                     model_output = self.normal_output("Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer.")
+                    print("Blackbox: ", model_output)
                 if answer == True:
                     num_correct += 1
                     if self.model_family == 'gemini':
                         self.messages.append(types.Content(role="user", parts=[types.Part.from_text(text="Your answer is correct.")]))
                         self.messages.append(types.Content(role="model", parts=[types.Part.from_text(text="Ok.")]))
+                    elif self.model_family == 'human':
+                        self.messages.append({"role": "user", "content": "Your answer is correct."})
+                        self.messages.append({"role": "assistant", "content": "Ok."})
+                        print("Blackbox: Your answer is correct.")
                     else:
                         self.messages.append({"role": "user", "content": "Your answer is correct."})
                         self.messages.append({"role": "assistant", "content": "Ok."})
@@ -630,6 +682,10 @@ class ReasoningLLM:
                     if self.model_family == 'gemini':
                         self.messages.append(types.Content(role="user", parts=[types.Part.from_text(text="Your answer is wrong.")]))
                         self.messages.append(types.Content(role="model", parts=[types.Part.from_text(text="Ok.")]))
+                    elif self.model_family == 'human':
+                        self.messages.append({"role": "user", "content": "Your answer is wrong."})
+                        self.messages.append({"role": "assistant", "content": "Ok."})
+                        print("Blackbox: Your answer is wrong.")
                     else:
                         self.messages.append({"role": "user", "content": "Your answer is wrong."})
                         self.messages.append({"role": "assistant", "content": "Ok."})
@@ -640,9 +696,9 @@ class ReasoningLLM:
 
             if self.mode == 'evaluate':
                 if self.thinking_mode:
-                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name+'_thinking', 'run_'+str(version), max_turns, failure_num, num_correct, active_samples, num_correct/active_samples]])  
+                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name+'_thinking', 'run_'+str(version), max_turns, failure_num, num_correct, active_samples, num_correct/active_samples, sum(self.token_cost)/len(self.token_cost), self.token_cost]])  
                 else:
-                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name, 'run_'+str(version), max_turns, failure_num, num_correct, active_samples, num_correct/active_samples]])  
+                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name, 'run_'+str(version), max_turns, failure_num, num_correct, active_samples, num_correct/active_samples, sum(self.token_cost)/len(self.token_cost), self.token_cost]])  
 
         elif self.task == 'game':
             active_samples = len(samples) if self.mode == 'evaluate' else 1
@@ -700,9 +756,9 @@ class ReasoningLLM:
             logging.info(f"Total Score: {sum_score}, {best_score}, {max_score}")
             if self.mode == 'evaluate':
                 if self.thinking_mode:
-                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name+'_thinking', 'run_'+str(version), max_turns, failure_num, best_score, max_score, performance]])  
+                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name+'_thinking', 'run_'+str(version), max_turns, failure_num, best_score, max_score, performance, sum(self.token_cost)/len(self.token_cost), self.token_cost]])  
                 else:
-                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name, 'run_'+str(version), max_turns, failure_num, best_score, max_score, performance]])  
+                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name, 'run_'+str(version), max_turns, failure_num, best_score, max_score, performance, sum(self.token_cost)/len(self.token_cost), self.token_cost]])  
 
         elif self.task == 'physics':
             def check(output, truth):
@@ -741,13 +797,11 @@ class ReasoningLLM:
                             model_input = model_input["content"] + f"\n********Evaluation Starts, You Have {failure_num+1} Chances for Answering Each Question********\n Now answer the question: What is the coordinate of each object at time {t}?"
                     else:
                         model_input = f"Answer the question: What is the coordinate of each object at time {t}?"
-                    logging.info(f"Evaluation Stage Model Input: {model_input}")
                     model_output = self.normal_output(model_input)
                     model_output = model_output.rstrip('\n')
                     if 'json' in model_output:
                         model_output = re.findall(r"```json\n(.*?)```", model_output, re.DOTALL)[0]
                         model_output = model_output.rstrip()
-                    logging.info(f"Evaluation Stage Model Output: {model_output}")
                     times = 0
                     while self.check_text_format(model_output) == False:
                         times += 1
@@ -782,6 +836,10 @@ class ReasoningLLM:
                         elif self.model_family == 'llama':
                             self.messages.append({"role": "user", "content": [{"text": "Your answer is right. Let's move to next question."}]})
                             self.messages.append({"role": "assistant", "content": [{"text":"Ok."}]})
+                        elif self.model_family == 'human':
+                            self.messages.append({"role": "user", "content": "Your answer is correct. Let's move to next question."})
+                            self.messages.append({"role": "assistant", "content": "Ok."})
+                            print("Blackbox: Your answer is correct. Let's move to next question.")
                         else:
                             self.messages.append({"role": "user", "content": "Your answer is correct. Let's move to next question."})
                             self.messages.append({"role": "assistant", "content": "Ok."})
@@ -794,6 +852,10 @@ class ReasoningLLM:
                         elif self.model_family == 'llama':
                             self.messages.append({"role": "user", "content": [{"text": "Your answer is wrong. Let's move to next question."}]})
                             self.messages.append({"role": "assistant", "content": [{"text":"Ok."}]})
+                        elif self.model_family == 'human':
+                            self.messages.append({"role": "user", "content": "Your answer is wrong. Let's move to next question."})
+                            self.messages.append({"role": "assistant", "content": "Ok."})
+                            print("Blackbox: Your answer is wrong. Let's move to next question.")
                         else:
                             self.messages.append({"role": "user", "content": "Your answer is wrong. Let's move to next question."})
                             self.messages.append({"role": "assistant", "content": "Ok."})
@@ -872,9 +934,9 @@ class ReasoningLLM:
                         model_output = self.normal_output(model_input)
             if self.mode == 'evaluate':
                 if self.thinking_mode:
-                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name+'_thinking', 'run_'+str(version), max_turns, failure_num, num_correct, active_samples, num_correct/active_samples]])  
+                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name+'_thinking', 'run_'+str(version), max_turns, failure_num, num_correct, active_samples, num_correct/active_samples, sum(self.token_cost)/len(self.token_cost), self.token_cost]])  
                 else:
-                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name, 'run_'+str(version), max_turns, failure_num, num_correct, active_samples, num_correct/active_samples]])  
+                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name, 'run_'+str(version), max_turns, failure_num, num_correct, active_samples, num_correct/active_samples, sum(self.token_cost)/len(self.token_cost), self.token_cost]])  
 
         elif self.task == 'circuit':
             num_correct = 0
@@ -928,6 +990,10 @@ class ReasoningLLM:
                 if self.model_family == 'gemini':
                     self.messages.append(types.Content(role="user", parts=[types.Part.from_text(text=f"{model_input} Let's move to next question.")]))
                     self.messages.append(types.Content(role="model", parts=[types.Part.from_text(text="Ok.")]))
+                elif self.model_family == 'human':
+                    self.messages.append({"role": "user", "content": f"{model_input} Let's move to next question."})
+                    self.messages.append({"role": "assistant", "content": "Ok."})
+                    print(f"Blackbox: {model_input} Let's move to next question.")
                 else:
                     self.messages.append({"role": "user", "content": f"{model_input} Let's move to next question."})
                     self.messages.append({"role": "assistant", "content": "Ok."})
@@ -938,9 +1004,9 @@ class ReasoningLLM:
             
             if self.mode == "evaluate":
                 if self.thinking_mode:
-                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name+'_thinking', 'run_'+str(version), max_turns, failure_num, num_correct, circuit_test_num, num_correct/circuit_test_num]])  
+                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name+'_thinking', 'run_'+str(version), max_turns, failure_num, num_correct, circuit_test_num, num_correct/circuit_test_num, sum(self.token_cost)/len(self.token_cost), self.token_cost]])  
                 else:
-                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name, 'run_'+str(version), max_turns, failure_num, num_correct, circuit_test_num, num_correct/circuit_test_num]])  
+                    self.save_result(self.paths.result_path, [[self.difficulty, self.task_id, self.model_family, self.model_name, 'run_'+str(version), max_turns, failure_num, num_correct, circuit_test_num, num_correct/circuit_test_num, sum(self.token_cost)/len(self.token_cost), self.token_cost]])  
 
     '''check if LLM make mistakes in output format.'''
     def has_format_mistake(self, input):

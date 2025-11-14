@@ -1,0 +1,1550 @@
+[
+    {
+        "role": "developer",
+        "content": "You are an excellent reasoning model. You are very good at understanding the interaction rules, reasoning over interaction history, thinking step by step, and finally figureing out the working principle of a system that contains hidden information. \nYou also strictly follow output format rules. When making queries, you strictly obey querying format. When answering questions, you strictly obey answer format. You never output anymore unrelated text."
+    },
+    {
+        "role": "user",
+        "content": "1. Task overview: \n- The user plays the role of a puzzle, and you don't know what the hidden answer is. You need to guess the hidden answer by interacting with the user in multiple turns. \n\n2. Goals:\n- You need to guess the answer to the puzzle within given interaction turns. \n\n3. User property:\n- The user hides the answer which you need to figure out.\n\n4. Interaction rules:\n- Rule 0: The user will first tell you the rule of the puzzle, and the interaction format that must be followed when querying. In each turn, the user will tell *current turn* and *remaining turns*.\n- Rule 1: You can ask questions according to the rules of the game and receive corresponding feedback. If your ask is unavailable, the user will tell you.\n- Rule 2: After a series of interactions, you should answer the puzzle in the format specified in the description.\n\n5. Output format:\n- When you ask a question, you should strictly follow query format in the **Description**.\n- When you answer the puzzle, you should strictly follow the answer format in the **Description**.\n- Refer to the examples in the **Description**. for the correct format.\n- If you figure out the right answer before given turns, keep interacting with the puzzle to make sure your answer is correct.\n\n6. Evaluation:\n- When the given number of interactions is reached, you need to give your answer of the puzzle. **You MUST ONLY output the answer itself in the format mentioned in the description, DO NOT contain more text.**\n\nNow Let's Solve the Puzzle Nerdle.\n\n **Description**: Nerdle is a math-based puzzle game where players guess a hidden equation consisting of numbers and operators. Here we guarantee that the length of the equation is 15, including digits (0-9) and operators (+, -, *, /, =). For example, truth can be `10002*3+6=30012`. In each turn, player can guess a length 15 **valid equation** (such as `1+1+1+1=50` is invalid since this is not correct, and `1+1+1+1=4` is invalid since length is only 9). Each guess provides feedback: (1) Correct digit/operator in the correct position, represented by `A`; (2) Correct digit/operator but misplaced, represented by `M`; (3) Digit/operator not in the equation, represented by `X`. Players iteratively refine guesses using feedback until solving the equation, within limited attempts. After a few turns of querying, the player will give a 15-character valid equation answer.."
+    },
+    {
+        "role": "assistant",
+        "content": "I understand the rules. I will not output any unrelated text! Let us start the interaction."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "10002*3+6=30012"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> MXXXMMMXMMMXXMX"
+    },
+    {
+        "role": "assistant",
+        "content": "91*82-63/3=7441"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> XMMXMXMAXMMMMXM"
+    },
+    {
+        "role": "assistant",
+        "content": "124157*3=372471"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> MMMMMMMAAMXXXXM"
+    },
+    {
+        "role": "assistant",
+        "content": "1111*113=125543"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> MXXXAAAAAXMMMMM"
+    },
+    {
+        "role": "assistant",
+        "content": "5674*113=641162"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> MMAMAAAAAMXMXMM"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> AAAAAAAAAAAAAAA********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "4572*113=516636"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "10002*3+6=30012"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> MXXXMXXMXMAXXMX"
+    },
+    {
+        "role": "assistant",
+        "content": "27+49+86+13=175"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> MMAMMXMXAMAAAXA"
+    },
+    {
+        "role": "assistant",
+        "content": "81+98-27+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> MMAMXAMMAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Your query must be exactly 15 characters long."
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> Your query must be exactly 15 characters long."
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> AAAAAAAAAAAAAAA********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "79+85-12+43=195"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "12345+678=13023"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> AXMMMXMXMMMMXXX"
+    },
+    {
+        "role": "assistant",
+        "content": "10486*3-5=31453"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> AXMAMMMMMMMAXMX"
+    },
+    {
+        "role": "assistant",
+        "content": "13485-653=12832"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> AAMAMMMMMMMXXXX"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-6/3*5*1=94"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> AAAAAMMMXMXAAMM"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3549/91=65"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> AAAAAAAMAAMAAMA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> AAAAAAAAAAAAAAA********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "13*8-3599/61=45"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "100+200+300=600"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> MXXXMXXXXXXMMXA"
+    },
+    {
+        "role": "assistant",
+        "content": "12*5*1*1*1*1=60"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> MMXXXAXXXXXXMMA"
+    },
+    {
+        "role": "assistant",
+        "content": "92-7-1-84/1/1=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> MMXXXAAMMXXXAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "692841-692841=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> MMMMMAAMMMMMAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "268491-268491=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> AAMMMAAAAMMMAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> AAAAAAAAAAAAAAA********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "264981-264981=0"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "10002*3+6=30012"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> AXXAMMMMMMMXAMX"
+    },
+    {
+        "role": "assistant",
+        "content": "1230*4+126=5046"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> AMMAMMMMXMAXAXX"
+    },
+    {
+        "role": "assistant",
+        "content": "1+20*4-3/1=0078"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> Your query is not a valid equation. Please ensure both sides are valid and the equation is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "I apologize for the confusion."
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Your query must be exactly 15 characters long."
+    },
+    {
+        "role": "assistant",
+        "content": "1+20*3-4/2=0059"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> Your query is not a valid equation. Please ensure both sides are valid and the equation is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "1*20+34/2=00037"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Your query is not a valid equation. Please ensure both sides are valid and the equation is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "1+20+34*59=2027"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> AAXAXMMMXXAAAXX"
+    },
+    {
+        "role": "assistant",
+        "content": "1+36/6*4*1=0025"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> Your query is not a valid equation. Please ensure both sides are valid and the equation is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "1+30/6*4/1=0021"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Your query is not a valid equation. Please ensure both sides are valid and the equation is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "1+80/6*3/4=0011"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Your query is not a valid equation. Please ensure both sides are valid and the equation is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "1+4060/2+0=2031"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> AAMAMXAXXXAAAAM"
+    },
+    {
+        "role": "assistant",
+        "content": "1+6036/6*4=4025"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> AAXAMAAXAMAXAMX"
+    },
+    {
+        "role": "assistant",
+        "content": "1+20*3+4-6=0059"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> Your query is not a valid equation. Please ensure both sides are valid and the equation is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "1+6036/3*1=2013"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> AAXAMAAXAMAAAMA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> AAAAAAAAAAAAAAA********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "1+1016/4*8=2033"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "12345+678=13023"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> AMXAXXMXMMMXMMX"
+    },
+    {
+        "role": "assistant",
+        "content": "18*24-096=00336"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> Your query is not a valid equation. Please ensure both sides are valid and the equation is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "1*6408-200=6208"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> AXMAMMXMXXMXMXX"
+    },
+    {
+        "role": "assistant",
+        "content": "10248/6/2/2=427"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> AAAAMMMMMMMMXMX"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/8/1/1/2=64"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> AAAAAMAMAXAAAMX"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> AAAAAAAAAAAAAAA"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> AAAAAAAAAAAAAAA********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "1024/2/8/2/2=16"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    }
+]

@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+easy,oblique_projectile_infheight,gpt,o4-mini-2025-04-16,run_1,9.0,0,6,6,1.0,1240.888888888889,"[704, 512, 320, 768, 512, 2560, 2112, 3712, 2368, 1024, 512, 1152, 704, 1024, 960, 832, 1344, 1216]"

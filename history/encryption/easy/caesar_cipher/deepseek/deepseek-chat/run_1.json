@@ -1,0 +1,430 @@
+[
+    {
+        "role": "system",
+        "content": "You are an excellent reasoning model. You are very good at understanding the interaction rules, reasoning over interaction history, thinking step by step, and finally figureing out the working principle of a system that contains hidden information. \nYou also strictly follow output format rules."
+    },
+    {
+        "role": "user",
+        "content": "1. Task overview: \n- The user transforms one string into another based on a fixed rule, but you don't know what the fixed rule is. You need to figure out this rule by interacting with the user in multiple turns. \n\n2. Goal:\n- By interacting with the user within given interaction turns, you need to understand the fixed rule of transforming one string into another.\n\n3. User property:\n- The user will remind you the remaining number of turns in each turn.\n- The user will output transformed string in each turn.\n\n4. Interaction rules:\n- Rule 1: You must only assign one string in each turn. You can assign any string freely, but make sure the string **only contains uppercase or lowercase English letters (A-Z, a-z) and blank space**. Then you will receive corresponding transformed string from the user.\n\n5. Output format:\n- You must strictly obey the output format rules: **Only output the string**. DO NOT output any unrelated text or symbols like \"Let's input\", \"I'll try\", \"\\n\".\n- If you understand the transforming rule before reaching given interaction turns, keep interacting with the user to make sure you don't miss any details. DO NOT output text like \"I understand the pattern\".\n\n6. Evaluation:\n- When the given number of interactions is reached, you will be given several test strings and you need to output corresponding transformed string. **You MUST ONLY output the value, DO NOT contain any other text.**"
+    },
+    {
+        "role": "assistant",
+        "content": "I understand the rules. I will not output any unrelated text! Let us start the interaction."
+    },
+    {
+        "role": "user",
+        "content": "You have 30 interaction turns to understand the black-box. Now the interaction starts. Only output the value and DO NOT contain any unrelated text."
+    },
+    {
+        "role": "assistant",
+        "content": "Hello World"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> Pmttw Ewztl"
+    },
+    {
+        "role": "assistant",
+        "content": "HELLO WORLD"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> PMTTW EWZTL"
+    },
+    {
+        "role": "assistant",
+        "content": "hello world"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> pmttw ewztl"
+    },
+    {
+        "role": "assistant",
+        "content": "Abc"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Ijk"
+    },
+    {
+        "role": "assistant",
+        "content": "XYZ"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> FGH"
+    },
+    {
+        "role": "assistant",
+        "content": "The Quick Brown Fox"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Bpm Ycqks Jzwev Nwf"
+    },
+    {
+        "role": "assistant",
+        "content": "the quick brown fox"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> bpm ycqks jzwev nwf"
+    },
+    {
+        "role": "assistant",
+        "content": "A"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> I"
+    },
+    {
+        "role": "assistant",
+        "content": "Z"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> H"
+    },
+    {
+        "role": "assistant",
+        "content": "Testing One Two Three"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Bmabqvo Wvm Bew Bpzmm"
+    },
+    {
+        "role": "assistant",
+        "content": "TESTING ONE TWO THREE"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> BMABQVO WVM BEW BPZMM"
+    },
+    {
+        "role": "assistant",
+        "content": "abcdefghijklmnopqrstuvwxyz"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> ijklmnopqrstuvwxyzabcdefgh"
+    },
+    {
+        "role": "assistant",
+        "content": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> IJKLMNOPQRSTUVWXYZABCDEFGH"
+    },
+    {
+        "role": "assistant",
+        "content": "a"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> i"
+    },
+    {
+        "role": "assistant",
+        "content": "z"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> h"
+    },
+    {
+        "role": "assistant",
+        "content": "Caesar Cipher"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> Kimaiz Kqxpmz"
+    },
+    {
+        "role": "assistant",
+        "content": "caesar cipher"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> kimaiz kqxpmz"
+    },
+    {
+        "role": "assistant",
+        "content": "Programming is Fun"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> Xzwoziuuqvo qa Ncv"
+    },
+    {
+        "role": "assistant",
+        "content": "PROGRAMMING IS FUN"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> XZWOZIUUQVO QA NCV"
+    },
+    {
+        "role": "assistant",
+        "content": "programming is fun"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> xzwoziuuqvo qa ncv"
+    },
+    {
+        "role": "assistant",
+        "content": "J"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> R"
+    },
+    {
+        "role": "assistant",
+        "content": "Q"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> Y"
+    },
+    {
+        "role": "assistant",
+        "content": "P"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> X"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello There"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> Pmttw Bpmzm"
+    },
+    {
+        "role": "assistant",
+        "content": "HELLO THERE"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> PMTTW BPMZM"
+    },
+    {
+        "role": "assistant",
+        "content": "hello there"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> pmttw bpmzm"
+    },
+    {
+        "role": "assistant",
+        "content": "Final Test String"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> Nqvit Bmab Abzqvo"
+    },
+    {
+        "role": "assistant",
+        "content": "FINAL TEST STRING"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> NQVIT BMAB ABZQVO"
+    },
+    {
+        "role": "assistant",
+        "content": "final test string"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> nqvit bmab abzqvo"
+    },
+    {
+        "role": "assistant",
+        "content": "Pattern Recognition Complete"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> Xibbmzv Zmkwovqbqwv Kwuxtmbm\n********Evaluation Starts, You Have 2 Chances for Answering Each Question********\n Now answer the question: What's the output of the blackbox when the input plaintext is 'Quick Brown Fox'?"
+    },
+    {
+        "role": "assistant",
+        "content": "YRNLS ZUIRB KRA"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
+    },
+    {
+        "role": "assistant",
+        "content": "YRNLS ZUIRB KRA"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'Jumps Over'?"
+    },
+    {
+        "role": "assistant",
+        "content": "MYRJB RZJA"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
+    },
+    {
+        "role": "assistant",
+        "content": "MYRJB RZJA"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'Lazy Dogs'?"
+    },
+    {
+        "role": "assistant",
+        "content": "QJCL FTRJ"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
+    },
+    {
+        "role": "assistant",
+        "content": "QJCL FTRJ"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'?"
+    },
+    {
+        "role": "assistant",
+        "content": "IJKLMNOPQRSTUVWXYZABCDEFGH"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'AbCdEfGhIjKlMnOpQrStUvWxYz'?"
+    },
+    {
+        "role": "assistant",
+        "content": "IjKlMnOpQrStUvWxYzAbCdEfGh"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'crypto systems are interesting'?"
+    },
+    {
+        "role": "assistant",
+        "content": "kzobyr yayzoub izm mzbmabqvo"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
+    },
+    {
+        "role": "assistant",
+        "content": "kzobyr yayzoub izm mzbmabqvo"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'Encryption Needs Creativity'?"
+    },
+    {
+        "role": "assistant",
+        "content": "Mkizobyrvo Wmmjb Kzmibqvo"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
+    },
+    {
+        "role": "assistant",
+        "content": "Mkizobyrvo Wmmjb Kzmibqvo"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'Challenge yourself often'?"
+    },
+    {
+        "role": "assistant",
+        "content": "Mibqvoomz kzobpzqj rlubq"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
+    },
+    {
+        "role": "assistant",
+        "content": "Mibqvoomz kzobpzqj rlubq"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    }
+]

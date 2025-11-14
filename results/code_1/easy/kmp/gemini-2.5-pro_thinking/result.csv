@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+easy,kmp,gemini,gemini-2.5-pro_thinking,run_1,28.5,1,35,35,1.0,3550.1911764705883,"[249, 151, 230, 121, 469, 411, 1110, 499, 840, 899, 0, 1121, 1566, 1454, 1622, 5547, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6234, 15384, 3784, 7293, 9531, 6844, 14891, 8043, 9687, 13103, 10837, 0, 2389, 0, 0, 4513, 15189, 9373, 9436, 0, 0, 0, 0, 12371, 8674, 14126, 0, 0, 0, 0, 0, 0, 16917, 0, 8677, 17828, 0, 0, 0, 0]"

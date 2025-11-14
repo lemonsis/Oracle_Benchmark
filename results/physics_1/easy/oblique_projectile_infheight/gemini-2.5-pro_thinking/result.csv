@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+easy,oblique_projectile_infheight,gemini,gemini-2.5-pro_thinking,run_1,28.5,1,6,6,1.0,1586.2702702702702,"[635, 880, 806, 1648, 1856, 1953, 1632, 2180, 2445, 2410, 2914, 2246, 3162, 0, 0, 3060, 3594, 0, 0, 3057, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3867, 6567, 2468, 2448, 1838, 1767, 2205, 3054]"

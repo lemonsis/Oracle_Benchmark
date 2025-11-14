@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+easy,balls_completely_elastic_collision,gemini,gemini-2.5-flash_thinking,run_1,28.5,1,5,6,0.8333333333333334,1714.3157894736842,"[147, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5495, 4090, 6142, 7559, 8104, 10235, 485, 8516, 14371]"

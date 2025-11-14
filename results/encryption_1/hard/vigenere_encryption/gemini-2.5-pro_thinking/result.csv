@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+hard,vigenere_encryption,gemini,gemini-2.5-pro_thinking,run_1,9.5,0,5,8,0.625,6445.8421052631575,"[172, 688, 1452, 1980, 3126, 6875, 3219, 0, 9316, 8411, 19243, 19432, 7899, 12403, 8969, 8656, 10630, 0, 0]"

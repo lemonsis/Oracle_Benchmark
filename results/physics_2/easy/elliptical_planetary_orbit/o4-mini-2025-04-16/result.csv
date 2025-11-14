@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+easy,elliptical_planetary_orbit,gpt,o4-mini-2025-04-16,run_1,10.0,0,0,6,0.0,2599.1111111111113,"[256, 896, 1280, 2496, 1472, 1984, 1664, 6720, 3584, 2816, 2112, 3200, 1792, 3136, 3136, 5184, 3328, 1728]"

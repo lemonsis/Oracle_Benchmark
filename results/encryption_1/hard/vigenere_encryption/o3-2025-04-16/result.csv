@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+hard,vigenere_encryption,gpt,o3-2025-04-16,run_1,30.0,1,7,8,0.875,6742.857142857143,"[128, 128, 192, 640, 704, 2112, 2368, 3392, 4416, 4032, 5696, 4288, 4480, 5440, 6720, 9088, 17280, 4992, 13184, 8128, 6976, 11200, 17792, 8256, 8960, 17216, 8512, 14400, 18432, 6720, 14080, 5632, 9792, 832, 576, 6912, 8192, 8512, 3008, 3264, 3072, 3456]"

@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+hard,harmonic_friction,gpt,o3-2025-04-16,run_1,28.0,1,2,6,0.3333333333333333,3234.909090909091,"[64, 64, 448, 2752, 3264, 512, 384, 256, 384, 192, 320, 3200, 2112, 1984, 2048, 3456, 7488, 2176, 6272, 2624, 3776, 5248, 3648, 6144, 5568, 4864, 3648, 3136, 9792, 5888, 1152, 8640, 5248]"

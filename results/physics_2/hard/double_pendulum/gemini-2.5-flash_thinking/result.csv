@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+hard,double_pendulum,gemini,gemini-2.5-flash_thinking,run_1,9.5,0,0,6,0.0,3716.1666666666665,"[180, 0, 0, 10462, 0, 0, 0, 0, 0, 0, 14276, 19676]"

@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+hard,river_boat,gpt,o3-2025-04-16,run_1,29.0,1,6,6,1.0,3866.9473684210525,"[192, 192, 64, 128, 640, 832, 1024, 2048, 1216, 1536, 1856, 1536, 4416, 9216, 4160, 1984, 4736, 5248, 4032, 6400, 3712, 8000, 3648, 1856, 3648, 9536, 11712, 4800, 5888, 4992, 7104, 4352, 3200, 7680, 3136, 4864, 3584, 3776]"

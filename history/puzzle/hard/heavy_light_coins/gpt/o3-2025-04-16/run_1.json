@@ -1,0 +1,1550 @@
+[
+    {
+        "role": "developer",
+        "content": "You are an excellent reasoning model. You are very good at understanding the interaction rules, reasoning over interaction history, thinking step by step, and finally figureing out the working principle of a system that contains hidden information. \nYou also strictly follow output format rules. When making queries, you strictly obey querying format. When answering questions, you strictly obey answer format. You never output anymore unrelated text."
+    },
+    {
+        "role": "user",
+        "content": "1. Task overview: \n- The user plays the role of a puzzle, and you don't know what the hidden answer is. You need to guess the hidden answer by interacting with the user in multiple turns. \n\n2. Goals:\n- You need to guess the answer to the puzzle within given interaction turns. \n\n3. User property:\n- The user hides the answer which you need to figure out.\n\n4. Interaction rules:\n- Rule 0: The user will first tell you the rule of the puzzle, and the interaction format that must be followed when querying. In each turn, the user will tell *current turn* and *remaining turns*.\n- Rule 1: You can ask questions according to the rules of the game and receive corresponding feedback. If your ask is unavailable, the user will tell you.\n- Rule 2: After a series of interactions, you should answer the puzzle in the format specified in the description.\n\n5. Output format:\n- When you ask a question, you should strictly follow query format in the **Description**.\n- When you answer the puzzle, you should strictly follow the answer format in the **Description**.\n- Refer to the examples in the **Description**. for the correct format.\n- If you figure out the right answer before given turns, keep interacting with the puzzle to make sure your answer is correct.\n\n6. Evaluation:\n- When the given number of interactions is reached, you need to give your answer of the puzzle. **You MUST ONLY output the answer itself in the format mentioned in the description, DO NOT contain more text.**\n\nNow Let's Solve the Puzzle Heavy Light Coins.\n\n **Description**: In the Heavy Light Coins puzzle, there are 152 coins, named `Coin 1`, `Coin 2`, ..., `Coin 152`. Among these coins, one is heavier than the others, and another one is lighter than the others. If the normal coin weighs 1, then the heavy coin weighs 1.1 and the light coin weighs 0.9. The task is to identify the heavy coin and the light coin using a balance scale. The balance scale can compare the weight of two groups of coins at a time. For example, player can make queries like `Left: Coin 1, Coin 2, Coin 3; Right: Coin 4, Coin 5, Coin 6`. The balance scale will return `Left` if the left side is heavier, `Right` if the right side is heavier, or `Equal` if both sides are balanced. After a series of queries, the player need to identify the heavy coin and the light coin among the 152 coins in the form of `Heavy Coin X; Light Coin Y`, where `X` and `Y` is the number of the heavy coin and the light coin.."
+    },
+    {
+        "role": "assistant",
+        "content": "I understand the rules. I will not output any unrelated text! Let us start the interaction."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17, Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25, Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34, Coin 35, Coin 36, Coin 37, Coin 38, Coin 39, Coin 40, Coin 41, Coin 42, Coin 43, Coin 44, Coin 45, Coin 46, Coin 47, Coin 48, Coin 49, Coin 50; Right: Coin 51, Coin 52, Coin 53, Coin 54, Coin 55, Coin 56, Coin 57, Coin 58, Coin 59, Coin 60, Coin 61, Coin 62, Coin 63, Coin 64, Coin 65, Coin 66, Coin 67, Coin 68, Coin 69, Coin 70, Coin 71, Coin 72, Coin 73, Coin 74, Coin 75, Coin 76, Coin 77, Coin 78, Coin 79, Coin 80, Coin 81, Coin 82, Coin 83, Coin 84, Coin 85, Coin 86, Coin 87, Coin 88, Coin 89, Coin 90, Coin 91, Coin 92, Coin 93, Coin 94, Coin 95, Coin 96, Coin 97, Coin 98, Coin 99, Coin 100"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17, Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25; Right: Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34, Coin 35, Coin 36, Coin 37, Coin 38, Coin 39, Coin 40, Coin 41, Coin 42, Coin 43, Coin 44, Coin 45, Coin 46, Coin 47, Coin 48, Coin 49, Coin 50"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17; Right: Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25, Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25, Coin 101, Coin 102, Coin 103, Coin 104, Coin 105, Coin 106, Coin 107, Coin 108; Right: Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34, Coin 109, Coin 110, Coin 111, Coin 112, Coin 113, Coin 114, Coin 115"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6; Right: Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3; Right: Coin 4, Coin 5, Coin 6"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 4, Coin 101; Right: Coin 5, Coin 102"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 5; Right: Coin 6"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25; Right: Coin 35, Coin 36, Coin 37, Coin 38, Coin 39, Coin 40, Coin 41, Coin 42"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 18, Coin 19, Coin 20, Coin 21; Right: Coin 22, Coin 23, Coin 24, Coin 25"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 22; Right: Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 5; Right: Coin 6"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 5; Light Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 5; Right: Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 5; Light Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 5; Light Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 23; Right: Coin 24"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 23; Right: Coin 101"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 5; Right: Coin 24"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 5; Light Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 5; Right: Coin 101"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 5; Light Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 5; Right: Coin 101"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 5; Light Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 5; Right: Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 5; Light Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 5; Light Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 5; Light Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 5; Right: Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 5; Light Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'.********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 5; Light Coin 23"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17, Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25, Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34, Coin 35, Coin 36, Coin 37, Coin 38, Coin 39, Coin 40, Coin 41, Coin 42, Coin 43, Coin 44, Coin 45, Coin 46, Coin 47, Coin 48, Coin 49, Coin 50, Coin 51; Right: Coin 52, Coin 53, Coin 54, Coin 55, Coin 56, Coin 57, Coin 58, Coin 59, Coin 60, Coin 61, Coin 62, Coin 63, Coin 64, Coin 65, Coin 66, Coin 67, Coin 68, Coin 69, Coin 70, Coin 71, Coin 72, Coin 73, Coin 74, Coin 75, Coin 76, Coin 77, Coin 78, Coin 79, Coin 80, Coin 81, Coin 82, Coin 83, Coin 84, Coin 85, Coin 86, Coin 87, Coin 88, Coin 89, Coin 90, Coin 91, Coin 92, Coin 93, Coin 94, Coin 95, Coin 96, Coin 97, Coin 98, Coin 99, Coin 100, Coin 101, Coin 102"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 103; Right: Coin 104"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 103, Coin 104, Coin 105, Coin 106, Coin 107, Coin 108, Coin 109, Coin 110, Coin 111, Coin 112; Right: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 113, Coin 114, Coin 115, Coin 116, Coin 117, Coin 118, Coin 119, Coin 120, Coin 121, Coin 122, Coin 123, Coin 124, Coin 125, Coin 126, Coin 127, Coin 128, Coin 129, Coin 130, Coin 131, Coin 132; Right: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17, Coin 18, Coin 19, Coin 20"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 105, Coin 106, Coin 107, Coin 108, Coin 109, Coin 110, Coin 111, Coin 112, Coin 133, Coin 134, Coin 135, Coin 136, Coin 137, Coin 138; Right: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 133; Right: Coin 134"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 105, Coin 106, Coin 107, Coin 108, Coin 109, Coin 110; Right: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 135; Right: Coin 136"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 137; Right: Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 103; Light Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 103; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 103; Right: Coin 134"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 137; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 103; Right: Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 103; Light Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 137; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 103; Light Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 103; Light Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 103; Right: Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 103; Light Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 103; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 103; Light Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 103; Light Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 103; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 103; Light Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 103; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 103; Light Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 103; Right: Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 103; Light Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 103; Light Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'.********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 103; Light Coin 137"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17, Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25, Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34, Coin 35, Coin 36, Coin 37, Coin 38, Coin 39, Coin 40, Coin 41, Coin 42, Coin 43, Coin 44, Coin 45, Coin 46, Coin 47, Coin 48, Coin 49, Coin 50; Right: Coin 51, Coin 52, Coin 53, Coin 54, Coin 55, Coin 56, Coin 57, Coin 58, Coin 59, Coin 60, Coin 61, Coin 62, Coin 63, Coin 64, Coin 65, Coin 66, Coin 67, Coin 68, Coin 69, Coin 70, Coin 71, Coin 72, Coin 73, Coin 74, Coin 75, Coin 76, Coin 77, Coin 78, Coin 79, Coin 80, Coin 81, Coin 82, Coin 83, Coin 84, Coin 85, Coin 86, Coin 87, Coin 88, Coin 89, Coin 90, Coin 91, Coin 92, Coin 93, Coin 94, Coin 95, Coin 96, Coin 97, Coin 98, Coin 99, Coin 100"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17, Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25, Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34, Coin 35, Coin 36, Coin 37, Coin 38, Coin 39, Coin 40, Coin 41, Coin 42, Coin 43, Coin 44, Coin 45, Coin 46, Coin 47, Coin 48, Coin 49, Coin 50; Right: Coin 101, Coin 102, Coin 103, Coin 104, Coin 105, Coin 106, Coin 107, Coin 108, Coin 109, Coin 110, Coin 111, Coin 112, Coin 113, Coin 114, Coin 115, Coin 116, Coin 117, Coin 118, Coin 119, Coin 120, Coin 121, Coin 122, Coin 123, Coin 124, Coin 125, Coin 126, Coin 127, Coin 128, Coin 129, Coin 130, Coin 131, Coin 132, Coin 133, Coin 134, Coin 135, Coin 136, Coin 137, Coin 138, Coin 139, Coin 140, Coin 141, Coin 142, Coin 143, Coin 144, Coin 145, Coin 146, Coin 147, Coin 148, Coin 149, Coin 150"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17; Right: Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25, Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25; Right: Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 51, Coin 52, Coin 53, Coin 54, Coin 55, Coin 56, Coin 57, Coin 58, Coin 59, Coin 60, Coin 61, Coin 62, Coin 63, Coin 64, Coin 65, Coin 66, Coin 67, Coin 68, Coin 69, Coin 70, Coin 71, Coin 72, Coin 73, Coin 74, Coin 75, Coin 76, Coin 77, Coin 78, Coin 79, Coin 80, Coin 81, Coin 82, Coin 83, Coin 84; Right: Coin 85, Coin 86, Coin 87, Coin 88, Coin 89, Coin 90, Coin 91, Coin 92, Coin 93, Coin 94, Coin 95, Coin 96, Coin 97, Coin 98, Coin 99, Coin 100, Coin 101, Coin 102, Coin 103, Coin 104, Coin 105, Coin 106, Coin 107, Coin 108, Coin 109, Coin 110, Coin 111, Coin 112, Coin 113, Coin 114, Coin 115, Coin 116, Coin 117, Coin 118"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 51, Coin 52, Coin 53, Coin 54, Coin 55, Coin 56, Coin 57, Coin 58, Coin 59, Coin 60, Coin 61, Coin 62; Right: Coin 63, Coin 64, Coin 65, Coin 66, Coin 67, Coin 68, Coin 69, Coin 70, Coin 71, Coin 72, Coin 73, Coin 74"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 75, Coin 76, Coin 77, Coin 78, Coin 79; Right: Coin 80, Coin 81, Coin 82, Coin 83, Coin 84"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 75, Coin 76; Right: Coin 77, Coin 78"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 34; Right: Coin 35"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 34; Right: Coin 36"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 35; Right: Coin 36"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 34; Right: Coin 40"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 79; Right: Coin 80"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 34; Light Coin 79"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 34; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 79; Right: Coin 81"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 34; Light Coin 79"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 79; Right: Coin 81"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 34; Light Coin 79"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 34; Light Coin 79"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 34; Light Coin 79"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 34; Right: Coin 36"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 18; Right: Coin 19"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 34; Light Coin 79"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 34; Light Coin 79"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 34; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 34; Light Coin 79"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 34; Right: Coin 40"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 34; Light Coin 79"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 34; Right: Coin 79"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> Left********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 34; Light Coin 79"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1; Right: Coin 2"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17, Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25, Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34, Coin 35, Coin 36, Coin 37, Coin 38, Coin 39, Coin 40, Coin 41, Coin 42, Coin 43, Coin 44, Coin 45, Coin 46, Coin 47, Coin 48, Coin 49, Coin 50, Coin 51; Right: Coin 52, Coin 53, Coin 54, Coin 55, Coin 56, Coin 57, Coin 58, Coin 59, Coin 60, Coin 61, Coin 62, Coin 63, Coin 64, Coin 65, Coin 66, Coin 67, Coin 68, Coin 69, Coin 70, Coin 71, Coin 72, Coin 73, Coin 74, Coin 75, Coin 76, Coin 77, Coin 78, Coin 79, Coin 80, Coin 81, Coin 82, Coin 83, Coin 84, Coin 85, Coin 86, Coin 87, Coin 88, Coin 89, Coin 90, Coin 91, Coin 92, Coin 93, Coin 94, Coin 95, Coin 96, Coin 97, Coin 98, Coin 99, Coin 100, Coin 101, Coin 102"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17, Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25, Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34, Coin 35, Coin 36, Coin 37, Coin 38, Coin 39, Coin 40, Coin 41, Coin 42, Coin 43, Coin 44, Coin 45, Coin 46, Coin 47, Coin 48, Coin 49, Coin 50, Coin 51; Right: Coin 103, Coin 104, Coin 105, Coin 106, Coin 107, Coin 108, Coin 109, Coin 110, Coin 111, Coin 112, Coin 113, Coin 114, Coin 115, Coin 116, Coin 117, Coin 118, Coin 119, Coin 120, Coin 121, Coin 122, Coin 123, Coin 124, Coin 125, Coin 126, Coin 127, Coin 128, Coin 129, Coin 130, Coin 131, Coin 132, Coin 133, Coin 134, Coin 135, Coin 136, Coin 137, Coin 138, Coin 139, Coin 140, Coin 141, Coin 142, Coin 143, Coin 144, Coin 145, Coin 146, Coin 147, Coin 148, Coin 149, Coin 150, Coin 151, Coin 152"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 52, Coin 53, Coin 54, Coin 55, Coin 56, Coin 57, Coin 58, Coin 59, Coin 60, Coin 61, Coin 62, Coin 63, Coin 64, Coin 65, Coin 66, Coin 67, Coin 68, Coin 69, Coin 70, Coin 71, Coin 72, Coin 73, Coin 74, Coin 75, Coin 76, Coin 77, Coin 78, Coin 79, Coin 80, Coin 81, Coin 82, Coin 83, Coin 84, Coin 85, Coin 86, Coin 87, Coin 88, Coin 89, Coin 90, Coin 91, Coin 92, Coin 93, Coin 94, Coin 95, Coin 96, Coin 97, Coin 98, Coin 99, Coin 100, Coin 101, Coin 102; Right: Coin 103, Coin 104, Coin 105, Coin 106, Coin 107, Coin 108, Coin 109, Coin 110, Coin 111, Coin 112, Coin 113, Coin 114, Coin 115, Coin 116, Coin 117, Coin 118, Coin 119, Coin 120, Coin 121, Coin 122, Coin 123, Coin 124, Coin 125, Coin 126, Coin 127, Coin 128, Coin 129, Coin 130, Coin 131, Coin 132, Coin 133, Coin 134, Coin 135, Coin 136, Coin 137, Coin 138, Coin 139, Coin 140, Coin 141, Coin 142, Coin 143, Coin 144, Coin 145, Coin 146, Coin 147, Coin 148, Coin 149, Coin 150, Coin 151, Coin 152, Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17, Coin 18; Right: Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25, Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 35, Coin 36, Coin 37, Coin 38, Coin 39, Coin 40, Coin 41, Coin 42, Coin 43; Right: Coin 52, Coin 53, Coin 54, Coin 55, Coin 56, Coin 57, Coin 58, Coin 59, Coin 60"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 44, Coin 45, Coin 46, Coin 47; Right: Coin 52, Coin 53, Coin 54, Coin 55"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 48; Right: Coin 49"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 61, Coin 62, Coin 63, Coin 64, Coin 65, Coin 66, Coin 67, Coin 68, Coin 69, Coin 70, Coin 71, Coin 72, Coin 73, Coin 74, Coin 75, Coin 76, Coin 77, Coin 78, Coin 79, Coin 80, Coin 81, Coin 82, Coin 83, Coin 84, Coin 85, Coin 86, Coin 87, Coin 88, Coin 89, Coin 90; Right: Coin 91, Coin 92, Coin 93, Coin 94, Coin 95, Coin 96, Coin 97, Coin 98, Coin 99, Coin 100, Coin 101, Coin 102, Coin 103, Coin 104, Coin 105, Coin 106, Coin 107, Coin 108, Coin 109, Coin 110, Coin 111, Coin 112, Coin 113, Coin 114, Coin 115, Coin 116, Coin 117, Coin 118, Coin 119, Coin 120"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 103, Coin 104, Coin 105, Coin 106, Coin 107, Coin 108, Coin 109, Coin 110, Coin 111, Coin 112, Coin 113, Coin 114, Coin 115, Coin 116, Coin 117, Coin 118, Coin 119, Coin 120, Coin 121, Coin 122, Coin 123, Coin 124, Coin 125, Coin 126, Coin 127; Right: Coin 128, Coin 129, Coin 130, Coin 131, Coin 132, Coin 133, Coin 134, Coin 135, Coin 136, Coin 137, Coin 138, Coin 139, Coin 140, Coin 141, Coin 142, Coin 143, Coin 144, Coin 145, Coin 146, Coin 147, Coin 148, Coin 149, Coin 150, Coin 151, Coin 152"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 121, Coin 122, Coin 123; Right: Coin 124, Coin 125, Coin 126"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 48; Right: Coin 2"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 121; Right: Coin 122"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 122; Right: Coin 123"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 122; Right: Coin 2"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 48; Light Coin 122"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 48; Light Coin 122"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 48; Light Coin 122"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 48; Light Coin 122"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "48 122"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 48; Right: Coin 2"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 48; Right: Coin 50"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 122; Right: Coin 121"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 48; Right: Coin 2"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 48; Light Coin 122"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 48; Light Coin 122"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 48; Light Coin 122"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 48; Light Coin 122"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 48; Right: Coin 121"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 48; Light Coin 122"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'.********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 48; Light Coin 122"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17, Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25, Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34, Coin 35, Coin 36, Coin 37, Coin 38, Coin 39, Coin 40, Coin 41, Coin 42, Coin 43, Coin 44, Coin 45, Coin 46, Coin 47, Coin 48, Coin 49, Coin 50, Coin 51, Coin 52, Coin 53, Coin 54, Coin 55, Coin 56, Coin 57, Coin 58, Coin 59, Coin 60, Coin 61, Coin 62, Coin 63, Coin 64, Coin 65, Coin 66, Coin 67, Coin 68, Coin 69, Coin 70, Coin 71, Coin 72, Coin 73, Coin 74, Coin 75, Coin 76; Right: Coin 77, Coin 78, Coin 79, Coin 80, Coin 81, Coin 82, Coin 83, Coin 84, Coin 85, Coin 86, Coin 87, Coin 88, Coin 89, Coin 90, Coin 91, Coin 92, Coin 93, Coin 94, Coin 95, Coin 96, Coin 97, Coin 98, Coin 99, Coin 100, Coin 101, Coin 102, Coin 103, Coin 104, Coin 105, Coin 106, Coin 107, Coin 108, Coin 109, Coin 110, Coin 111, Coin 112, Coin 113, Coin 114, Coin 115, Coin 116, Coin 117, Coin 118, Coin 119, Coin 120, Coin 121, Coin 122, Coin 123, Coin 124, Coin 125, Coin 126, Coin 127, Coin 128, Coin 129, Coin 130, Coin 131, Coin 132, Coin 133, Coin 134, Coin 135, Coin 136, Coin 137, Coin 138, Coin 139, Coin 140, Coin 141, Coin 142, Coin 143, Coin 144, Coin 145, Coin 146, Coin 147, Coin 148, Coin 149, Coin 150, Coin 151, Coin 152"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17, Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25; Right: Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34, Coin 35, Coin 36, Coin 37, Coin 38, Coin 39, Coin 40, Coin 41, Coin 42, Coin 43, Coin 44, Coin 45, Coin 46, Coin 47, Coin 48, Coin 49, Coin 50"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8; Right: Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4; Right: Coin 5, Coin 6, Coin 7, Coin 8"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1; Right: Coin 2"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 3; Right: Coin 4"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 77, Coin 78, Coin 79, Coin 80, Coin 81, Coin 82, Coin 83, Coin 84, Coin 85, Coin 86, Coin 87, Coin 88, Coin 89, Coin 90, Coin 91, Coin 92, Coin 93, Coin 94, Coin 95, Coin 96, Coin 97, Coin 98, Coin 99, Coin 100, Coin 101, Coin 102, Coin 103, Coin 104, Coin 105, Coin 106, Coin 107, Coin 108, Coin 109, Coin 110, Coin 111, Coin 112, Coin 113, Coin 114; Right: Coin 115, Coin 116, Coin 117, Coin 118, Coin 119, Coin 120, Coin 121, Coin 122, Coin 123, Coin 124, Coin 125, Coin 126, Coin 127, Coin 128, Coin 129, Coin 130, Coin 131, Coin 132, Coin 133, Coin 134, Coin 135, Coin 136, Coin 137, Coin 138, Coin 139, Coin 140, Coin 141, Coin 142, Coin 143, Coin 144, Coin 145, Coin 146, Coin 147, Coin 148, Coin 149, Coin 150, Coin 151, Coin 152"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 3; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1; Right: Coin 3"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 115, Coin 116, Coin 117, Coin 118, Coin 119, Coin 120, Coin 121, Coin 122, Coin 123, Coin 124, Coin 125, Coin 126, Coin 127, Coin 128, Coin 129, Coin 130, Coin 131, Coin 132, Coin 133; Right: Coin 134, Coin 135, Coin 136, Coin 137, Coin 138, Coin 139, Coin 140, Coin 141, Coin 142, Coin 143, Coin 144, Coin 145, Coin 146, Coin 147, Coin 148, Coin 149, Coin 150, Coin 151, Coin 152"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 134, Coin 135, Coin 136, Coin 137, Coin 138, Coin 139, Coin 140, Coin 141, Coin 142; Right: Coin 143, Coin 144, Coin 145, Coin 146, Coin 147, Coin 148, Coin 149, Coin 150, Coin 151"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 134, Coin 135, Coin 136; Right: Coin 137, Coin 138, Coin 139"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 137; Right: Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 138; Right: Coin 139"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 3; Light Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 3; Right: Coin 10"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 3; Light Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 3; Right: Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 3; Light Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 3; Light Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 3; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 3; Light Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 3; Light Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 3; Light Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 3; Light Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 138; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 3; Light Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 3; Right: Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 3; Light Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 3; Light Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'.********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 3; Light Coin 138"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "********A New Puzzle Starts, You can Make 30 Queries Before Answering Each Question. And Then You Have 2 Chances for Answering. Output the Value Only.********"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 2, Coin 5, Coin 8, Coin 11, Coin 14, Coin 17, Coin 20, Coin 23, Coin 26, Coin 29, Coin 32, Coin 35, Coin 38, Coin 41, Coin 44, Coin 47, Coin 50, Coin 53, Coin 56, Coin 59, Coin 62, Coin 65, Coin 68, Coin 71, Coin 74, Coin 77, Coin 80, Coin 83, Coin 86, Coin 89, Coin 92, Coin 95, Coin 98, Coin 101, Coin 104, Coin 107, Coin 110, Coin 113, Coin 116, Coin 119, Coin 122, Coin 125, Coin 128, Coin 131, Coin 134, Coin 137, Coin 140, Coin 143, Coin 146, Coin 149; Right: Coin 3, Coin 6, Coin 9, Coin 12, Coin 15, Coin 18, Coin 21, Coin 24, Coin 27, Coin 30, Coin 33, Coin 36, Coin 39, Coin 42, Coin 45, Coin 48, Coin 51, Coin 54, Coin 57, Coin 60, Coin 63, Coin 66, Coin 69, Coin 72, Coin 75, Coin 78, Coin 81, Coin 84, Coin 87, Coin 90, Coin 93, Coin 96, Coin 99, Coin 102, Coin 105, Coin 108, Coin 111, Coin 114, Coin 117, Coin 120, Coin 123, Coin 126, Coin 129, Coin 132, Coin 135, Coin 138, Coin 141, Coin 144, Coin 147, Coin 150"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 29 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 3, Coin 6, Coin 9, Coin 12, Coin 15, Coin 18, Coin 21, Coin 24, Coin 27, Coin 30, Coin 33, Coin 36, Coin 39, Coin 42, Coin 45, Coin 48, Coin 51, Coin 54, Coin 57, Coin 60, Coin 63, Coin 66, Coin 69, Coin 72, Coin 75; Right: Coin 78, Coin 81, Coin 84, Coin 87, Coin 90, Coin 93, Coin 96, Coin 99, Coin 102, Coin 105, Coin 108, Coin 111, Coin 114, Coin 117, Coin 120, Coin 123, Coin 126, Coin 129, Coin 132, Coin 135, Coin 138, Coin 141, Coin 144, Coin 147, Coin 150"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 28 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 2, Coin 5, Coin 8, Coin 11, Coin 14, Coin 17, Coin 20, Coin 23, Coin 26, Coin 29, Coin 32, Coin 35, Coin 38, Coin 41, Coin 44, Coin 47, Coin 50; Right: Coin 53, Coin 56, Coin 59, Coin 62, Coin 65, Coin 68, Coin 71, Coin 74, Coin 77, Coin 80, Coin 83, Coin 86, Coin 89, Coin 92, Coin 95, Coin 98, Coin 101"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 27 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 4, Coin 7, Coin 10, Coin 13, Coin 16, Coin 19, Coin 22, Coin 25, Coin 28, Coin 31, Coin 34, Coin 37, Coin 40, Coin 43, Coin 46, Coin 49; Right: Coin 52, Coin 55, Coin 58, Coin 61, Coin 64, Coin 67, Coin 70, Coin 73, Coin 76, Coin 79, Coin 82, Coin 85, Coin 88, Coin 91, Coin 94, Coin 97, Coin 100"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 26 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 52, Coin 55, Coin 58, Coin 61, Coin 64, Coin 67; Right: Coin 3, Coin 6, Coin 9, Coin 12, Coin 15, Coin 18"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 25 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 70, Coin 73, Coin 76, Coin 79; Right: Coin 82, Coin 85, Coin 88, Coin 91"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 24 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 82; Right: Coin 3"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 23 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 82; Right: Coin 85"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 22 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 1, Coin 2, Coin 3, Coin 4, Coin 5, Coin 6, Coin 7, Coin 8, Coin 9, Coin 10, Coin 11, Coin 12, Coin 13, Coin 14, Coin 15, Coin 16, Coin 17, Coin 18, Coin 19, Coin 20, Coin 21, Coin 22, Coin 23, Coin 24, Coin 25, Coin 26, Coin 27, Coin 28, Coin 29, Coin 30, Coin 31, Coin 32, Coin 33, Coin 34, Coin 35, Coin 36, Coin 37, Coin 38, Coin 39, Coin 40, Coin 41, Coin 42, Coin 43, Coin 44, Coin 45, Coin 46, Coin 47, Coin 48, Coin 49, Coin 50; Right: Coin 51, Coin 52, Coin 53, Coin 54, Coin 55, Coin 56, Coin 57, Coin 58, Coin 59, Coin 60, Coin 61, Coin 62, Coin 63, Coin 64, Coin 65, Coin 66, Coin 67, Coin 68, Coin 69, Coin 70, Coin 71, Coin 72, Coin 73, Coin 74, Coin 75, Coin 76, Coin 77, Coin 78, Coin 79, Coin 80, Coin 81, Coin 83, Coin 84, Coin 85, Coin 86, Coin 87, Coin 88, Coin 89, Coin 90, Coin 91, Coin 92, Coin 93, Coin 94, Coin 95, Coin 96, Coin 97, Coin 98, Coin 99, Coin 100, Coin 101"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 21 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 104, Coin 107, Coin 110, Coin 113, Coin 116; Right: Coin 119, Coin 122, Coin 125, Coin 128, Coin 131"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 20 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 102, Coin 103, Coin 105, Coin 106, Coin 108, Coin 109, Coin 111, Coin 112, Coin 114, Coin 115, Coin 117, Coin 118, Coin 120, Coin 121, Coin 123, Coin 124, Coin 126, Coin 127, Coin 129, Coin 130; Right: Coin 3, Coin 6, Coin 9, Coin 12, Coin 15, Coin 18, Coin 21, Coin 24, Coin 27, Coin 30, Coin 33, Coin 36, Coin 39, Coin 42, Coin 45, Coin 48, Coin 51, Coin 54, Coin 57, Coin 60"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 11, 19 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 134, Coin 137, Coin 140; Right: Coin 143, Coin 146, Coin 149"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 12, 18 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 143; Right: Coin 146"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 13, 17 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 104, Coin 107, Coin 110, Coin 113, Coin 116, Coin 119, Coin 122, Coin 125; Right: Coin 3, Coin 6, Coin 9, Coin 12, Coin 15, Coin 18, Coin 21, Coin 24"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 14, 16 Turns Remaining> Equal"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 82; Light Coin 149"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 15, 15 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 149; Right: Coin 3"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 16, 14 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 82; Right: Coin 90"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 17, 13 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 82; Light Coin 149"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 18, 12 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 82; Light Coin 149"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 19, 11 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 82; Light Coin 149"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 20, 10 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 82; Light Coin 149"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 21, 9 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 82; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 22, 8 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 149; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 23, 7 Turns Remaining> Right"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 82; Light Coin 149"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 24, 6 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 82; Light Coin 149"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 25, 5 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 82; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 26, 4 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 82; Light Coin 149"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 27, 3 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 82; Right: Coin 1"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 28, 2 Turns Remaining> Left"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 82; Light Coin 149"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 29, 1 Turns Remaining> Query format error. Please use 'Left: Coin X, Coin Y; Right: Coin Z, Coin W'."
+    },
+    {
+        "role": "assistant",
+        "content": "Left: Coin 82; Right: Coin 149"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 30, 0 Turns Remaining> Left********Evaluation Starts, You Have 2 Chances for Answering, Please Output the Answer DIRECTLY.********\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Heavy Coin 82; Light Coin 149"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    }
+]

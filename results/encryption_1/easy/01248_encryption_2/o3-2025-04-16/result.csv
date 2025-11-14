@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+easy,01248_encryption_2,gpt,o3-2025-04-16,run_1,30.0,1,8,8,1.0,6196.51282051282,"[128, 384, 128, 256, 384, 704, 1984, 1024, 1024, 2944, 1664, 1728, 3392, 5824, 3904, 4416, 3712, 5312, 5184, 8448, 16320, 5632, 11328, 6080, 6336, 8768, 7168, 6848, 7616, 5632, 8768, 11776, 13376, 14848, 3392, 7488, 18368, 9280, 20096]"

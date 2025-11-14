@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+hard,playfair_cipher,gemini,gemini-2.5-pro_thinking,run_1,9.5,0,0,8,0.0,13802.736842105263,"[160, 673, 5970, 3655, 1038, 1366, 2798, 11866, 15536, 17840, 15669, 22191, 26478, 21680, 20165, 24370, 26768, 21432, 22597]"

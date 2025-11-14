@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+hard,incline_plane_block,gemini,gemini-2.5-pro_thinking,run_1,9.5,0,4,6,0.6666666666666666,7292.529411764706,"[722, 512, 4546, 3304, 4614, 4549, 6373, 6366, 10146, 6134, 10549, 7644, 9955, 9295, 7166, 14780, 17318]"

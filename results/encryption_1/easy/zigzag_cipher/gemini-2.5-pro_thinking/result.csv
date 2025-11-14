@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+easy,zigzag_cipher,gemini,gemini-2.5-pro_thinking,run_1,9.5,0,2,8,0.25,11574.7,"[340, 1011, 5276, 10503, 10143, 13419, 14663, 14041, 14327, 18704, 18837, 22819, 20746, 10194, 16851, 20332, 0, 19288, 0, 0]"

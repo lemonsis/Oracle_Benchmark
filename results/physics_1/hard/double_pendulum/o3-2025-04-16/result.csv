@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+hard,double_pendulum,gpt,o3-2025-04-16,run_1,30.0,1,0,6,0.0,6324.363636363636,"[128, 192, 1088, 1344, 2624, 3840, 1088, 3136, 3776, 4416, 4672, 6464, 8000, 4672, 3008, 4864, 3264, 6464, 2304, 12608, 10880, 11328, 5504, 8960, 8448, 8896, 12288, 9216, 8640, 8256, 12864, 12608, 12864]"

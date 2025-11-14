@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+easy,zigzag_cipher,gpt,o3-2025-04-16,run_1,30.0,1,8,8,1.0,7212.8,"[0, 128, 128, 512, 512, 2240, 1344, 2496, 4160, 2688, 10176, 8064, 4032, 15552, 5696, 6016, 5376, 4864, 8448, 11264, 12288, 16896, 5760, 13760, 5056, 16704, 7552, 17152, 15872, 10560, 1472, 6080, 6720, 8576, 9088, 7424, 5824, 8128, 9344, 10560]"

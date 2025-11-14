@@ -1,0 +1,222 @@
+[
+    {
+        "role": "developer",
+        "content": "You are an excellent reasoning model. You are very good at understanding the interaction rules, reasoning over interaction history, thinking step by step, and finally figureing out the working principle of a system that contains hidden information. \nYou also strictly follow output format rules."
+    },
+    {
+        "role": "user",
+        "content": "1. Task overview: \n- The user transforms one string into another based on a fixed rule, but you don't know what the fixed rule is. You need to figure out this rule by interacting with the user in multiple turns. \n\n2. Goal:\n- By interacting with the user within given interaction turns, you need to understand the fixed rule of transforming one string into another.\n\n3. User property:\n- The user will remind you the remaining number of turns in each turn.\n- The user will output transformed string in each turn.\n\n4. Interaction rules:\n- Rule 1: You must only assign one string in each turn. You can assign any string freely, but make sure the string **only contains uppercase or lowercase English letters (A-Z, a-z) and blank space**. Then you will receive corresponding transformed string from the user.\n\n5. Output format:\n- You must strictly obey the output format rules: **Only output the string**. DO NOT output any unrelated text or symbols like \"Let's input\", \"I'll try\", \"\\n\".\n- If you understand the transforming rule before reaching given interaction turns, keep interacting with the user to make sure you don't miss any details. DO NOT output text like \"I understand the pattern\".\n\n6. Evaluation:\n- When the given number of interactions is reached, you will be given several test strings and you need to output corresponding transformed string. **You MUST ONLY output the value, DO NOT contain any other text.**"
+    },
+    {
+        "role": "assistant",
+        "content": "I understand the rules. I will not output any unrelated text! Let us start the interaction."
+    },
+    {
+        "role": "user",
+        "content": "You have 10 interaction turns to understand the black-box. Now the interaction starts. Only output the value and DO NOT contain any unrelated text."
+    },
+    {
+        "role": "assistant",
+        "content": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 9 Turns Remaining> 0,35,11,46,58,93,69,104,51,86,62,97,109,144,120,155,34,69,45,80,92,127,103,138,85,120"
+    },
+    {
+        "role": "assistant",
+        "content": "AAAAA"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 8 Turns Remaining> 0,0,0,0,0"
+    },
+    {
+        "role": "assistant",
+        "content": "a"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 7 Turns Remaining> 0"
+    },
+    {
+        "role": "assistant",
+        "content": " "
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 6 Turns Remaining> "
+    },
+    {
+        "role": "assistant",
+        "content": "A A"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 5 Turns Remaining> 0,0"
+    },
+    {
+        "role": "assistant",
+        "content": "Zz"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 4 Turns Remaining> 120,120"
+    },
+    {
+        "role": "assistant",
+        "content": "azAZ"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 3 Turns Remaining> 0,120,0,120"
+    },
+    {
+        "role": "assistant",
+        "content": "MNOP"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 2 Turns Remaining> 109,144,120,155"
+    },
+    {
+        "role": "assistant",
+        "content": "GRgr"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 1 Turns Remaining> 69,69,69,69"
+    },
+    {
+        "role": "assistant",
+        "content": "Aa Zz Mm Nn"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 0 Turns Remaining> 0,0,120,120,109,109,144,144\n********Evaluation Starts, You Have 1 Chances for Answering Each Question********\n Now answer the question: What's the output of the blackbox when the input plaintext is 'Gentle Rainfalls'?"
+    },
+    {
+        "role": "assistant",
+        "content": "69,58,144,80,97,58,0,69,0,51,144,93,0,97,97,45"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'vnDkiUeuwcrapytx'?"
+    },
+    {
+        "role": "assistant",
+        "content": "127,144,46,62,51,92,58,92,103,11,69,0,155,85,80,138"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'q'?"
+    },
+    {
+        "role": "assistant",
+        "content": "34"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'BLUE sky midst palm trees'?"
+    },
+    {
+        "role": "assistant",
+        "content": "35,97,92,58,170,45,62,85,170,109,51,46,45,80,170,155,0,97,109,170,80,69,58,58,45"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'rocking TableLamp'?"
+    },
+    {
+        "role": "assistant",
+        "content": "69,120,11,62,51,144,69,170,80,0,35,97,58,97,0,109,155"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'sLMGKJxavilqWYrsjMgLFZ'?"
+    },
+    {
+        "role": "assistant",
+        "content": "45,97,109,69,62,86,138,0,127,51,97,34,103,85,69,45,86,109,69,97,93,120"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'Ocean breeze'?"
+    },
+    {
+        "role": "assistant",
+        "content": "120,11,58,0,144,35,69,58,58,120,58"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'R z'?"
+    },
+    {
+        "role": "assistant",
+        "content": "69,120"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is correct. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    }
+]

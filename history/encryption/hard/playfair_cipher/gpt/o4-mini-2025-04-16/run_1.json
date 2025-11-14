@@ -1,0 +1,326 @@
+[
+    {
+        "role": "developer",
+        "content": "You are an excellent reasoning model. You are very good at understanding the interaction rules, reasoning over interaction history, thinking step by step, and finally figureing out the working principle of a system that contains hidden information. \nYou also strictly follow output format rules."
+    },
+    {
+        "role": "user",
+        "content": "1. Task overview: \n- The user transforms one string into another based on a fixed rule, but you don't know what the fixed rule is. You need to figure out this rule by interacting with the user in multiple turns. \n\n2. Goal:\n- By interacting with the user within given interaction turns, you need to understand the fixed rule of transforming one string into another.\n\n3. User property:\n- The user will remind you the remaining number of turns in each turn.\n- The user will output transformed string in each turn.\n\n4. Interaction rules:\n- Rule 1: You must only assign one string in each turn. You can assign any string freely, but make sure the string **only contains uppercase or lowercase English letters (A-Z, a-z) and blank space**. Then you will receive corresponding transformed string from the user.\n\n5. Output format:\n- You must strictly obey the output format rules: **Only output the string**. DO NOT output any unrelated text or symbols like \"Let's input\", \"I'll try\", \"\\n\".\n- If you understand the transforming rule before reaching given interaction turns, keep interacting with the user to make sure you don't miss any details. DO NOT output text like \"I understand the pattern\".\n\n6. Evaluation:\n- When the given number of interactions is reached, you will be given several test strings and you need to output corresponding transformed string. **You MUST ONLY output the value, DO NOT contain any other text.**"
+    },
+    {
+        "role": "assistant",
+        "content": "I understand the rules. I will not output any unrelated text! Let us start the interaction."
+    },
+    {
+        "role": "user",
+        "content": "You have 10 interaction turns to understand the black-box. Now the interaction starts. Only output the value and DO NOT contain any unrelated text."
+    },
+    {
+        "role": "assistant",
+        "content": "A"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 1, 9 Turns Remaining> HU"
+    },
+    {
+        "role": "assistant",
+        "content": "B"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 2, 8 Turns Remaining> AZ"
+    },
+    {
+        "role": "assistant",
+        "content": "C"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 3, 7 Turns Remaining> UW"
+    },
+    {
+        "role": "assistant",
+        "content": "D"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 6 Turns Remaining> HQ"
+    },
+    {
+        "role": "assistant",
+        "content": "E"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 5 Turns Remaining> UV"
+    },
+    {
+        "role": "assistant",
+        "content": "Z"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 6, 4 Turns Remaining> QZ"
+    },
+    {
+        "role": "assistant",
+        "content": "M"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 7, 3 Turns Remaining> OV"
+    },
+    {
+        "role": "assistant",
+        "content": "F"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 2 Turns Remaining> HV"
+    },
+    {
+        "role": "assistant",
+        "content": "G"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 1 Turns Remaining> HW"
+    },
+    {
+        "role": "assistant",
+        "content": "J"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 10, 0 Turns Remaining> AQ\n********Evaluation Starts, You Have 1 Chances for Answering Each Question********\n Now answer the question: What's the output of the blackbox when the input plaintext is 'Spotted zebra lives nearby'?"
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": "QWUZUUQQQQUVHQ QZUVAZRUHU AWAQOUUVQW AVUVHURUAZOQ"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'Unusual DREAMS'?"
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": "UZAVUZQWUZHUAW HQRUUVHUOVQW"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'PUZZLE'?"
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": "HQUZQZQZAWUV"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'azuriteCrystal'?"
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'Change quickly'?"
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'stripedXxXwaters'?"
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": "HUHUHUHUHUHUHUHUHUHUHUHUHUHUHUHU"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'Seek quiet time always'?"
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "You must only return the result of the blackbox function, without any other unrelated text or symbols. Please try again."
+    },
+    {
+        "role": "assistant",
+        "content": ""
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    },
+    {
+        "role": "user",
+        "content": "Answer the question: What's the output of the blackbox when the input plaintext is 'fancy scarf'?"
+    },
+    {
+        "role": "assistant",
+        "content": "N"
+    },
+    {
+        "role": "user",
+        "content": "Your answer is wrong. Let's move to next question."
+    },
+    {
+        "role": "assistant",
+        "content": "Ok."
+    }
+]
