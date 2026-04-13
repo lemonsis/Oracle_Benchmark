@@ -13,7 +13,7 @@
     },
     {
         "role": "user",
-        "content": "You have 20 interaction turns to understand the black-box. Now the interaction starts. Only output the value and DO NOT contain any unrelated text."
+        "content": "You have 10 interaction turns to understand the black-box. Now the interaction starts. Only output the value and DO NOT contain any unrelated text."
     },
     {
         "role": "assistant",
@@ -21,7 +21,7 @@
     },
     {
         "role": "user",
-        "content": "<Current Turn: 1, 19 Turns Remaining> P"
+        "content": "<Current Turn: 1, 9 Turns Remaining> P"
     },
     {
         "role": "assistant",
@@ -29,15 +29,31 @@
     },
     {
         "role": "user",
-        "content": "<Current Turn: 2, 18 Turns Remaining> H"
+        "content": "<Current Turn: 2, 8 Turns Remaining> H"
     },
     {
         "role": "assistant",
-        "content": "I"
+        "content": "C"
     },
     {
         "role": "user",
-        "content": "<Current Turn: 3, 17 Turns Remaining> A"
+        "content": "<Current Turn: 3, 7 Turns Remaining> Q"
+    },
+    {
+        "role": "assistant",
+        "content": "D"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 4, 6 Turns Remaining> G"
+    },
+    {
+        "role": "assistant",
+        "content": "A"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 5, 5 Turns Remaining> P"
     },
     {
         "role": "assistant",
@@ -45,15 +61,31 @@
     },
     {
         "role": "user",
-        "content": "<Current Turn: 4, 16 Turns Remaining> H"
+        "content": "<Current Turn: 6, 4 Turns Remaining> H"
     },
     {
         "role": "assistant",
-        "content": "I"
+        "content": "C"
     },
     {
         "role": "user",
-        "content": "<Current Turn: 5, 15 Turns Remaining> A"
+        "content": "<Current Turn: 7, 3 Turns Remaining> Q"
+    },
+    {
+        "role": "assistant",
+        "content": "D"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 8, 2 Turns Remaining> G"
+    },
+    {
+        "role": "assistant",
+        "content": "A"
+    },
+    {
+        "role": "user",
+        "content": "<Current Turn: 9, 1 Turns Remaining> P"
     },
     {
         "role": "assistant",
@@ -61,131 +93,11 @@
     },
     {
         "role": "user",
-        "content": "<Current Turn: 6, 14 Turns Remaining> H"
+        "content": "<Current Turn: 10, 0 Turns Remaining> H\n********Evaluation Starts, You Have 1 Chances for Answering Each Question********\n Now answer the question: What's the output of the blackbox when the input plaintext is 'Sphinx Of Black Quartz'?"
     },
     {
         "role": "assistant",
-        "content": "I"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 7, 13 Turns Remaining> A"
-    },
-    {
-        "role": "assistant",
-        "content": "B"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 8, 12 Turns Remaining> H"
-    },
-    {
-        "role": "assistant",
-        "content": "I"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 9, 11 Turns Remaining> A"
-    },
-    {
-        "role": "assistant",
-        "content": "B"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 10, 10 Turns Remaining> H"
-    },
-    {
-        "role": "assistant",
-        "content": "I"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 11, 9 Turns Remaining> A"
-    },
-    {
-        "role": "assistant",
-        "content": "B"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 12, 8 Turns Remaining> H"
-    },
-    {
-        "role": "assistant",
-        "content": "I"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 13, 7 Turns Remaining> A"
-    },
-    {
-        "role": "assistant",
-        "content": "B"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 14, 6 Turns Remaining> H"
-    },
-    {
-        "role": "assistant",
-        "content": "I"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 15, 5 Turns Remaining> A"
-    },
-    {
-        "role": "assistant",
-        "content": "B"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 16, 4 Turns Remaining> H"
-    },
-    {
-        "role": "assistant",
-        "content": "I"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 17, 3 Turns Remaining> A"
-    },
-    {
-        "role": "assistant",
-        "content": "B"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 18, 2 Turns Remaining> H"
-    },
-    {
-        "role": "assistant",
-        "content": "I"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 19, 1 Turns Remaining> A"
-    },
-    {
-        "role": "assistant",
-        "content": "B"
-    },
-    {
-        "role": "user",
-        "content": "<Current Turn: 20, 0 Turns Remaining> H\n********Evaluation Starts, You Have 2 Chances for Answering Each Question********\n Now answer the question: What's the output of the blackbox when the input plaintext is 'Sphinx Of Black Quartz'?"
-    },
-    {
-        "role": "assistant",
-        "content": "Tipioy Pg Cmblv Rvbsua"
-    },
-    {
-        "role": "user",
-        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
-    },
-    {
-        "role": "assistant",
-        "content": "Tipioy Pg Cmblv Rvbsua"
+        "content": "CBACB A B C D CBAC"
     },
     {
         "role": "user",
@@ -201,15 +113,7 @@
     },
     {
         "role": "assistant",
-        "content": "yzmpqipof"
-    },
-    {
-        "role": "user",
-        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
-    },
-    {
-        "role": "assistant",
-        "content": "yzmpqipof"
+        "content": "CBACBACBA"
     },
     {
         "role": "user",
@@ -225,15 +129,7 @@
     },
     {
         "role": "assistant",
-        "content": "Btsqpnpnz jt gvo"
-    },
-    {
-        "role": "user",
-        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
-    },
-    {
-        "role": "assistant",
-        "content": "Btsqpnpnz jt gvo"
+        "content": "BACBACBAC BAC BAC"
     },
     {
         "role": "user",
@@ -253,14 +149,6 @@
     },
     {
         "role": "user",
-        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
-    },
-    {
-        "role": "assistant",
-        "content": "A"
-    },
-    {
-        "role": "user",
         "content": "Your answer is wrong. Let's move to next question."
     },
     {
@@ -273,15 +161,7 @@
     },
     {
         "role": "assistant",
-        "content": "B"
-    },
-    {
-        "role": "user",
-        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
-    },
-    {
-        "role": "assistant",
-        "content": "B"
+        "content": "BACBACBACBACBACBACBACB"
     },
     {
         "role": "user",
@@ -297,15 +177,7 @@
     },
     {
         "role": "assistant",
-        "content": "B"
-    },
-    {
-        "role": "user",
-        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
-    },
-    {
-        "role": "assistant",
-        "content": "B"
+        "content": "CBACB"
     },
     {
         "role": "user",
@@ -321,15 +193,7 @@
     },
     {
         "role": "assistant",
-        "content": "B"
-    },
-    {
-        "role": "user",
-        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
-    },
-    {
-        "role": "assistant",
-        "content": "B"
+        "content": "BACBAC BACBAC BACBACBAC"
     },
     {
         "role": "user",
@@ -345,15 +209,7 @@
     },
     {
         "role": "assistant",
-        "content": "B"
-    },
-    {
-        "role": "user",
-        "content": "Your answer is wrong. Please try again. DO NOT output any other text, ONLY output the answer."
-    },
-    {
-        "role": "assistant",
-        "content": "B"
+        "content": "CBAC BAC BAC BAC"
     },
     {
         "role": "user",

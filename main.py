@@ -6,21 +6,24 @@ import subprocess
 import logging
 import sys
 import multiprocessing
+import csv
 
 '''if you want to add new model family and model name, please add them in both the following function and argparse choices.'''
 def get_model_name(model_family):
     if model_family == 'gpt':
-        return ['o1', 'o3', 'o3-mini','o4-mini']
+        return ['gpt-4.1', 'o1', 'o3', 'o3-mini','o4-mini', 'gpt-5.4']
     elif model_family == 'claude':
         return ['claude-3.5-sonnet', 'claude-3.7-sonnet', 'claude-4-sonnet', 'claude-3.7-sonnet_thinking', 'claude-4-sonnet_thinking'] 
     elif model_family == 'gemini':
-        return ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.5-flash_thinking', 'gemini-2.5-pro_thinking'] 
+        return ['gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.5-flash_thinking', 'gemini-2.5-pro_thinking','gemini-3.1-pro_thinking'] 
     elif model_family == 'llama':
         return ['llama-4-marverick', 'llama-4-scout']
     elif model_family == 'qwen':
         return ['qwen3-32b_thinking', 'qwen3-235b-a22b_thinking', 'qwen-plus_thinking', 'qwq-plus_thinking']
     elif model_family == 'deepseek':
         return ['deepseek-v3', 'deepseek-r1']
+    elif model_family == 'human':
+        return ['human']
     else:
         raise ValueError(f"Unknown model family: {model_family}")
     
@@ -33,6 +36,8 @@ def map_model_name_to_api_name(model_name: str) -> str:
         return 'gpt-4.1-2025-04-14'
     elif model_name == 'gpt-4.1-mini':
         return 'gpt-4.1-mini-2025-04-14'
+    elif model_name == 'gpt-5.4':
+        return 'gpt-5.4'
     elif model_name == 'o1':
         return 'o1-2024-12-17'
     elif model_name == 'o3-mini':
@@ -57,6 +62,8 @@ def map_model_name_to_api_name(model_name: str) -> str:
     elif model_name == 'claude-4-opus':
         return 'claude-opus-4-20250514'
     
+    elif model_name== 'gemini-3.1-pro':
+        return 'google/gemini-3.1-pro-preview'
     elif model_name == 'gemini-2.5-pro':
         return 'gemini-2.5-pro'
     elif model_name == 'gemini-2.5-flash':
@@ -89,6 +96,9 @@ def map_model_name_to_api_name(model_name: str) -> str:
     elif model_name == 'llama-4-marverick':
         return 'meta-llama/llama-4-maverick'
 
+    elif model_name == 'human':
+        return 'human'
+    
     else:
         raise ValueError(f"Unsupported model name: {model_name}")
 
@@ -132,15 +142,15 @@ def main():
     paths = PathManager()
     parser = argparse.ArgumentParser(description='Oracle-Benchmark')
     evaluator_group = parser.add_argument_group('eva_model')
-    evaluator_group.add_argument('--eva_model_family', type=str, default='gpt', choices=['gpt', 'claude', 'gemini', 'llama', 'qwen', 'deepseek', 'all'], required=True, help='Model family to evaluate.')
-    evaluator_group.add_argument('--eva_model_name', type=str, choices=['gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.1-mini', 'o1', 'o3-mini', 'o3', 'o4-mini',
+    evaluator_group.add_argument('--eva_model_family', type=str, default='gemini', choices=['gpt', 'claude', 'gemini', 'qwen', 'deepseek', 'all'], required=True, help='Model family to evaluate.')
+    evaluator_group.add_argument('--eva_model_name', type=str, choices=['gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.1-mini', 'gpt-5.4', 'o1', 'o3-mini', 'o3', 'o4-mini',
                                                                     'claude-3.5-sonnet', 'claude-3.5-haiku', 'claude-3.7-sonnet', 'claude-4-sonnet', 'claude-4-opus',
-                                                                    'gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.5-pro',
+                                                                    'gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-3.1-pro',
                                                                     'qwen-max', 'qwen-plus', 'qwq-plus', 'qwen3-235b-a22b', 'qwen3-32b', 'qwq-32b',
                                                                     'llama-4-scout', 'llama-4-marverick',
-                                                                    'deepseek-r1', 'deepseek-v3'], help='Model name to evaluate.')
+                                                                    'deepseek-r1', 'deepseek-v3', 'human'], help='Model name to evaluate.')
     # some models can choose to open the thinking mode. Default is not using thinking mode.
-    evaluator_group.add_argument('--thinking_mode', type=bool, default=False, help='Whether to use thinking mode. Only claude3.7, gemini2.5, and qwen3-series support this. Default is False.')
+    evaluator_group.add_argument('--thinking_mode', type=bool, default=True, help='Whether to use thinking mode. Only claude3.7, gemini2.5, and qwen3-series support this. Default is False.')
     evaluator_group.add_argument('--task', type=str, default='circuit', choices=['code', 'encryption', 'puzzle', 'game', 'physics', 'circuit'])
     evaluator_group.add_argument('--task_id', type=str, default=None, help='Task ID to evaluate. If not specified, all tasks in the task folder will be evaluated.')
     evaluator_group.add_argument('--difficulty', type=str, default=None, help='difficulty level to evaluate. If not specified, all difficulties in the task folder will be evaluated.')
@@ -162,6 +172,28 @@ def main():
     test_group.add_argument('--test_sample_generator_model_name', type=str, default='gpt-4.1', choices=['gpt-4.1','gpt-4o'], help='Model name to generate test sample.')
 
     args = parser.parse_args()
+
+    # gather score
+    # if not os.path.exists(os.path.join(paths.result_path, args.task, 'merge_result.csv')):
+    #     header = ['difficulty', 'task_id', 'model_family', 'model_name', 'run_times', 'max_turns', 'failure_num', 'num_correct', 'total_samples', 'accuracy']
+    #     with open(os.path.join(paths.result_path, args.task, 'merge_result.csv'), 'w', newline="", encoding='utf-8') as f:
+    #         writer = csv.writer(f)
+    #         writer.writerow(header)
+  
+    # for difficulty_folder in os.listdir(os.path.join(paths.result_path, args.task)):
+    #     if difficulty_folder not in ['easy', 'hard']: continue
+    #     for task_id in os.listdir(os.path.join(paths.result_path, args.task, difficulty_folder)):
+    #         if task_id == ".DS_Store": continue
+    #         for model_name in os.listdir(os.path.join(paths.result_path, args.task, difficulty_folder, task_id)):
+    #             if model_name == ".DS_Store": continue
+    #             with open(os.path.join(paths.result_path, args.task, difficulty_folder, task_id, model_name, 'result.csv'), 'r', encoding='utf-8') as f:
+    #                 reader = csv.reader(f)
+    #                 result = list(reader)
+    #             with open(os.path.join(paths.result_path, args.task, 'merge_result.csv'), 'a', newline="", encoding='utf-8') as f:
+    #                 writer = csv.writer(f)
+    #                 writer.writerow(result[1])
+    # sys.exit(0)
+
 
     # Step 0: A model must pass through baseline test first
     if args.baseline_test:
@@ -393,7 +425,7 @@ def main():
         if not tasks_to_run:
             logging.info("No tasks found to evaluate.")
         else:
-            num_processes = 15
+            num_processes = 10
             logging.info(f"\nCollected {len(tasks_to_run)} tasks. Starting evaluation using {num_processes} concurrent processes...")
             with multiprocessing.Pool(processes=num_processes) as pool:
                 results = pool.starmap(run_evaluation, tasks_to_run)

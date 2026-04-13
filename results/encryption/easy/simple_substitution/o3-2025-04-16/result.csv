@@ -1,0 +1,2 @@
+difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
+easy,simple_substitution,gpt,o3-2025-04-16,run_1,10.0,0,3,8,0.375,6090.105263157895,"[0, 192, 384, 384, 1408, 1088, 1856, 2304, 2240, 1088, 11520, 10240, 12992, 8640, 11392, 14784, 6272, 21312, 7616]"
