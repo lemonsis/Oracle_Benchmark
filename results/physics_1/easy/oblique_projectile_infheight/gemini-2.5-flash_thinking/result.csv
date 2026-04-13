@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-easy,oblique_projectile_infheight,gemini,gemini-2.5-flash_thinking,run_1,29.5,1,5,6,0.8333333333333334,568.4615384615385,"[138, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3789, 4201, 2963, 2307, 2839, 0, 2607, 0, 0, 3326]"

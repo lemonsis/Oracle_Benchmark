@@ -173,10 +173,11 @@ class ReasoningLLM:
                     json.dump(self.history, f, ensure_ascii=False, indent=4)
 
     def normal_output(self, input):
+        ''' OPENAI API STYLE'''
         if self.model_family == 'gpt':
             self.messages.append({"role": "user", "content": str(input)})
             self.history.append({"role": "user", "content": str(input)})
-            if 'gpt' in self.model_name:
+            if 'gpt' in self.model_name and '5.4' not in self.model_name:   
                 response = self.client.chat.completions.create(
                     model=self.model_name,
                     messages=self.messages,
@@ -185,7 +186,7 @@ class ReasoningLLM:
                 )
                 response = response.choices[0].message.content
                 self.token_cost.append(0)
-            else:   # for o-series models
+            else:   # for o-series models and gpt-5.4
                 response = self.client.responses.create(
                     model=self.model_name,
                     input=self.messages,
@@ -195,6 +196,59 @@ class ReasoningLLM:
                 response = response.output_text
             self.messages.append({"role": "assistant", "content": response})
             self.history.append({"role": "assistant", "content": response})
+
+        # ''' OpenRouter API STYLE'''
+        # if self.model_family == 'gpt':
+        #     self.messages.append({"role": "user", "content": str(input)})
+        #     self.history.append({"role": "user", "content": str(input)})
+
+        #     # 初始化 OpenAI 客户端（指向 OpenRouter）
+        #     client = OpenAI(
+        #         base_url="https://openrouter.ai/api/v1",
+        #         api_key=os.getenv("OPENROUTER_API_KEY"),  # 替换为你存放 key 的属性名
+        #     )
+
+        #     # 构建请求参数
+        #     kwargs = {
+        #         "model": self.model_name,
+        #         "messages": self.messages,
+        #     }
+
+        #     if 'gpt' in self.model_name and '5.4' not in self.model_name:
+        #         kwargs["temperature"] = 0
+        #         kwargs["max_tokens"] = 500
+        #     else:
+        #         # GPT-5.4 / o-series：启用 high reasoning
+        #         kwargs["extra_body"] = {
+        #             "reasoning": {
+        #                 "effort": "high"
+        #             }
+        #         }
+
+        #     # 发送请求
+        #     completion = client.chat.completions.create(**kwargs)
+
+        #     # 解析文本内容
+        #     response_content = completion.choices[0].message.content
+
+        #     # 统计 reasoning token 开销
+        #     if 'gpt' in self.model_name and '5.4' not in self.model_name:
+        #         self.token_cost.append(0)
+        #     else:
+        #         try:
+        #             usage = completion.usage
+        #             reasoning_tokens = (
+        #                 getattr(getattr(usage, 'completion_tokens_details', None), 'reasoning_tokens', 0)
+        #                 or 0
+        #             )
+        #         except Exception:
+        #             reasoning_tokens = 0
+        #         self.token_cost.append(reasoning_tokens)
+
+        #     self.messages.append({"role": "assistant", "content": response_content})
+        #     self.history.append({"role": "assistant", "content": response_content})
+
+        #     response = response_content
             
         elif self.model_family == 'claude':
             if self.thinking_mode == False:
@@ -245,7 +299,7 @@ class ReasoningLLM:
         elif self.model_family == 'gemini':
             self.messages.append(types.Content(role="user", parts=[types.Part.from_text(text=str(input))]))
             self.history.append({"role": "user", "content": str(input)})
-            if '2.5' in self.model_name:
+            if '2.5' in self.model_name or '3.1' in self.model_name:
                 if self.thinking_mode:
                     response = self.client.models.generate_content(
                         model=self.model_name,

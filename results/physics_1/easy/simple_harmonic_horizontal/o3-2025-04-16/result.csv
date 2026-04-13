@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-easy,simple_harmonic_horizontal,gpt,o3-2025-04-16,run_1,29.0,1,2,6,0.3333333333333333,4590.829268292683,"[128, 768, 128, 384, 2496, 3328, 768, 768, 704, 256, 1600, 1856, 1792, 2048, 1408, 6080, 3968, 4224, 2048, 3712, 6080, 2688, 6976, 4928, 6336, 6400, 12992, 7104, 3008, 8192, 3136, 2816, 7808, 5440, 4928, 9024, 11776, 6592, 10432, 12160, 10944]"

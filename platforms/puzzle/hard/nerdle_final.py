@@ -82,7 +82,7 @@ def blackbox(truth, query):
         if feedback[i] == 'A':
             continue
         for j in range(15):
-            if not used_truth[j] and query_list[i] == truth_list[j]:
+            if query_list[i] == truth_list[j]:
                 feedback[i] = 'M'
                 used_truth[j] = True
                 used_query[i] = True

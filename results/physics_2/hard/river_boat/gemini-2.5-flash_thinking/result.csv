@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-hard,river_boat,gemini,gemini-2.5-flash_thinking,run_1,9.5,0,5,6,0.8333333333333334,3232.9444444444443,"[122, 0, 0, 0, 0, 0, 0, 0, 0, 9771, 8147, 3671, 7625, 0, 17086, 0, 11771, 0]"

@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-easy,bacon_cipher,gpt,o4-mini-2025-04-16,run_1,10.0,0,0,8,0.0,8862.608695652174,"[384, 384, 896, 4160, 2944, 4928, 3136, 6080, 8128, 8768, 11840, 11136, 21888, 26432, 9344, 13824, 6336, 11712, 10112, 12288, 10816, 4288, 14016]"

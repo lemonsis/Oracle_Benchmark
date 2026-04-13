@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-hard,incline_plane_block,gpt,o3-2025-04-16,run_1,29.0,1,3,6,0.5,3739.2,"[256, 128, 192, 832, 1216, 960, 1792, 2048, 1472, 4480, 3072, 2368, 8832, 4160, 3456, 3136, 4032, 3840, 5696, 4992, 3456, 3008, 1984, 3776, 6016, 3328, 7872, 4480, 5120, 3968, 8384, 4224, 4416, 4800, 4608, 2624, 6528, 1664, 8064, 4288]"

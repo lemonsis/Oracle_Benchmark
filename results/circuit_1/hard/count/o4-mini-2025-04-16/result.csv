@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-hard,count,gpt,o4-mini-2025-04-16,run_1,20,0,2,10,0.2,5260.190476190476,"[192, 1856, 2624, 6976, 4416, 4160, 6080, 5312, 5696, 2496, 8832, 4672, 8768, 7040, 8320, 6272, 5632, 4288, 4032, 7744, 5056]"

@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-easy,01248_encryption_1,gemini,gemini-2.5-pro_thinking,run_1,29.5,1,8,8,1.0,3646.075,"[102, 294, 276, 962, 1259, 1818, 2322, 1387, 1583, 2258, 1510, 0, 1182, 1432, 2651, 1820, 5661, 4128, 3244, 0, 6462, 2211, 2798, 0, 1927, 3023, 3308, 0, 0, 6573, 5974, 7759, 10875, 7294, 6681, 9928, 11857, 10529, 8371, 6384]"

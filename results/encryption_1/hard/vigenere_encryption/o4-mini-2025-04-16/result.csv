@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-hard,vigenere_encryption,gpt,o4-mini-2025-04-16,run_1,10.0,0,5,8,0.625,5416.421052631579,"[320, 384, 1728, 1152, 1152, 3008, 1856, 4864, 8320, 4416, 6784, 4800, 16832, 8064, 13696, 7872, 9024, 4672, 3968]"

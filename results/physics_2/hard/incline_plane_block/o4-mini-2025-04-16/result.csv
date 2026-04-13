@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-hard,incline_plane_block,gpt,o4-mini-2025-04-16,run_1,9.0,0,1,6,0.16666666666666666,5088.0,"[768, 320, 2176, 1472, 3072, 3328, 8192, 12096, 10880, 3968, 4864, 4416, 3136, 5632, 3072, 9600, 6784, 7808]"

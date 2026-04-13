@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-easy,bacon_cipher,gemini,gemini-2.5-pro_thinking,run_1,29.5,1,1,8,0.125,4024.340425531915,"[85, 614, 578, 612, 479, 993, 857, 1051, 993, 619, 691, 1065, 1178, 0, 2910, 0, 9416, 2081, 0, 0, 1992, 2358, 0, 5059, 3897, 4210, 2681, 5756, 4563, 3076, 5823, 8257, 6797, 10810, 7107, 10648, 21237, 11460, 0, 6584, 9525, 5919, 7798, 5811, 0, 13554, 0]"

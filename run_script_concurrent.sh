@@ -1,7 +1,7 @@
 #!/bin/bash
 
 EVA_MODEL_FAMILY="all"
-TASK="physics"
+TASK="encryption"
 EVA_MODE="concurrent"
 MAX_TURNS=10
 K=0

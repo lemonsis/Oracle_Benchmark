@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-hard,ball_air_resistance,gemini,gemini-2.5-pro_thinking,run_1,28.5,1,0,6,0.0,5743.545454545455,"[752, 224, 1085, 1615, 3718, 5839, 4108, 6701, 5011, 10670, 12537, 7119, 0, 12779, 12131, 10548, 17111, 0, 0, 0, 18556, 0, 0, 0, 0, 0, 0, 0, 0, 20287, 13254, 14733, 10759]"

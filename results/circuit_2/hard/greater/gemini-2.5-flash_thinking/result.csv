@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-hard,greater,gemini,gemini-2.5-flash_thinking,run_1,20,1,3,10,0.3,10469.30612244898,"[2393, 10010, 1793, 0, 0, 0, 0, 0, 0, 0, 13749, 0, 0, 0, 0, 0, 13516, 0, 0, 0, 0, 0, 0, 0, 0, 20055, 0, 0, 0, 0, 42836, 36675, 39109, 54949, 38515, 656, 37602, 40414, 41014, 12496, 36200, 34328, 0, 0, 0, 0, 35410, 1276, 0]"

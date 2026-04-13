@@ -2,11 +2,11 @@
 
 EVA_MODEL_FAMILY="human"
 EVA_MODEL_NAME="human"
-TASK="physics"
-TASK_ID="cycloid.json"
+TASK="puzzle"
+TASK_ID="quordle.json"
 EVA_MODE="normal"
 MAX_TURNS=5
-K=0
+K=1
 
 python main.py \
     --eva_model_family $EVA_MODEL_FAMILY \

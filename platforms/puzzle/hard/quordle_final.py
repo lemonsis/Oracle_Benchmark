@@ -42,7 +42,7 @@ def blackbox(truth, query):
             if fb[i] == 'A':
                 continue
             for j in range(8):
-                if not used_in_word[j] and not used_in_query[i] and query_chars[i] == word_chars[j]:
+                if query_chars[i] == word_chars[j]:
                     fb[i] = 'M'
                     used_in_word[j] = True
                     used_in_query[i] = True

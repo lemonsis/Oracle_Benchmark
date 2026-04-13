@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-easy,conical_pendulum,gemini,gemini-2.5-pro_thinking,run_1,29.5,1,1,6,0.16666666666666666,5168.261904761905,"[674, 1186, 2265, 2477, 2575, 2950, 3559, 2863, 4375, 3773, 3266, 3892, 0, 0, 5281, 7640, 5336, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6357, 9547, 5412, 13068, 17522, 13496, 9916, 10894, 16846, 17453, 16403, 15198, 12843]"

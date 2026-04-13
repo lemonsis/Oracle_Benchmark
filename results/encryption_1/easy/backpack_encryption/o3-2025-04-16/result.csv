@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-easy,backpack_encryption,gpt,o3-2025-04-16,run_1,30.0,1,7,8,0.875,6168.975609756098,"[128, 128, 192, 320, 1472, 448, 832, 2112, 1088, 12096, 3072, 4288, 2688, 3712, 8896, 18304, 5696, 7360, 8384, 8512, 5824, 3520, 12672, 6208, 4416, 5440, 7360, 18688, 4544, 5120, 6784, 5632, 6784, 2688, 11072, 8768, 3712, 6784, 11584, 16512, 9088]"

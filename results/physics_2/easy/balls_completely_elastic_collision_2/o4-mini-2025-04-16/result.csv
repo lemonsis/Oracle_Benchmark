@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-easy,balls_completely_elastic_collision_2,gpt,o4-mini-2025-04-16,run_1,9.0,0,6,6,1.0,3576.8888888888887,"[256, 512, 960, 5248, 4992, 5760, 8000, 4160, 3392, 4288, 640, 2688, 2560, 3008, 4672, 6208, 2368, 4672]"

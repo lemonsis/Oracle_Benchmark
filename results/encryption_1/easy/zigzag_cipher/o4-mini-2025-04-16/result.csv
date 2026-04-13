@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-easy,zigzag_cipher,gpt,o4-mini-2025-04-16,run_1,10.0,0,7,8,0.875,6800.8421052631575,"[256, 320, 960, 576, 4224, 3840, 5888, 6272, 6016, 12160, 9536, 11392, 12544, 13760, 11968, 8448, 6848, 8704, 5504]"

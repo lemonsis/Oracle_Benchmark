@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-easy,adhxz_encryption,gpt,o3-2025-04-16,run_1,30.0,1,5,8,0.625,6189.714285714285,"[64, 192, 320, 256, 576, 1472, 1664, 2240, 1792, 1280, 2176, 2368, 7552, 2880, 4288, 1472, 7680, 3392, 10752, 7872, 12736, 10048, 13184, 20608, 5760, 8640, 9600, 8640, 15232, 6464, 4096, 9920, 2112, 4608, 6848, 17792, 18432, 5952, 10816, 4672, 2240, 1280]"

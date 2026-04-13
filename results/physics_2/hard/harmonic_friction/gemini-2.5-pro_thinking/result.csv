@@ -1,2 +1,0 @@
-difficulty,task_id,model_family,model_name,run_times,max_turns,failure_num,num_correct,total_samples,accuracy,avg_token_cost,token_cost
-hard,harmonic_friction,gemini,gemini-2.5-pro_thinking,run_1,9.5,0,0,6,0.0,4140.75,"[509, 317, 1341, 1187, 2119, 5257, 5953, 3442, 2814, 10205, 8444, 8101]"
