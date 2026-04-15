@@ -49,6 +49,11 @@ We provide three shell files to help quickly reproduce the performance of GPT-4.
     sh run_script_concurrent.sh
     ```
 
+* If you want to start a 5@1 human evaluation for the 'quordle' black-box from Interactive Puzzle Inference (IPI) task, try
+    ```
+    sh run_humaneval.sh
+    ```
+
 The interaction history will be save under ```./history```, and the results will be saved under ```./results```.
 
 
