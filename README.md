@@ -1,4 +1,4 @@
-# <img src="assets/logo.png" alt="Oracle" width="50"> Oracle: Investigating Advanced Reasoning of Large Language Models via Black-Box Interaction
+# <img src="assets/logo.png" alt="Oracle" width="50"> Oracle: Investigating Advanced Reasoning of Large Language Models via Black-Box Environment Interaction
 
 ---
 
@@ -17,10 +17,11 @@ Please check out the paper for more details, and this repo will detail how to ru
 
 ## 💥 News
 
+- **[2026.05]** 🎉 Our paper is accepted by ICML 2026!
 - **[2025.11]** 🎯 Support human evaluation
-- **[2025.9]** 🐛 Fix a bug that caused incorrect GSI task results
-- **[2025.8]** 🎯 Paper available in arxiv.
-- **[2025.8]** 🎯 We release the code for Oracle Benchmark v1.0.
+- **[2025.09]** 🐛 Fix a bug that caused incorrect GSI task results
+- **[2025.08]** 🎯 Paper available in arxiv.
+- **[2025.08]** 🎯 We release the code for Oracle Benchmark v1.0.
 
 ## 📖 Quick Start
 
